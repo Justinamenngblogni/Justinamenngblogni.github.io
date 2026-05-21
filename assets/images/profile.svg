@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+  <rect width="400" height="500" fill="#ede8d8"/>
+  <rect x="0" y="0" width="400" height="500" fill="url(#noise)" opacity="0.05"/>
+  <defs>
+    <pattern id="noise" patternUnits="userSpaceOnUse" width="2" height="2">
+      <rect width="1" height="1" fill="#0d1117"/>
+    </pattern>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b04a2b" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#0d1117" stop-opacity="0.18"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#g)"/>
+  <!-- Stylized portrait silhouette -->
+  <g fill="#0d1117" opacity="0.85">
+    <circle cx="200" cy="200" r="68"/>
+    <path d="M 80 500 C 80 380, 130 320, 200 320 C 270 320, 320 380, 320 500 Z"/>
+  </g>
+  <!-- Frame mark -->
+  <g stroke="#b04a2b" stroke-width="1.5" fill="none">
+    <line x1="30" y1="30" x2="60" y2="30"/>
+    <line x1="30" y1="30" x2="30" y2="60"/>
+    <line x1="370" y1="30" x2="340" y2="30"/>
+    <line x1="370" y1="30" x2="370" y2="60"/>
+    <line x1="30" y1="470" x2="60" y2="470"/>
+    <line x1="30" y1="470" x2="30" y2="440"/>
+    <line x1="370" y1="470" x2="340" y2="470"/>
+    <line x1="370" y1="470" x2="370" y2="440"/>
+  </g>
+  <text x="200" y="490" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#6b6a5e" letter-spacing="2">REPLACE WITH PHOTO</text>
+</svg>

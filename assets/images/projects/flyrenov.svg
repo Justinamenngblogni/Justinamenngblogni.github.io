@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="600" fill="#e3dcc7"/>
+  <!-- Technical drawing grid -->
+  <g stroke="#0d1117" stroke-width="0.5" opacity="0.1">
+    <path d="M 0 100 H 800 M 0 200 H 800 M 0 300 H 800 M 0 400 H 800 M 0 500 H 800"/>
+    <path d="M 100 0 V 600 M 200 0 V 600 M 300 0 V 600 M 400 0 V 600 M 500 0 V 600 M 600 0 V 600 M 700 0 V 600"/>
+  </g>
+  <!-- Drone (top) -->
+  <g transform="translate(400 130)">
+    <!-- Body -->
+    <rect x="-30" y="-12" width="60" height="24" fill="#0d1117" rx="3"/>
+    <!-- Arms -->
+    <line x1="-30" y1="0" x2="-70" y2="-30" stroke="#0d1117" stroke-width="4"/>
+    <line x1="30" y1="0" x2="70" y2="-30" stroke="#0d1117" stroke-width="4"/>
+    <line x1="-30" y1="0" x2="-70" y2="30" stroke="#0d1117" stroke-width="4"/>
+    <line x1="30" y1="0" x2="70" y2="30" stroke="#0d1117" stroke-width="4"/>
+    <!-- Rotors -->
+    <circle cx="-70" cy="-30" r="20" fill="none" stroke="#0d1117" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="70" cy="-30" r="20" fill="none" stroke="#0d1117" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="-70" cy="30" r="20" fill="none" stroke="#0d1117" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="70" cy="30" r="20" fill="none" stroke="#0d1117" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="-70" cy="-30" r="3" fill="#b04a2b"/>
+    <circle cx="70" cy="-30" r="3" fill="#b04a2b"/>
+    <circle cx="-70" cy="30" r="3" fill="#b04a2b"/>
+    <circle cx="70" cy="30" r="3" fill="#b04a2b"/>
+  </g>
+  <!-- Cable -->
+  <path d="M 400 145 Q 405 280, 400 420" stroke="#0d1117" stroke-width="2" fill="none"/>
+  <!-- Tension indicators -->
+  <g stroke="#b04a2b" stroke-width="1.5" fill="none">
+    <path d="M 410 250 L 425 250" />
+    <path d="M 410 320 L 425 320" />
+  </g>
+  <!-- Reel (bottom) -->
+  <g transform="translate(400 480)">
+    <!-- Mount -->
+    <rect x="-80" y="40" width="160" height="20" fill="#0d1117"/>
+    <!-- Reel structure -->
+    <circle cx="0" cy="0" r="55" fill="none" stroke="#0d1117" stroke-width="3"/>
+    <circle cx="0" cy="0" r="55" fill="#0d1117" opacity="0.08"/>
+    <!-- Coil lines -->
+    <g stroke="#0d1117" stroke-width="0.8" fill="none" opacity="0.6">
+      <circle cx="0" cy="0" r="48"/>
+      <circle cx="0" cy="0" r="42"/>
+      <circle cx="0" cy="0" r="36"/>
+      <circle cx="0" cy="0" r="30"/>
+      <circle cx="0" cy="0" r="24"/>
+    </g>
+    <!-- Motor hub -->
+    <circle cx="0" cy="0" r="14" fill="#b04a2b"/>
+    <circle cx="0" cy="0" r="6" fill="#0d1117"/>
+    <!-- Spokes -->
+    <g stroke="#0d1117" stroke-width="2">
+      <line x1="0" y1="-55" x2="0" y2="-14"/>
+      <line x1="0" y1="55" x2="0" y2="14"/>
+      <line x1="-55" y1="0" x2="-14" y2="0"/>
+      <line x1="55" y1="0" x2="14" y2="0"/>
+    </g>
+  </g>
+  <!-- Tech labels -->
+  <g font-family="ui-monospace, monospace" font-size="11" fill="#6b6a5e" letter-spacing="2">
+    <text x="40" y="50">TENSION CONTROL</text>
+    <text x="40" y="70" font-size="9" opacity="0.7">CLOSED LOOP</text>
+    <text x="760" y="50" text-anchor="end">3DEXPERIENCE</text>
+    <text x="760" y="70" font-size="9" opacity="0.7" text-anchor="end">CAD · SIMULATION</text>
+  </g>
+  <!-- Annotations -->
+  <g font-family="ui-monospace, monospace" font-size="10" fill="#b04a2b">
+    <text x="445" y="285">T = f(ω)</text>
+    <text x="445" y="355">L = ∫v dt</text>
+  </g>
+</svg>
