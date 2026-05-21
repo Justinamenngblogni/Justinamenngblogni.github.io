@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="600" fill="#ede8d8"/>
+
+  <!-- Background grid -->
+  <g stroke="#0d1117" stroke-width="0.5" opacity="0.07">
+    <path d="M 0 100 H 800 M 0 200 H 800 M 0 300 H 800 M 0 400 H 800 M 0 500 H 800"/>
+    <path d="M 100 0 V 600 M 200 0 V 600 M 300 0 V 600 M 400 0 V 600 M 500 0 V 600 M 600 0 V 600 M 700 0 V 600"/>
+  </g>
+
+  <!-- Risk uncertainty regions around obstacles (faded) -->
+  <g fill="#b04a2b" opacity="0.08">
+    <ellipse cx="360" cy="330" rx="80" ry="55"/>
+    <ellipse cx="560" cy="220" rx="70" ry="50"/>
+  </g>
+  <g fill="#b04a2b" opacity="0.12">
+    <ellipse cx="360" cy="330" rx="55" ry="38"/>
+    <ellipse cx="560" cy="220" rx="48" ry="35"/>
+  </g>
+
+  <!-- Obstacles -->
+  <g fill="#0d1117">
+    <rect x="335" y="310" width="50" height="40"/>
+    <rect x="538" y="200" width="44" height="40"/>
+  </g>
+
+  <!-- Sampled MPPI trajectories (K rollouts) -->
+  <g stroke="#0d1117" stroke-width="0.8" fill="none" opacity="0.18">
+    <path d="M 150 460 Q 250 380, 280 320 T 420 240 T 680 130"/>
+    <path d="M 150 460 Q 230 400, 290 350 T 450 280 T 680 130"/>
+    <path d="M 150 460 Q 220 390, 260 310 T 410 220 T 680 130"/>
+    <path d="M 150 460 Q 260 410, 320 360 T 470 270 T 680 130"/>
+    <path d="M 150 460 Q 200 380, 250 290 T 400 200 T 680 130"/>
+    <path d="M 150 460 Q 240 420, 310 370 T 480 290 T 680 130"/>
+    <path d="M 150 460 Q 270 400, 330 330 T 490 240 T 680 130"/>
+    <path d="M 150 460 Q 210 410, 270 360 T 430 290 T 680 130"/>
+    <path d="M 150 460 Q 280 420, 350 360 T 510 260 T 680 130"/>
+    <path d="M 150 460 Q 190 400, 240 320 T 390 230 T 680 130"/>
+    <path d="M 150 460 Q 250 430, 320 380 T 480 310 T 680 130"/>
+    <path d="M 150 460 Q 230 360, 280 280 T 420 200 T 680 130"/>
+  </g>
+
+  <!-- Failed / high-risk trajectories (going through obstacles) -->
+  <g stroke="#b04a2b" stroke-width="0.8" fill="none" opacity="0.35" stroke-dasharray="2 2">
+    <path d="M 150 460 Q 260 400, 360 330 T 560 220 T 680 130"/>
+    <path d="M 150 460 Q 250 410, 365 335 T 540 215 T 680 130"/>
+  </g>
+
+  <!-- OPTIMAL trajectory (risk-aware solution) -->
+  <path d="M 150 460 Q 240 420, 290 380 T 360 270 T 510 165 T 680 130"
+        stroke="#b04a2b" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Waypoints on optimal path -->
+  <g fill="#b04a2b">
+    <circle cx="290" cy="380" r="3.5"/>
+    <circle cx="360" cy="270" r="3.5"/>
+    <circle cx="510" cy="165" r="3.5"/>
+  </g>
+
+  <!-- UGV (start) -->
+  <g transform="translate(150 460)">
+    <!-- Chassis -->
+    <rect x="-22" y="-15" width="44" height="30" fill="#0d1117" rx="3"/>
+    <!-- Sensor top -->
+    <circle cx="0" cy="-22" r="5" fill="#b04a2b"/>
+    <!-- Wheels -->
+    <rect x="-26" y="-18" width="6" height="10" fill="#0d1117"/>
+    <rect x="20" y="-18" width="6" height="10" fill="#0d1117"/>
+    <rect x="-26" y="8" width="6" height="10" fill="#0d1117"/>
+    <rect x="20" y="8" width="6" height="10" fill="#0d1117"/>
+    <!-- Heading arrow -->
+    <path d="M 0 -8 L 0 8 M -4 4 L 0 8 L 4 4" stroke="#f7f3ea" stroke-width="1.5" fill="none"/>
+    <!-- Sensor cone -->
+    <path d="M 0 -22 L -50 -80 A 60 60 0 0 1 50 -80 Z" fill="#b04a2b" opacity="0.08"/>
+  </g>
+
+  <!-- Goal marker -->
+  <g transform="translate(680 130)">
+    <circle r="14" fill="none" stroke="#b04a2b" stroke-width="2"/>
+    <circle r="8" fill="none" stroke="#b04a2b" stroke-width="1.5"/>
+    <circle r="3" fill="#b04a2b"/>
+    <path d="M -22 0 L -14 0 M 14 0 L 22 0 M 0 -22 L 0 -14 M 0 14 L 0 22"
+          stroke="#b04a2b" stroke-width="1.5"/>
+  </g>
+
+  <!-- Labels -->
+  <g font-family="ui-monospace, monospace" font-size="11" fill="#6b6a5e" letter-spacing="2">
+    <text x="40" y="50">RISK-AWARE MPPI</text>
+    <text x="40" y="68" font-size="9" opacity="0.7">K = 1024 SAMPLES · ΔT = 0.05s</text>
+    <text x="760" y="50" text-anchor="end">ROS 2 · C++</text>
+    <text x="760" y="68" font-size="9" opacity="0.7" text-anchor="end">POLITECNICO DI TORINO</text>
+  </g>
+
+  <!-- Annotations -->
+  <g font-family="ui-monospace, monospace" font-size="9" fill="#6b6a5e">
+    <text x="150" y="500" text-anchor="middle">UGV · t=0</text>
+    <text x="680" y="170" text-anchor="middle">GOAL</text>
+  </g>
+  <g font-family="ui-monospace, monospace" font-size="9" fill="#b04a2b" opacity="0.8">
+    <text x="295" y="380" text-anchor="end">RISK</text>
+    <text x="495" y="270" text-anchor="end">REGIONS</text>
+  </g>
+
+  <!-- Cost function notation -->
+  <g font-family="ui-monospace, monospace" font-size="10" fill="#0d1117" opacity="0.5">
+    <text x="40" y="560">J = E[ Σ q(x,u) + λ·risk(x) ]</text>
+  </g>
+</svg>

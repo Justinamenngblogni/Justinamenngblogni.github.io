@@ -78,7 +78,7 @@
           <aside class="hero__meta">
             <div class="meta-item">
               <span class="meta-item__label" data-i18n="hero.meta_status_label">Disponibilité</span>
-              <span class="meta-item__value" data-i18n="hero.meta_status_value">Stage · Avr – Sep 2026</span>
+              <span class="meta-item__value" data-i18n="hero.meta_status_value">Stage · Mars – Sep 2027</span>
             </div>
             <div class="meta-item">
               <span class="meta-item__label" data-i18n="hero.meta_mobility_label">Mobilité</span>
@@ -86,7 +86,7 @@
             </div>
             <div class="meta-item">
               <span class="meta-item__label" data-i18n="hero.meta_location_label">Basé à</span>
-              <span class="meta-item__value">Limoges, FR</span>
+              <span class="meta-item__value">Paris, FR</span>
             </div>
             <div class="meta-item">
               <span class="meta-item__label" data-i18n="hero.meta_school_label">École</span>
@@ -107,13 +107,13 @@
 
         <div class="about__grid">
           <div class="about__portrait">
-            <img src="assets/images/profile.svg" alt="Justin Amen N'GBLOGNI" loading="lazy" />
+            <img src="assets/images/profile.jpg" alt="Justin Amen N'GBLOGNI" loading="lazy" />
             <div class="about__portrait-frame" aria-hidden="true"></div>
           </div>
 
           <div class="about__body">
             <p class="about__lead" data-i18n="about.lead">Étudiant ingénieur motivé en mécatronique, avec une solide expérience pratique en conception de véhicules autonomes et en intelligence artificielle embarquée.</p>
-            <p data-i18n="about.body">Mes compétences couvrent la modélisation, la simulation et l'intégration de systèmes, appuyées par des bases solides en électronique et en informatique. Je recherche actuellement un stage de 4ᵉ année — partout dans le monde — pour approfondir mon expertise en robotique et en automatisation.</p>
+            <p data-i18n="about.body">Mes compétences couvrent la modélisation, la simulation et l'intégration de systèmes, appuyées par des bases solides en électronique et en informatique. Actuellement en stage au Politecnico di Torino sur un contrôleur risk-aware MPPI pour la navigation autonome, je rejoindrai l'ISAE-Supméca à la rentrée 2026 pour mon année d'échange 5A. Je recherche un stage de fin d'études (mars – septembre 2027), partout dans le monde, pour approfondir mon expertise en robotique et en automatisation.</p>
 
             <div class="stats">
               <div class="stat">
@@ -144,13 +144,40 @@
         <header class="section__head">
           <span class="section__num">02</span>
           <h2 class="section__title" data-i18n="projects.heading">Projets sélectionnés</h2>
-          <p class="section__sub" data-i18n="projects.sub">Trois projets représentatifs de mon travail en robotique, IA et conception mécatronique.</p>
+          <p class="section__sub" data-i18n="projects.sub">Quatre projets représentatifs de mon travail en robotique, IA et conception mécatronique.</p>
         </header>
 
-        <!-- Project 1: Robotic Arm -->
+        <!-- Project 1: Polito MPPI -->
         <article class="project">
           <div class="project__meta">
             <span class="project__num">P / 01</span>
+            <span class="project__year">2026</span>
+          </div>
+          <div class="project__media">
+            <img src="assets/images/projects/polito-mppi.svg" alt="Visualisation MPPI — trajectoires et zones de risque" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <p class="project__context" data-i18n="projects.polito.context">Politecnico di Torino · DIMEAS · Italie</p>
+            <h3 class="project__title" data-i18n="projects.polito.title">Risk-aware MPPI — Navigation autonome pour UGV</h3>
+            <p class="project__desc" data-i18n="projects.polito.desc">Développement d'un contrôleur Model Predictive Path Integral (MPPI) intégrant une notion de risque, pour la navigation autonome d'un véhicule terrestre sans pilote (UGV) en environnement incertain.</p>
+            <ul class="project__results">
+              <li data-i18n="projects.polito.r1">Échantillonnage stochastique de trajectoires en temps réel</li>
+              <li data-i18n="projects.polito.r2">Fonction de coût risk-aware — pénalisation des trajectoires sous incertitude</li>
+              <li data-i18n="projects.polito.r3">Validation en simulation ROS 2 avant déploiement</li>
+            </ul>
+            <ul class="project__stack">
+              <li>ROS 2</li><li>C++</li><li>Python</li><li>MPPI</li><li>Optimal Control</li><li>Gazebo</li>
+            </ul>
+            <div class="project__links">
+              <a href="#" class="link-arrow" data-i18n="projects.cta_details">En savoir plus →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Robotic Arm -->
+        <article class="project project--reversed">
+          <div class="project__meta">
+            <span class="project__num">P / 02</span>
             <span class="project__year">2025</span>
           </div>
           <div class="project__media">
@@ -174,10 +201,10 @@
           </div>
         </article>
 
-        <!-- Project 2: Autonomous Vehicle -->
-        <article class="project project--reversed">
+        <!-- Project 3: Autonomous Vehicle -->
+        <article class="project">
           <div class="project__meta">
-            <span class="project__num">P / 02</span>
+            <span class="project__num">P / 03</span>
             <span class="project__year">2021 – 2024</span>
           </div>
           <div class="project__media">
@@ -201,10 +228,10 @@
           </div>
         </article>
 
-        <!-- Project 3: Flyrenov -->
-        <article class="project">
+     <!-- Project 4: Flyrenov -->
+        <article class="project project--reversed">
           <div class="project__meta">
-            <span class="project__num">P / 03</span>
+            <span class="project__num">P / 04</span>
             <span class="project__year">2026</span>
           </div>
           <div class="project__media">
@@ -293,7 +320,21 @@
           <h2 class="section__title" data-i18n="experience.heading">Expérience professionnelle</h2>
         </header>
 
-        <ol class="timeline">
+       <ol class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__date">
+              <span data-i18n="experience.polito.dates">Mai – Juillet 2026</span>
+            </div>
+            <div class="timeline__body">
+              <h3 class="timeline__role" data-i18n="experience.polito.role">Stagiaire R&D — Robotique autonome</h3>
+              <p class="timeline__company">Politecnico di Torino · DIMEAS<span class="timeline__loc"> — Italie</span></p>
+              <ul class="timeline__points">
+                <li data-i18n="experience.polito.p1">Développement d'un contrôleur risk-aware MPPI (Model Predictive Path Integral) pour la navigation autonome d'un UGV.</li>
+                <li data-i18n="experience.polito.p2">Implémentation en C++ / ROS 2, validation en simulation et étude des performances sous incertitude.</li>
+              </ul>
+            </div>
+          </li>
+
           <li class="timeline__item">
             <div class="timeline__date">
               <span data-i18n="experience.stellantis.dates">Juin – Juillet 2025</span>
@@ -334,6 +375,13 @@
 
         <ul class="education">
           <li class="edu-item">
+            <span class="edu-item__date">2026 – 2027</span>
+            <div>
+              <h3 class="edu-item__degree" data-i18n="education.isae">Année d'échange 5A — Mécatronique</h3>
+              <p class="edu-item__school">ISAE-Supméca — Institut Supérieur de Mécanique de Paris, France</p>
+            </div>
+          </li>
+          <li class="edu-item">
             <span class="edu-item__date">2024 – 2027</span>
             <div>
               <h3 class="edu-item__degree" data-i18n="education.engineering">Cycle ingénieur — Mécatronique & Robotique (4ᵉ/5)</h3>
@@ -366,7 +414,7 @@
           <h2 class="section__title" data-i18n="contact.heading">Travaillons ensemble</h2>
         </header>
 
-        <p class="contact__lead" data-i18n="contact.lead">À la recherche d'un stage en robotique, automatisation ou IA embarquée — disponible d'avril à septembre 2026, mobilité internationale.</p>
+        <p class="contact__lead" data-i18n="contact.lead">À la recherche d'un stage de fin d'études en robotique, automatisation ou IA embarquée — disponible de mars à septembre 2027, mobilité internationale.</p>
 
         <div class="contact__links">
           <a href="mailto:justin.ngblogni@etu.unilim.fr" class="contact-link">
@@ -394,7 +442,7 @@
   <!-- ============== FOOTER ============== -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__sig">© <span id="year">2026</span> Justin Amen N'GBLOGNI · Limoges, FR</p>
+      <p class="footer__sig">© <span id="year">2026</span> Justin Amen N'GBLOGNI · Paris, FR</p>
       <p class="footer__build" data-i18n="footer.build">Construit avec HTML, CSS & JavaScript</p>
     </div>
   </footer>

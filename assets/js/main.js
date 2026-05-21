@@ -26,7 +26,7 @@ const TRANSLATIONS = {
       cta_projects: "Voir mes projets",
       cta_contact: "Me contacter",
       meta_status_label: "Disponibilité",
-      meta_status_value: "Stage · Avr – Sep 2026",
+      meta_status_value: "Stage · Mars – Sep 2027",
       meta_mobility_label: "Mobilité",
       meta_mobility_value: "Internationale",
       meta_location_label: "Basé à",
@@ -35,7 +35,7 @@ const TRANSLATIONS = {
     about: {
       heading: "À propos",
       lead: "Étudiant ingénieur motivé en mécatronique, avec une solide expérience pratique en conception de véhicules autonomes et en intelligence artificielle embarquée.",
-      body: "Mes compétences couvrent la modélisation, la simulation et l'intégration de systèmes, appuyées par des bases solides en électronique et en informatique. Je recherche actuellement un stage de 4ᵉ année — partout dans le monde — pour approfondir mon expertise en robotique et en automatisation.",
+      body: "Mes compétences couvrent la modélisation, la simulation et l'intégration de systèmes, appuyées par des bases solides en électronique et en informatique. Actuellement en stage au Politecnico di Torino sur un contrôleur risk-aware MPPI pour la navigation autonome, je rejoindrai l'ISAE-Supméca à la rentrée 2026 pour mon année d'échange 5A. Je recherche un stage de fin d'études (mars – septembre 2027), partout dans le monde, pour approfondir mon expertise en robotique et en automatisation.",
       stat1: "Précision agent DQN",
       stat2: "Ans en IA & robotique",
       stat3: "Langues parlées",
@@ -43,9 +43,17 @@ const TRANSLATIONS = {
     },
     projects: {
       heading: "Projets sélectionnés",
-      sub: "Trois projets représentatifs de mon travail en robotique, IA et conception mécatronique.",
+      sub: "Quatre projets représentatifs de mon travail en robotique, IA et conception mécatronique.",
       cta_github: "Code GitHub →",
       cta_details: "En savoir plus →",
+      polito: {
+        context: "Politecnico di Torino · DIMEAS · Italie",
+        title: "Risk-aware MPPI — Navigation autonome pour UGV",
+        desc: "Développement d'un contrôleur Model Predictive Path Integral (MPPI) intégrant une notion de risque, pour la navigation autonome d'un véhicule terrestre sans pilote (UGV) en environnement incertain.",
+        r1: "Échantillonnage stochastique de trajectoires en temps réel",
+        r2: "Fonction de coût risk-aware — pénalisation des trajectoires sous incertitude",
+        r3: "Validation en simulation ROS 2 avant déploiement"
+      },
       robotic_arm: {
         context: "EEIA Summer School · Bénin",
         title: "Bras robotique — Tic-Tac-Toe par renforcement",
@@ -86,6 +94,12 @@ const TRANSLATIONS = {
     },
     experience: {
       heading: "Expérience professionnelle",
+      polito: {
+        dates: "Mai – Juillet 2026",
+        role: "Stagiaire R&D — Robotique autonome",
+        p1: "Développement d'un contrôleur risk-aware MPPI (Model Predictive Path Integral) pour la navigation autonome d'un UGV.",
+        p2: "Implémentation en C++ / ROS 2, validation en simulation et étude des performances sous incertitude."
+      },
       stellantis: {
         dates: "Juin – Juillet 2025",
         role: "Opérateur ligne d'assemblage — Stage",
@@ -99,13 +113,14 @@ const TRANSLATIONS = {
     },
     education: {
       heading: "Formation",
+      isae: "Année d'échange 5A — Mécatronique",
       engineering: "Cycle ingénieur — Mécatronique & Robotique (4ᵉ/5)",
       prep: "Classes préparatoires intégrées — Génie électrique",
       bac: "Baccalauréat scientifique — GPA 3.332"
     },
     contact: {
       heading: "Travaillons ensemble",
-      lead: "À la recherche d'un stage en robotique, automatisation ou IA embarquée — disponible d'avril à septembre 2026, mobilité internationale."
+      lead: "À la recherche d'un stage de fin d'études en robotique, automatisation ou IA embarquée — disponible de mars à septembre 2027, mobilité internationale."
     },
     footer: {
       build: "Construit avec HTML, CSS & JavaScript"
@@ -128,7 +143,7 @@ const TRANSLATIONS = {
       cta_projects: "View my projects",
       cta_contact: "Get in touch",
       meta_status_label: "Availability",
-      meta_status_value: "Internship · Apr – Sep 2026",
+      meta_status_value: "Internship · Mar – Sep 2027",
       meta_mobility_label: "Mobility",
       meta_mobility_value: "Worldwide",
       meta_location_label: "Based in",
@@ -137,7 +152,7 @@ const TRANSLATIONS = {
     about: {
       heading: "About",
       lead: "Motivated mechatronics engineering student with strong hands-on experience in autonomous vehicle design and embedded AI.",
-      body: "My skills span modeling, simulation and system integration, backed by solid foundations in electrical engineering and computer science. I am currently seeking a 4th-year internship — worldwide — to deepen my expertise in robotics and automation.",
+      body: "My skills span modeling, simulation and system integration, backed by solid foundations in electrical engineering and computer science. Currently on an internship at Politecnico di Torino working on a risk-aware MPPI controller for autonomous navigation, I will join ISAE-Supméca in autumn 2026 for my 5th-year exchange. I am seeking a final-year internship (March – September 2027) worldwide to deepen my expertise in robotics and automation.",
       stat1: "DQN agent accuracy",
       stat2: "Years in AI & robotics",
       stat3: "Languages spoken",
@@ -145,9 +160,17 @@ const TRANSLATIONS = {
     },
     projects: {
       heading: "Selected work",
-      sub: "Three projects that best represent my work across robotics, AI and mechatronic design.",
+      sub: "Four projects that best represent my work across robotics, AI and mechatronic design.",
       cta_github: "GitHub code →",
       cta_details: "Learn more →",
+      polito: {
+        context: "Politecnico di Torino · DIMEAS · Italy",
+        title: "Risk-aware MPPI — Autonomous UGV navigation",
+        desc: "Development of a Model Predictive Path Integral (MPPI) controller with risk awareness, for autonomous navigation of an unmanned ground vehicle (UGV) in uncertain environments.",
+        r1: "Stochastic trajectory sampling in real time",
+        r2: "Risk-aware cost function — penalizing trajectories under uncertainty",
+        r3: "Validation in ROS 2 simulation before deployment"
+      },
       robotic_arm: {
         context: "EEIA Summer School · Benin",
         title: "Robotic arm — Reinforcement-learned Tic-Tac-Toe",
@@ -188,6 +211,12 @@ const TRANSLATIONS = {
     },
     experience: {
       heading: "Professional experience",
+      polito: {
+        dates: "May – July 2026",
+        role: "R&D Intern — Autonomous Robotics",
+        p1: "Development of a risk-aware MPPI (Model Predictive Path Integral) controller for autonomous UGV navigation.",
+        p2: "Implementation in C++ / ROS 2, simulation validation and performance analysis under uncertainty."
+      },
       stellantis: {
         dates: "June – July 2025",
         role: "Assembly line operator — Internship",
@@ -201,13 +230,14 @@ const TRANSLATIONS = {
     },
     education: {
       heading: "Education",
+      isae: "Exchange year 5A — Mechatronics",
       engineering: "Engineering cycle — Mechatronics & Robotics (4th of 5)",
       prep: "Integrated preparatory courses — Electrical engineering",
       bac: "Scientific high school diploma — GPA 3.332"
     },
     contact: {
       heading: "Let's work together",
-      lead: "Seeking an internship in robotics, automation or embedded AI — available April to September 2026, worldwide mobility."
+      lead: "Seeking a final-year internship in robotics, automation or embedded AI — available March to September 2027, worldwide mobility."
     },
     footer: {
       build: "Built with HTML, CSS & JavaScript"
