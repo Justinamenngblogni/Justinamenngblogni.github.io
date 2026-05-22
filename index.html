@@ -44,7 +44,7 @@
           <span class="lang-switch__divider" aria-hidden="true">·</span>
           <button type="button" data-lang-switch="en" class="lang-switch__btn">EN</button>
         </div>
-        <a href="assets/docs/CV_Justin.pdf" class="btn btn--ghost btn--small" data-i18n="nav.cv">CV</a>
+        <a href="assets/docs/Cv%20Justin%20fr.pdf" id="cv-link" class="btn btn--ghost btn--small" target="_blank" rel="noopener" download data-i18n="nav.cv">CV</a>
         <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -86,11 +86,11 @@
             </div>
             <div class="meta-item">
               <span class="meta-item__label" data-i18n="hero.meta_location_label">Basé à</span>
-              <span class="meta-item__value">Paris, FR</span>
+              <span class="meta-item__value">Limoges · Paris, FR</span>
             </div>
             <div class="meta-item">
               <span class="meta-item__label" data-i18n="hero.meta_school_label">École</span>
-              <span class="meta-item__value">ENSIL-ENSCI</span>
+              <span class="meta-item__value">ISAE-Supméca · ENSIL-ENSCI</span>
             </div>
           </aside>
         </div>
@@ -154,7 +154,8 @@
             <span class="project__year">2026</span>
           </div>
           <div class="project__media">
-            <img src="assets/images/projects/polito-mppi.svg" alt="Visualisation MPPI — trajectoires et zones de risque" loading="lazy" />
+            <img src="assets/images/projects/TurtleBot4_web-9-scaled.jpg" alt="Visualisation MPPI — trajectoires et zones de risque" loading="lazy" />
+          
           </div>
           <div class="project__body">
             <p class="project__context" data-i18n="projects.polito.context">Politecnico di Torino · DIMEAS · Italie</p>
@@ -181,7 +182,8 @@
             <span class="project__year">2025</span>
           </div>
           <div class="project__media">
-            <img src="assets/images/projects/robotic-arm.svg" alt="Bras robotique jouant au Tic-Tac-Toe" loading="lazy" />
+            <img src="assets/images/projects/robotic-arm.png" alt="Bras robotique jouant au Tic-Tac-Toe" loading="lazy" />
+
           </div>
           <div class="project__body">
             <p class="project__context" data-i18n="projects.robotic_arm.context">EEIA Summer School · Bénin</p>
@@ -377,6 +379,7 @@
           <li class="edu-item">
             <span class="edu-item__date">2026 – 2027</span>
             <div>
+              <img class="edu-item__logo" src="assets/images/logos/isae-supmeca.png" alt="ISAE-Supméca" />
               <h3 class="edu-item__degree" data-i18n="education.isae">Année d'échange 5A — Mécatronique</h3>
               <p class="edu-item__school">ISAE-Supméca — Institut Supérieur de Mécanique de Paris, France</p>
             </div>
@@ -384,6 +387,7 @@
           <li class="edu-item">
             <span class="edu-item__date">2024 – 2027</span>
             <div>
+              <img class="edu-item__logo" src="assets/images/logos/ensil-ensci.png" alt="ENSIL-ENSCI" />
               <h3 class="edu-item__degree" data-i18n="education.engineering">Cycle ingénieur — Mécatronique & Robotique (4ᵉ/5)</h3>
               <p class="edu-item__school">ENSIL-ENSCI — École Nationale d'Ingénieurs de Limoges, France</p>
             </div>
@@ -391,6 +395,10 @@
           <li class="edu-item">
             <span class="edu-item__date">2021 – 2024</span>
             <div>
+              <div class="edu-item__logos">
+                <img class="edu-item__logo" src="assets/images/logos/ensil-ensci.png" alt="ENSIL-ENSCI" />
+                <img class="edu-item__logo" src="assets/images/logos/epac.png" alt="École Polytechnique d'Abomey-Calavi" />
+              </div>
               <h3 class="edu-item__degree" data-i18n="education.prep">Classes préparatoires intégrées — Génie électrique</h3>
               <p class="edu-item__school">ENSIL-ENSCI (France) / École Polytechnique d'Abomey-Calavi (Bénin)</p>
             </div>
@@ -398,6 +406,7 @@
           <li class="edu-item">
             <span class="edu-item__date">2014 – 2021</span>
             <div>
+              <img class="edu-item__logo" src="assets/images/logos/st-augustin.png" alt="St Augustin Secondary School" />
               <h3 class="edu-item__degree" data-i18n="education.bac">Baccalauréat scientifique — GPA 3.332</h3>
               <p class="edu-item__school">St Augustin Secondary School — Bénin</p>
             </div>
@@ -406,11 +415,85 @@
       </div>
     </section>
 
+    <!-- ============== CERTIFICATIONS ============== -->
+    <section class="section section--alt" id="certifications">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__num">06</span>
+          <h2 class="section__title" data-i18n="certifications.heading">Certifications</h2>
+        </header>
+
+        <div class="cert-grid">
+
+          <!-- Bourse d'excellence — Fondation Vallet -->
+          <div class="cert-card cert-card--award">
+            <div class="cert-card__header">
+              <span class="cert-card__issuer">Fondation Vallet</span>
+              <span class="cert-card__year">2022 – 2025</span>
+            </div>
+            <h3 class="cert-card__name" data-i18n="certifications.vallet.name">Bourse d'excellence</h3>
+            <p class="cert-card__desc" data-i18n="certifications.vallet.desc">Distinction attribuée aux étudiants africains à fort potentiel académique et scientifique — Fondation de France.</p>
+          </div>
+
+          <!-- MATLAB Onramp — MathWorks -->
+          <div class="cert-card">
+            <div class="cert-card__header">
+              <span class="cert-card__issuer">MathWorks</span>
+            </div>
+            <h3 class="cert-card__name" data-i18n="certifications.matlab.name">MATLAB Onramp</h3>
+            <p class="cert-card__desc" data-i18n="certifications.matlab.desc">Initiation au workflow MATLAB : scripts, fonctions et visualisation de données.</p>
+            <a href="assets/docs/certifications/matlab-onramp.pdf" class="cert-card__link" target="_blank" rel="noopener" download data-i18n="certifications.cta">Voir le certificat →</a>
+          </div>
+
+          <!-- Simulink Onramp — MathWorks -->
+          <div class="cert-card">
+            <div class="cert-card__header">
+              <span class="cert-card__issuer">MathWorks</span>
+            </div>
+            <h3 class="cert-card__name" data-i18n="certifications.simulink.name">Simulink Onramp</h3>
+            <p class="cert-card__desc" data-i18n="certifications.simulink.desc">Modélisation et simulation de systèmes dynamiques sous Simulink.</p>
+            <a href="assets/docs/certifications/simulink-onramp.pdf" class="cert-card__link" target="_blank" rel="noopener" download data-i18n="certifications.cta">Voir le certificat →</a>
+          </div>
+
+          <!-- Reinforcement Learning Onramp — MathWorks -->
+          <div class="cert-card">
+            <div class="cert-card__header">
+              <span class="cert-card__issuer">MathWorks</span>
+            </div>
+            <h3 class="cert-card__name" data-i18n="certifications.rl.name">Reinforcement Learning Onramp</h3>
+            <p class="cert-card__desc" data-i18n="certifications.rl.desc">Entraînement d'agents par apprentissage par renforcement avec MATLAB & Simulink.</p>
+            <a href="assets/docs/certifications/rl-onramp.pdf" class="cert-card__link" target="_blank" rel="noopener" download data-i18n="certifications.cta">Voir le certificat →</a>
+          </div>
+
+          <!-- Simscape Onramp — MathWorks -->
+          <div class="cert-card">
+            <div class="cert-card__header">
+              <span class="cert-card__issuer">MathWorks</span>
+            </div>
+            <h3 class="cert-card__name" data-i18n="certifications.simscape.name">Simscape Onramp</h3>
+            <p class="cert-card__desc" data-i18n="certifications.simscape.desc">Simulation physique de systèmes mécaniques, électriques et hydrauliques.</p>
+            <a href="assets/docs/certifications/simscape-onramp.pdf" class="cert-card__link" target="_blank" rel="noopener" download data-i18n="certifications.cta">Voir le certificat →</a>
+          </div>
+
+          <!-- Arduino -->
+          <div class="cert-card">
+            <div class="cert-card__header">
+              <span class="cert-card__issuer">Arduino</span>
+            </div>
+            <h3 class="cert-card__name" data-i18n="certifications.arduino.name">Arduino</h3>
+            <p class="cert-card__desc" data-i18n="certifications.arduino.desc">Programmation et contrôle de systèmes embarqués avec Arduino.</p>
+            <a href="assets/docs/certifications/arduino.pdf" class="cert-card__link" target="_blank" rel="noopener" download data-i18n="certifications.cta">Voir le certificat →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ============== CONTACT ============== -->
     <section class="section section--alt section--contact" id="contact">
       <div class="container">
         <header class="section__head">
-          <span class="section__num">06</span>
+          <span class="section__num">07</span>
           <h2 class="section__title" data-i18n="contact.heading">Travaillons ensemble</h2>
         </header>
 

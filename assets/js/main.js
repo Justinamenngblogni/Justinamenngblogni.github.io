@@ -118,6 +118,34 @@ const TRANSLATIONS = {
       prep: "Classes préparatoires intégrées — Génie électrique",
       bac: "Baccalauréat scientifique — GPA 3.332"
     },
+    certifications: {
+      heading: "Certifications",
+      cta: "Voir le certificat →",
+      vallet: {
+        name: "Bourse d'excellence",
+        desc: "Distinction attribuée aux étudiants africains à fort potentiel académique et scientifique — Fondation de France."
+      },
+      matlab: {
+        name: "MATLAB Onramp",
+        desc: "Initiation au workflow MATLAB : scripts, fonctions et visualisation de données."
+      },
+      simulink: {
+        name: "Simulink Onramp",
+        desc: "Modélisation et simulation de systèmes dynamiques sous Simulink."
+      },
+      rl: {
+        name: "Reinforcement Learning Onramp",
+        desc: "Entraînement d'agents par apprentissage par renforcement avec MATLAB & Simulink."
+      },
+      simscape: {
+        name: "Simscape Onramp",
+        desc: "Simulation physique de systèmes mécaniques, électriques et hydrauliques."
+      },
+      arduino: {
+        name: "Arduino",
+        desc: "Programmation et contrôle de systèmes embarqués avec Arduino."
+      }
+    },
     contact: {
       heading: "Travaillons ensemble",
       lead: "À la recherche d'un stage de fin d'études en robotique, automatisation ou IA embarquée — disponible de mars à septembre 2027, mobilité internationale."
@@ -235,6 +263,34 @@ const TRANSLATIONS = {
       prep: "Integrated preparatory courses — Electrical engineering",
       bac: "Scientific high school diploma — GPA 3.332"
     },
+    certifications: {
+      heading: "Certifications",
+      cta: "View certificate →",
+      vallet: {
+        name: "Excellence scholarship",
+        desc: "Award granted to high-achieving African students with strong academic and scientific potential — Fondation de France."
+      },
+      matlab: {
+        name: "MATLAB Onramp",
+        desc: "Introduction to the MATLAB workflow: scripts, functions and data visualization."
+      },
+      simulink: {
+        name: "Simulink Onramp",
+        desc: "Modeling and simulation of dynamic systems with Simulink."
+      },
+      rl: {
+        name: "Reinforcement Learning Onramp",
+        desc: "Training agents via reinforcement learning with MATLAB & Simulink."
+      },
+      simscape: {
+        name: "Simscape Onramp",
+        desc: "Physical simulation of mechanical, electrical and hydraulic systems."
+      },
+      arduino: {
+        name: "Arduino",
+        desc: "Programming and control of embedded electronic systems with Arduino."
+      }
+    },
     contact: {
       heading: "Let's work together",
       lead: "Seeking a final-year internship in robotics, automation or embedded AI — available March to September 2027, worldwide mobility."
@@ -268,6 +324,14 @@ function applyTranslations(lang) {
   document.querySelectorAll("[data-lang-switch]").forEach((btn) => {
     btn.classList.toggle("is-active", btn.dataset.langSwitch === lang);
   });
+
+  // Update CV link to match active language
+  const cvLink = document.getElementById("cv-link");
+  if (cvLink) {
+    cvLink.href = lang === "fr"
+      ? "assets/docs/Cv%20Justin%20fr.pdf"
+      : "assets/docs/Cv%20Justin%20en.pdf";
+  }
 
   // Update meta description
   const metaDesc = document.querySelector('meta[name="description"]');
@@ -326,7 +390,7 @@ function initMobileMenu() {
 /* ---------- SCROLL REVEAL ---------- */
 function initReveal() {
   const targets = document.querySelectorAll(
-    ".section__head, .about__grid, .project, .skill-cat, .timeline__item, .edu-item, .contact__lead, .contact__links"
+    ".section__head, .about__grid, .project, .skill-cat, .timeline__item, .edu-item, .cert-card, .contact__lead, .contact__links"
   );
   targets.forEach((el) => el.classList.add("reveal"));
 
