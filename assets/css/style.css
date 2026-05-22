@@ -445,7 +445,7 @@ h1, h2, h3, h4, p { margin: 0; }
   letter-spacing: 0.08em;
   color: var(--muted);
 }
-.project--reversed .project__meta { left: 0; right: auto; }
+.project--reversed .project__meta { left: auto; right: 0; }
 .project__num { color: var(--accent); }
 
 .project__media {
@@ -520,6 +520,25 @@ h1, h2, h3, h4, p { margin: 0; }
   border-right: 1px solid var(--line);
 }
 .project__stack li:last-child { border-right: none; }
+
+.project__org-logo {
+  height: 28px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  margin-bottom: 14px;
+  opacity: 0.8;
+}
+
+.project__org-logos {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.project__org-logos .project__org-logo {
+  margin-bottom: 0;
+}
 
 .link-arrow {
   font-family: var(--font-mono);
@@ -619,6 +638,23 @@ h1, h2, h3, h4, p { margin: 0; }
   margin-bottom: 16px;
 }
 .timeline__loc { color: var(--muted); }
+.timeline__role-block + .timeline__role-block {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.timeline__role-period {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-left: 8px;
+  letter-spacing: 0.04em;
+}
+.timeline__link {
+  margin-top: 10px;
+  font-size: 13px;
+}
 .timeline__points {
   display: grid;
   gap: 8px;
@@ -634,6 +670,25 @@ h1, h2, h3, h4, p { margin: 0; }
   position: absolute;
   left: 0;
   color: var(--accent);
+}
+
+.timeline__org-logo {
+  height: 28px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  opacity: 0.8;
+  display: block;
+}
+.timeline__org-logos {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.timeline__org-logos .timeline__org-logo {
+  margin-bottom: 0;
 }
 
 /* ---------- EDUCATION ---------- */
@@ -788,6 +843,14 @@ h1, h2, h3, h4, p { margin: 0; }
 .cert-card__link:hover {
   color: var(--accent);
   border-color: var(--accent);
+}
+.cert-card__logo {
+  height: 28px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  margin-bottom: 4px;
+  opacity: 0.85;
 }
 
 /* Education logos */

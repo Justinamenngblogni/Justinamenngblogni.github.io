@@ -49,7 +49,7 @@ const TRANSLATIONS = {
       polito: {
         context: "Politecnico di Torino · DIMEAS · Italie",
         title: "Risk-aware MPPI — Navigation autonome pour UGV",
-        desc: "Développement d'un contrôleur Model Predictive Path Integral (MPPI) intégrant une notion de risque, pour la navigation autonome d'un véhicule terrestre sans pilote (UGV) en environnement incertain.",
+        desc: "Développement d'un contrôleur Model Predictive Path Integral (MPPI) intégrant une notion de risque, pour la navigation autonome d'un véhicule terrestre sans pilote (UGV) en environnement incertain. L'étude s'est réalisée dans le Department de Mécanique et d'ingénierie aérospatiale (DIMEAS) de l'école Politecnique de Turin.",
         r1: "Échantillonnage stochastique de trajectoires en temps réel",
         r2: "Fonction de coût risk-aware — pénalisation des trajectoires sous incertitude",
         r3: "Validation en simulation ROS 2 avant déploiement"
@@ -108,7 +108,10 @@ const TRANSLATIONS = {
       },
       vallet: {
         role: "Formateur — Robotique & IA",
-        p1: "Formation d'étudiants aux concepts fondamentaux d'IA et de robotique via des ateliers pratiques."
+        p1: "Formation d'étudiants aux concepts fondamentaux d'IA et de robotique via des ateliers pratiques.",
+        participant_role: "Participant — 2ᵉ prix national",
+        participant_p1: "Lauréat du 2ᵉ prix de la cohorte EEIA 2021 — parcours intensif d'apprentissage en intelligence artificielle et robotique embarquée.",
+        ceremony_link: "Voir la cérémonie de remise →"
       }
     },
     education: {
@@ -194,7 +197,7 @@ const TRANSLATIONS = {
       polito: {
         context: "Politecnico di Torino · DIMEAS · Italy",
         title: "Risk-aware MPPI — Autonomous UGV navigation",
-        desc: "Development of a Model Predictive Path Integral (MPPI) controller with risk awareness, for autonomous navigation of an unmanned ground vehicle (UGV) in uncertain environments.",
+        desc: "Development of a Model Predictive Path Integral (MPPI) controller with risk awareness, for autonomous navigation of an unmanned ground vehicle (UGV) in uncertain environments. The study was conducted in the Department of Mechanical and Aerospace Engineering (DIMEAS) at Politecnico di Torino.",
         r1: "Stochastic trajectory sampling in real time",
         r2: "Risk-aware cost function — penalizing trajectories under uncertainty",
         r3: "Validation in ROS 2 simulation before deployment"
@@ -253,7 +256,10 @@ const TRANSLATIONS = {
       },
       vallet: {
         role: "Robotics & AI trainer",
-        p1: "Trained students on core concepts of AI and robotics through practical workshops."
+        p1: "Trained students on core concepts of AI and robotics through practical workshops.",
+        participant_role: "Participant — 2nd national prize",
+        participant_p1: "Winner of the 2nd prize at the EEIA 2021 cohort — intensive training in artificial intelligence and embedded robotics.",
+        ceremony_link: "Watch the award ceremony →"
       }
     },
     education: {

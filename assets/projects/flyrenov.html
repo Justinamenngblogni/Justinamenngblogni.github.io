@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flyrenov — Bobine motorisée pour drone | Justin Amen N'GBLOGNI</title>
+  <meta name="description" content="Système de contrôle de tension et de longueur pour une bobine motorisée destinée au nettoyage de toitures par drone — ENSIL-ENSCI × Flyrenov 2026" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    body { background: var(--paper); }
+    .proj-page { padding: clamp(80px, 10vw, 120px) 0 100px; }
+
+    .proj-page__back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 13px; color: var(--muted);
+      text-decoration: none; margin-bottom: 48px; transition: color .2s;
+    }
+    .proj-page__back:hover { color: var(--accent); }
+
+    .proj-page__num { font-family: var(--font-mono); font-size: 13px; color: var(--accent); letter-spacing: .08em; margin-bottom: 8px; }
+
+    .proj-page__title {
+      font-family: var(--font-display); font-size: clamp(28px, 5vw, 52px);
+      font-weight: 500; color: var(--ink); margin: 0 0 20px; line-height: 1.15;
+    }
+
+    .proj-page__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .proj-page__tag {
+      font-family: var(--font-mono); font-size: 12px; padding: 4px 10px;
+      border: 1px solid var(--line); border-radius: 3px; color: var(--muted);
+    }
+
+    .proj-page__meta-row {
+      display: flex; gap: 40px; flex-wrap: wrap;
+      padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      margin-bottom: 56px;
+    }
+    .proj-page__meta-item { display: flex; flex-direction: column; gap: 5px; }
+    .proj-page__meta-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .proj-page__meta-value { font-size: 14px; font-weight: 500; color: var(--ink); }
+
+    .proj-page__section { margin-bottom: 56px; }
+    .proj-page__section-title { font-family: var(--font-display); font-size: 22px; font-weight: 500; margin-bottom: 20px; color: var(--ink); }
+
+    .proj-page__body p { font-size: 16px; line-height: 1.8; color: var(--muted); margin-bottom: 16px; }
+
+    .proj-page__gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .proj-page__img-wrap {
+      background: var(--paper-2); border: 1px solid var(--line); border-radius: 4px;
+      overflow: hidden; aspect-ratio: 16/10;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .proj-page__img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .proj-page__img-placeholder { font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-align: center; padding: 16px; }
+
+    .proj-page__results { list-style: none; padding: 0; margin: 0; }
+    .proj-page__results li {
+      font-size: 15px; line-height: 1.65; color: var(--muted);
+      padding: 12px 0 12px 24px; border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+    .proj-page__results li:first-child { border-top: 1px solid var(--line); }
+    .proj-page__results li::before {
+      content: "→"; position: absolute; left: 0; top: 13px;
+      color: var(--accent); font-family: var(--font-mono); font-size: 12px;
+    }
+
+    .proj-page__stack { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+    .proj-page__stack li {
+      font-family: var(--font-mono); font-size: 12px;
+      padding: 5px 12px; background: var(--paper-2); border: 1px solid var(--line);
+    }
+
+    .proj-page__org-logos { display: flex; gap: 16px; align-items: center; }
+    .proj-page__org-logo { height: 28px; width: auto; max-width: 140px; object-fit: contain; opacity: 0.8; }
+
+    .proj-page__video-wrap {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .proj-page__video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .proj-page__video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="proj-page">
+    <div class="container">
+
+      <a href="../../index.html#projects" class="proj-page__back">← Retour au portfolio</a>
+
+      <p class="proj-page__num">P / 04</p>
+      <h1 class="proj-page__title">Flyrenov —<br>Bobine motorisée pour drone</h1>
+
+      <div class="proj-page__tags">
+        <span class="proj-page__tag">Modélisation multi-physique</span>
+        <span class="proj-page__tag">Asservissement</span>
+        <span class="proj-page__tag">CAO</span>
+        <span class="proj-page__tag">Mécatronique</span>
+      </div>
+
+      <div class="proj-page__meta-row">
+        <div class="proj-page__meta-item">
+          <span class="proj-page__meta-label">Contexte</span>
+          <span class="proj-page__meta-value">Projet académique · ENSIL-ENSCI</span>
+        </div>
+        <div class="proj-page__meta-item">
+          <span class="proj-page__meta-label">Partenaire</span>
+          <span class="proj-page__meta-value">Flyrenov</span>
+        </div>
+        <div class="proj-page__meta-item">
+          <span class="proj-page__meta-label">Année</span>
+          <span class="proj-page__meta-value">2026</span>
+        </div>
+        <div class="proj-page__meta-item">
+          <span class="proj-page__meta-label">Rôle</span>
+          <span class="proj-page__meta-value">PLACEHOLDER_ROLE</span>
+        </div>
+        <div class="proj-page__meta-item">
+          <span class="proj-page__meta-label">Organisations</span>
+          <div class="proj-page__org-logos">
+            <img class="proj-page__org-logo" src="../images/logos/ensil-ensci.png" alt="ENSIL-ENSCI" />
+            <img class="proj-page__org-logo" src="../images/logos/FlyRenovLogo.jpg" alt="Flyrenov" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Description ── -->
+      <div class="proj-page__section proj-page__body">
+        <h2 class="proj-page__section-title">Description</h2>
+        <p>Conception d'un système de contrôle de tension et de longueur pour une bobine motorisée destinée au nettoyage de toitures par drone, modélisé sur la suite 3DEXPERIENCE.</p>
+        <!-- Ajoute ici autant de paragraphes que nécessaire -->
+        <p>PLACEHOLDER_DESCRIPTION_PARAGRAPH_2</p>
+        <p>PLACEHOLDER_DESCRIPTION_PARAGRAPH_3</p>
+      </div>
+
+      <!-- ── Démonstration ── -->
+      <div class="proj-page__section">
+        <h2 class="proj-page__section-title">Démonstration</h2>
+        <div class="proj-page__video-wrap">
+          <!--
+            Pour intégrer une vidéo YouTube :
+            1. Va sur ta vidéo YouTube
+            2. Clique "Partager" → "Intégrer"
+            3. Copie uniquement l'ID (ex: dQw4w9WgXcQ dans https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+            4. Remplace URL_VIDEO_FLYRENOV ci-dessous par : https://www.youtube.com/embed/TON_ID_ICI
+          -->
+          <iframe
+            src="URL_VIDEO_FLYRENOV"
+            title="Démonstration — Flyrenov bobine motorisée"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- ── Galerie ── -->
+      <div class="proj-page__section">
+        <h2 class="proj-page__section-title">Galerie</h2>
+        <div class="proj-page__gallery">
+
+          <div class="proj-page__img-wrap">
+            <img src="../images/projects/Flyrenov/flyrenov.png" alt="Flyrenov — bobine motorisée" />
+          </div>
+
+          <div class="proj-page__img-wrap">
+            <!-- Remplace ce bloc par : <img src="../images/projects/flyrenov/PLACEHOLDER_IMAGE_2.jpg" alt="Description de l'image" /> -->
+            <span class="proj-page__img-placeholder">PLACEHOLDER_IMAGE_2.jpg</span>
+          </div>
+
+          <div class="proj-page__img-wrap">
+            <!-- Remplace ce bloc par : <img src="../images/projects/flyrenov/PLACEHOLDER_IMAGE_3.jpg" alt="Description de l'image" /> -->
+            <span class="proj-page__img-placeholder">PLACEHOLDER_IMAGE_3.jpg</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Résultats clés ── -->
+      <div class="proj-page__section">
+        <h2 class="proj-page__section-title">Résultats clés</h2>
+        <ul class="proj-page__results">
+          <li>Modélisation multi-physique sous 3DEXPERIENCE</li>
+          <li>Contrôle de tension à boucle fermée</li>
+          <li>Intégration mécanique / électronique / asservissement</li>
+          <!-- Ajoute d'autres résultats ici -->
+        </ul>
+      </div>
+
+      <!-- ── Technologies ── -->
+      <div class="proj-page__section">
+        <h2 class="proj-page__section-title">Technologies</h2>
+        <ul class="proj-page__stack">
+          <li>3DEXPERIENCE</li>
+          <li>Matlab / Simulink</li>
+          <li>Asservissement</li>
+          <li>CAO</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
