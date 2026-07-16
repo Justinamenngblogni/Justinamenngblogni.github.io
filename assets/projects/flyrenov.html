@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FlyRenov — Enrouleur de tuyau asservi pour drone | Justin Amen N'GBLOGNI</title>
-  <meta name="description" content="Refonte mécatronique d'un enrouleur de tuyau haute pression pour drone de nettoyage : châssis allégé de 40 à 14 kg, motorisation divisée par deux, bus CAN remplacé par ESP32/VESC — ENSIL-ENSCI × FlyRenov, 2025-2026" />
+  <title>FlyRenov - Enrouleur de tuyau asservi pour drone | Justin Amen N'GBLOGNI</title>
+  <meta name="description" content="Refonte mécatronique d'un enrouleur de tuyau haute pression pour drone de nettoyage : châssis allégé de 40 à 14 kg, motorisation divisée par deux, bus CAN remplacé par ESP32/VESC - ENSIL-ENSCI × FlyRenov, 2025-2026" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -130,7 +130,7 @@
       <a href="../../index.html#projects" class="proj-page__back">← Retour au portfolio</a>
 
       <p class="proj-page__num">P / 02</p>
-      <h1 class="proj-page__title">FlyRenov —<br>Enrouleur de tuyau asservi pour drone</h1>
+      <h1 class="proj-page__title">FlyRenov -<br>Enrouleur de tuyau asservi pour drone</h1>
 
       <div class="proj-page__tags">
         <span class="proj-page__tag">Mécatronique</span>
@@ -156,7 +156,7 @@
         </div>
         <div class="proj-page__meta-item">
           <span class="proj-page__meta-label">Rôle</span>
-          <span class="proj-page__meta-value">Conception mécatronique — projet en binôme</span>
+          <span class="proj-page__meta-value">Conception mécatronique - projet en binôme</span>
         </div>
         <div class="proj-page__meta-item">
           <span class="proj-page__meta-label">Organisations</span>
@@ -180,7 +180,7 @@
         <h2 class="proj-page__section-title">Le problème de la machine existante</h2>
         <p>La première version fonctionnait, mais restait inutilisable sur le terrain. Nous avons relevé quatre défauts :</p>
         <ul class="proj-page__results" style="margin-bottom:16px;">
-          <li><strong>Beaucoup trop lourde.</strong> Plus de 40 kg, montés sur un gros chariot. Il fallait deux techniciens pour la bouger — et la hisser sur un toit devenait impossible.</li>
+          <li><strong>Beaucoup trop lourde.</strong> Plus de 40 kg, montés sur un gros chariot. Il fallait deux techniciens pour la bouger - et la hisser sur un toit devenait impossible.</li>
           <li><strong>Trop de moteurs.</strong> Quatre en tout, dont un dédié uniquement à répartir le tuyau proprement sur la bobine. Ce mouvement peut pourtant être obtenu sans moteur du tout.</li>
           <li><strong>Électronique trop compliquée.</strong> Un réseau de communication complet (bus CAN) reliait ces quatre moteurs. Pour une machine tenant sur un chariot, c'est une usine à gaz : plus de code, plus cher, et plus de pannes possibles.</li>
           <li><strong>Impossible à entretenir.</strong> Les moteurs étaient vissés sur des supports fixes. Résultat : impossible de retendre la courroie quand elle se détend, ni de la changer.</li>
@@ -195,8 +195,8 @@
         <ul class="proj-page__results">
           <li><strong>Un diable du commerce à la place du chariot.</strong> Il pèse 14 kg et supporte 250 kg. Une personne seule peut désormais monter l'enrouleur sur un toit.</li>
           <li><strong>Deux moteurs au lieu de quatre.</strong> Nous avons supprimé le moteur qui répartissait le tuyau sur la bobine et l'avons remplacé par une simple courroie, reliée à l'axe principal. Le tuyau se répartit donc tout seul, à la bonne vitesse, sans moteur ni code.</li>
-          <li><strong>Une carte au lieu d'un réseau.</strong> Le bus CAN laisse place à un <strong>ESP32</strong> qui parle directement aux contrôleurs des moteurs. C'est plus simple, plus fiable, plus facile à déboguer — et l'ESP32 a le Wi-Fi, indispensable pour la suite du projet.</li>
-          <li><strong>Un support moteur réglable.</strong> Nous l'avons dessiné et usiné nous-mêmes à l'école. Il coulisse, ce qui permet de retendre la courroie en quelques secondes — le défaut n°1 de l'ancienne version.</li>
+          <li><strong>Une carte au lieu d'un réseau.</strong> Le bus CAN laisse place à un <strong>ESP32</strong> qui parle directement aux contrôleurs des moteurs. C'est plus simple, plus fiable, plus facile à déboguer - et l'ESP32 a le Wi-Fi, indispensable pour la suite du projet.</li>
+          <li><strong>Un support moteur réglable.</strong> Nous l'avons dessiné et usiné nous-mêmes à l'école. Il coulisse, ce qui permet de retendre la courroie en quelques secondes - le défaut n°1 de l'ancienne version.</li>
         </ul>
       </div>
 
@@ -206,7 +206,7 @@
         <p>Pour choisir le moteur, nous avons imaginé la situation la plus difficile qu'il aurait à affronter : la machine posée sur un toit, la bobine pleine, et les 60 mètres de tuyau qui pendent dans le vide. C'est là que le moteur force le plus.</p>
         <p>Le calcul se déroule ainsi :</p>
         <ul class="proj-page__results">
-          <li>60 mètres de tuyau remplis d'eau pèsent <strong>7,09 kg</strong> — c'est ce que le moteur doit retenir.</li>
+          <li>60 mètres de tuyau remplis d'eau pèsent <strong>7,09 kg</strong> - c'est ce que le moteur doit retenir.</li>
           <li>Plus la bobine est pleine, plus l'effort demandé au moteur augmente. Un petit script Python simule l'enroulement couche par couche et donne le cas le plus défavorable.</li>
           <li>De là, on obtient l'effort nécessaire, que nous majorons de <strong>50 % par sécurité</strong> : le moteur doit fournir <strong>25 Nm</strong>.</li>
           <li>Le drone monte à 3 m/s : la bobine doit donc tourner à <strong>180 tours/minute</strong>.</li>
@@ -231,7 +231,7 @@
         <div class="proj-page__video-wrap">
           <iframe
             src="https://drive.google.com/file/d/1OLgfx7na_NiyKXVI1iLqjzif7EHjpNSR/preview"
-            title="Démonstration — Enrouleur FlyRenov V2"
+            title="Démonstration - Enrouleur FlyRenov V2"
             allow="autoplay"
             allowfullscreen
           ></iframe>
@@ -244,15 +244,15 @@
         <div class="proj-page__gallery">
 
           <div class="proj-page__img-wrap">
-            <img src="../images/projects/Flyrenov/flyrenov.png" alt="FlyRenov — modélisation CAO de l'enrouleur V2 sous 3DEXPERIENCE" loading="lazy" />
+            <img src="../images/projects/Flyrenov/flyrenov.png" alt="FlyRenov - modélisation CAO de l'enrouleur V2 sous 3DEXPERIENCE" loading="lazy" />
           </div>
 
           <div class="proj-page__img-wrap">
-            <img src="../images/projects/Flyrenov/flyrenov2.jpg" alt="Prototype physique — tambour RAASM et transmission par courroie montés sur le diable" loading="lazy" />
+            <img src="../images/projects/Flyrenov/flyrenov2.jpg" alt="Prototype physique - tambour RAASM et transmission par courroie montés sur le diable" loading="lazy" />
           </div>
 
           <div class="proj-page__img-wrap">
-            <img src="../images/projects/Flyrenov/flyrenov3.jpg" alt="Prototype physique — intégration de l'électronique de puissance et de commande (VESC, alimentation, ESP32)" loading="lazy" />
+            <img src="../images/projects/Flyrenov/flyrenov3.jpg" alt="Prototype physique - intégration de l'électronique de puissance et de commande (VESC, alimentation, ESP32)" loading="lazy" />
           </div>
 
         </div>

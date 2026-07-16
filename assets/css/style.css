@@ -1,5 +1,5 @@
 /* ============================================================
-   PORTFOLIO — Justin Amen N'GBLOGNI
+   PORTFOLIO - Justin Amen N'GBLOGNI
    Style: editorial corporate / sober refined
    ============================================================ */
 
@@ -700,7 +700,7 @@ h1, h2, h3, h4, p { margin: 0; }
   font-size: 15px;
 }
 .timeline__points li::before {
-  content: "—";
+  content: "-";
   position: absolute;
   left: 0;
   color: var(--accent);
