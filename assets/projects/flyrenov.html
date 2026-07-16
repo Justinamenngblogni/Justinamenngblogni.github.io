@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlyRenov — Enrouleur de tuyau asservi pour drone | Justin Amen N'GBLOGNI</title>
+  <meta name="description" content="Refonte mécatronique d'un enrouleur de tuyau haute pression pour drone de nettoyage : châssis allégé de 40 à 14 kg, motorisation divisée par deux, bus CAN remplacé par ESP32/VESC — ENSIL-ENSCI × FlyRenov, 2025-2026" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    body { background: var(--paper); }
+    .proj-page { padding: clamp(80px, 10vw, 120px) 0 100px; }
+
+    .proj-page__back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 13px; color: var(--muted);
+      text-decoration: none; margin-bottom: 48px; transition: color .2s;
+    }
+    .proj-page__back:hover { color: var(--accent); }
+
+    .proj-page__num { font-family: var(--font-mono); font-size: 13px; color: var(--accent); letter-spacing: .08em; margin-bottom: 8px; }
+
+    .proj-page__title {
+      font-family: var(--font-display); font-size: clamp(28px, 5vw, 52px);
+      font-weight: 500; color: var(--ink); margin: 0 0 20px; line-height: 1.15;
+    }
+
+    .proj-page__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .proj-page__tag {
+      font-family: var(--font-mono); font-size: 12px; padding: 4px 10px;
+      border: 1px solid var(--line); border-radius: 3px; color: var(--muted);
+    }
+
+    .proj-page__meta-row {
+      display: flex; gap: 40px; flex-wrap: wrap;
+      padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      margin-bottom: 56px;
+    }
+    .proj-page__meta-item { display: flex; flex-direction: column; gap: 5px; }
+    .proj-page__meta-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .proj-page__meta-value { font-size: 14px; font-weight: 500; color: var(--ink); }
+
+    .proj-page__section { margin-bottom: 56px; }
+    .proj-page__section-title { font-family: var(--font-display); font-size: 22px; font-weight: 500; margin-bottom: 20px; color: var(--ink); }
+
+    .proj-page__body p { font-size: 16px; line-height: 1.8; color: var(--muted); margin-bottom: 16px; }
+
+    .proj-page__gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .proj-page__img-wrap {
+      background: var(--paper-2); border: 1px solid var(--line); border-radius: 4px;
+      overflow: hidden; aspect-ratio: 16/10;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .proj-page__img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .proj-page__img-placeholder { font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-align: center; padding: 16px; }
+
+    .proj-page__results { list-style: none; padding: 0; margin: 0; }
+    .proj-page__results li {
+      font-size: 15px; line-height: 1.65; color: var(--muted);
+      padding: 12px 0 12px 24px; border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+    .proj-page__results li:first-child { border-top: 1px solid var(--line); }
+    .proj-page__results li::before {
+      content: "→"; position: absolute; left: 0; top: 13px;
+      color: var(--accent); font-family: var(--font-mono); font-size: 12px;
+    }
+
+    .proj-page__stack { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+    .proj-page__stack li {
+      font-family: var(--font-mono); font-size: 12px;
+      padding: 5px 12px; background: var(--paper-2); border: 1px solid var(--line);
+    }
+
+    .proj-page__org-logos { display: flex; gap: 16px; align-items: center; }
+    .proj-page__org-logo { height: 28px; width: auto; max-width: 140px; object-fit: contain; opacity: 0.8; }
+
+    .proj-page__video-wrap {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .proj-page__video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .proj-page__video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .proj-page__ext-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 13px; color: var(--accent);
+      text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px;
+      transition: opacity .2s;
+    }
+    .proj-page__ext-link:hover { opacity: 0.7; }
+
+    .proj-page__highlight {
+      background: var(--paper-2); border-left: 3px solid var(--accent);
+      padding: 20px 24px; border-radius: 0 4px 4px 0; margin-bottom: 16px;
+    }
+    .proj-page__highlight p { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+  <main class="proj-page">
+    <div class="container">
+
+      <a href="../../index.html#projects" class="proj-page__back">← Retour au portfolio</a>
+
+      <p class="proj-page__num">P / 02</p>
+      <h1 class="proj-page__title">FlyRenov —<br>Enrouleur de tuyau asservi pour drone</h1>
+
+      <div class="proj-page__tags">
+        <span class="proj-page__tag">Mécatronique</span>
+        <span class="proj-page__tag">Value Engineering</span>
+        <span class="proj-page__tag">CAO 3DEXPERIENCE</span>
+        <span class="proj-page__tag">Dimensionnement</span>
+        <span class="proj-page__tag">ESP32 / VESC</span>
+        <span class="proj-page__tag">Preuve de concept</span>
+      </div>
+
+      <div class="proj-page__meta-row">
+        <div class="proj-page__meta-item">
+          <span class="proj-page__meta-label">Contexte</span>
+          <span class="proj-page__meta-value">Projet académique · ENSIL-ENSCI</span>
+        </div>
+        <div class="proj-page__meta-item">
+          <span class="proj-page__meta-label">Partenaire</span>
+          <span class="proj-page__meta-value">Flyrenov</span>
+        </div>
+        <div class="proj-page__meta-item">
+          <span class="proj-page__meta-label">Période</span>
+          <span class="proj-page__meta-value">2025 – 2026 · Projet de 4ᵉ année</span>
+        </div>
+        <div class="proj-page__meta-item">
+          <span class="proj-page__meta-label">Rôle</span>
+          <span class="proj-page__meta-value">Conception mécatronique — projet en binôme</span>
+        </div>
+        <div class="proj-page__meta-item">
+          <span class="proj-page__meta-label">Organisations</span>
+          <div class="proj-page__org-logos">
+            <img class="proj-page__org-logo" src="../images/logos/ensil-ensci.png" alt="ENSIL-ENSCI" />
+            <img class="proj-page__org-logo" src="../images/logos/FlyRenovLogo.jpg" alt="Flyrenov" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Le contexte ── -->
+      <div class="proj-page__section proj-page__body">
+        <h2 class="proj-page__section-title">Le contexte</h2>
+        <p><strong>FlyRenov</strong> nettoie les toitures avec un drone. Le drone ne transporte pas son eau : elle lui arrive du sol par un <strong>tuyau de 60 mètres</strong> sous haute pression. Ce tuyau est enroulé sur une machine posée au sol, appelée <strong>enrouleur</strong>.</p>
+        <p>Cette machine est le maillon faible de tout le système. Si elle est trop lourde à transporter ou trop lente à dérouler le tuyau, le drone ne peut pas travailler.</p>
+        <p>L'entreprise nous a confié sa <strong>refonte complète</strong>, à deux, dans le cadre de notre projet de 4ᵉ année. Nous étions encadrés par M. Mourioux (responsable de la spécialité Mécatronique à l'ENSIL-ENSCI) et par Mme Postec, ingénieure mécatronique R&amp;D chez FlyRenov.</p>
+      </div>
+
+      <!-- ── Le problème ── -->
+      <div class="proj-page__section proj-page__body">
+        <h2 class="proj-page__section-title">Le problème de la machine existante</h2>
+        <p>La première version fonctionnait, mais restait inutilisable sur le terrain. Nous avons relevé quatre défauts :</p>
+        <ul class="proj-page__results" style="margin-bottom:16px;">
+          <li><strong>Beaucoup trop lourde.</strong> Plus de 40 kg, montés sur un gros chariot. Il fallait deux techniciens pour la bouger — et la hisser sur un toit devenait impossible.</li>
+          <li><strong>Trop de moteurs.</strong> Quatre en tout, dont un dédié uniquement à répartir le tuyau proprement sur la bobine. Ce mouvement peut pourtant être obtenu sans moteur du tout.</li>
+          <li><strong>Électronique trop compliquée.</strong> Un réseau de communication complet (bus CAN) reliait ces quatre moteurs. Pour une machine tenant sur un chariot, c'est une usine à gaz : plus de code, plus cher, et plus de pannes possibles.</li>
+          <li><strong>Impossible à entretenir.</strong> Les moteurs étaient vissés sur des supports fixes. Résultat : impossible de retendre la courroie quand elle se détend, ni de la changer.</li>
+        </ul>
+        <p>Notre conclusion : inutile de réparer cette version. Il fallait tout reprendre.</p>
+      </div>
+
+      <!-- ── Notre approche ── -->
+      <div class="proj-page__section proj-page__body">
+        <h2 class="proj-page__section-title">Notre approche : simplifier</h2>
+        <p>Une règle a guidé toute la refonte : <strong>supprimer ce qui n'apporte rien</strong>. Chaque pièce devait justifier sa présence. Quatre décisions en ont découlé.</p>
+        <ul class="proj-page__results">
+          <li><strong>Un diable du commerce à la place du chariot.</strong> Il pèse 14 kg et supporte 250 kg. Une personne seule peut désormais monter l'enrouleur sur un toit.</li>
+          <li><strong>Deux moteurs au lieu de quatre.</strong> Nous avons supprimé le moteur qui répartissait le tuyau sur la bobine et l'avons remplacé par une simple courroie, reliée à l'axe principal. Le tuyau se répartit donc tout seul, à la bonne vitesse, sans moteur ni code.</li>
+          <li><strong>Une carte au lieu d'un réseau.</strong> Le bus CAN laisse place à un <strong>ESP32</strong> qui parle directement aux contrôleurs des moteurs. C'est plus simple, plus fiable, plus facile à déboguer — et l'ESP32 a le Wi-Fi, indispensable pour la suite du projet.</li>
+          <li><strong>Un support moteur réglable.</strong> Nous l'avons dessiné et usiné nous-mêmes à l'école. Il coulisse, ce qui permet de retendre la courroie en quelques secondes — le défaut n°1 de l'ancienne version.</li>
+        </ul>
+      </div>
+
+      <!-- ── Dimensionnement ── -->
+      <div class="proj-page__section proj-page__body">
+        <h2 class="proj-page__section-title">Choisir le moteur : partir du pire scénario</h2>
+        <p>Pour choisir le moteur, nous avons imaginé la situation la plus difficile qu'il aurait à affronter : la machine posée sur un toit, la bobine pleine, et les 60 mètres de tuyau qui pendent dans le vide. C'est là que le moteur force le plus.</p>
+        <p>Le calcul se déroule ainsi :</p>
+        <ul class="proj-page__results">
+          <li>60 mètres de tuyau remplis d'eau pèsent <strong>7,09 kg</strong> — c'est ce que le moteur doit retenir.</li>
+          <li>Plus la bobine est pleine, plus l'effort demandé au moteur augmente. Un petit script Python simule l'enroulement couche par couche et donne le cas le plus défavorable.</li>
+          <li>De là, on obtient l'effort nécessaire, que nous majorons de <strong>50 % par sécurité</strong> : le moteur doit fournir <strong>25 Nm</strong>.</li>
+          <li>Le drone monte à 3 m/s : la bobine doit donc tourner à <strong>180 tours/minute</strong>.</li>
+          <li>Ces deux chiffres donnent la puissance nécessaire : <strong>475 W</strong>. Nous avons choisi un moteur Nanotec de 534 W, qui garde ainsi une marge confortable.</li>
+        </ul>
+      </div>
+
+      <!-- ── Architecture électronique ── -->
+      <div class="proj-page__section proj-page__body">
+        <h2 class="proj-page__section-title">L'électronique et la commande</h2>
+        <p>Trois éléments composent le système : une <strong>alimentation Mean Well</strong> de 960 W qui fournit le courant, un <strong>contrôleur Flipsky VESC</strong> qui pilote le moteur, et une carte <strong>ESP32</strong> qui donne les ordres. L'ESP32 parle au contrôleur en <strong>UART</strong>. Nous avons soudé tout le circuit sur une plaque plutôt que d'utiliser une breadboard : les vibrations de la machine auraient fini par créer des faux contacts.</p>
+        <p>L'opérateur dispose d'un bouton pour chaque sens de rotation et d'une molette pour régler la vitesse. Deux sécurités sont écrites dans le code :</p>
+        <ul class="proj-page__results">
+          <li><strong>Le moteur ne tourne que si un seul bouton est enfoncé.</strong> Aucun bouton, ou les deux à la fois par erreur : arrêt immédiat.</li>
+          <li><strong>La vitesse monte toujours progressivement.</strong> Même si l'opérateur pousse la molette à fond d'un coup, le moteur accélère en douceur. Sans cela, le à-coup pourrait casser les dents de la courroie ou abîmer le réducteur.</li>
+        </ul>
+      </div>
+
+      <!-- ── Démonstration ── -->
+      <div class="proj-page__section">
+        <h2 class="proj-page__section-title">Démonstration</h2>
+        <div class="proj-page__video-wrap">
+          <iframe
+            src="https://drive.google.com/file/d/1OLgfx7na_NiyKXVI1iLqjzif7EHjpNSR/preview"
+            title="Démonstration — Enrouleur FlyRenov V2"
+            allow="autoplay"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- ── Galerie ── -->
+      <div class="proj-page__section">
+        <h2 class="proj-page__section-title">Galerie</h2>
+        <div class="proj-page__gallery">
+
+          <div class="proj-page__img-wrap">
+            <img src="../images/projects/Flyrenov/flyrenov.png" alt="FlyRenov — modélisation CAO de l'enrouleur V2 sous 3DEXPERIENCE" loading="lazy" />
+          </div>
+
+          <div class="proj-page__img-wrap">
+            <img src="../images/projects/Flyrenov/flyrenov2.jpg" alt="Prototype physique — tambour RAASM et transmission par courroie montés sur le diable" loading="lazy" />
+          </div>
+
+          <div class="proj-page__img-wrap">
+            <img src="../images/projects/Flyrenov/flyrenov3.jpg" alt="Prototype physique — intégration de l'électronique de puissance et de commande (VESC, alimentation, ESP32)" loading="lazy" />
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Résultats ── -->
+      <div class="proj-page__section">
+        <h2 class="proj-page__section-title">Résultats : avant / après</h2>
+        <ul class="proj-page__results">
+          <li>Poids de la structure : <strong>plus de 40 kg → 14 kg</strong></li>
+          <li>Personnes nécessaires pour la déplacer : <strong>2 → 1</strong></li>
+          <li>Nombre de moteurs : <strong>4 → 2</strong></li>
+          <li>Électronique de commande : <strong>un réseau CAN à 4 nœuds → une seule carte ESP32</strong></li>
+          <li>Coût de la motorisation : nettement réduit, en supprimant le matériel surdimensionné</li>
+        </ul>
+      </div>
+
+      <!-- ── Statut ── -->
+      <div class="proj-page__section proj-page__body">
+        <h2 class="proj-page__section-title">Statut : preuve de concept</h2>
+        <div class="proj-page__highlight">
+          <p>Ce que nous avons livré est une <strong>preuve de concept</strong>, pas une machine finie. Le but était de valider l'architecture, pas de la produire en série.</p>
+        </div>
+        <p>C'est pourquoi le support moteur a été usiné en <strong>PVC</strong>, une matière peu chère, et non en aluminium. Ce prototype est fait pour être jeté : il sert à vérifier que les pièces s'ajustent bien et que le réglage de la courroie est pratique. Une fois ces points confirmés, on peut passer à l'aluminium sans risquer de gâcher une matière coûteuse et des heures de machine.</p>
+        <p>Nous avons aussi conçu les pièces pour qu'elles soient <strong>simples à fabriquer</strong> : tous les trous ont le même diamètre, ce qui permet de tout usiner avec un seul outil, sans jamais le changer. Et toutes les pièces ont la même épaisseur, pour être découpées dans une seule plaque.</p>
+      </div>
+
+      <!-- ── Perspectives ── -->
+      <div class="proj-page__section proj-page__body">
+        <h2 class="proj-page__section-title">Perspectives</h2>
+        <p>Le but final de FlyRenov est un enrouleur qui suit le drone tout seul. Le choix de l'ESP32, avec son Wi-Fi, ouvre déjà cette porte. Trois chantiers restent à mener :</p>
+        <ul class="proj-page__results">
+          <li><strong>Suivre le drone automatiquement.</strong> Le drone enverrait sa position GPS à l'enrouleur, qui déroulerait juste ce qu'il faut de tuyau. La contrainte : toujours laisser 1 à 2 mètres de mou au sol, pour ne jamais tirer sur le drone en vol.</li>
+          <li><strong>Enrouler le tuyau bien serré, sans tirer sur le drone.</strong> Deux besoins contradictoires. La solution envisagée est un système à galets qui sépare la machine en deux zones : le tuyau est tendu côté bobine, détendu côté drone.</li>
+          <li><strong>Protéger l'électronique.</strong> Au rembobinage, le tuyau entraîne le moteur, qui se met alors à produire du courant au lieu d'en consommer. Ce courant peut détruire l'alimentation. Il faudra soit le dissiper en chaleur, soit le stocker dans une batterie.</li>
+        </ul>
+      </div>
+
+      <!-- ── Rapport ── -->
+      <div class="proj-page__section">
+        <h2 class="proj-page__section-title">Rapport de projet</h2>
+        <div class="proj-page__body">
+          <p>Le rapport complet (34 pages) détaille l'état de l'art, les notes de calcul, la modélisation CAO, l'architecture électronique et les annexes de dimensionnement.</p>
+        </div>
+        <a
+          href="../docs/Flyrenov-Rapport-Projet.pdf"
+          target="_blank"
+          rel="noopener"
+          class="proj-page__ext-link"
+        >Lire le rapport complet (PDF) →</a>
+      </div>
+
+      <!-- ── Technologies ── -->
+      <div class="proj-page__section">
+        <h2 class="proj-page__section-title">Technologies</h2>
+        <ul class="proj-page__stack">
+          <li>3DEXPERIENCE (CATIA)</li>
+          <li>ESP32</li>
+          <li>VESC / FOC</li>
+          <li>UART</li>
+          <li>C / C++</li>
+          <li>Python</li>
+          <li>Usinage CNC 3 axes</li>
+          <li>DFMA</li>
+          <li>Dimensionnement mécanique (RDM)</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

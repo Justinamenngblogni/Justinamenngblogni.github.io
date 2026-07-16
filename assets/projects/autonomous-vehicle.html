@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Véhicule autonome — Du kit à la conception de zéro | Justin Amen N'GBLOGNI</title>
+  <meta name="description" content="Conception complète d'un véhicule autonome miniature : CAO, électronique, TinyML et vision par ordinateur — EEIA 2021–2024" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    body { background: var(--paper); }
+    .proj-page { padding: clamp(80px, 10vw, 120px) 0 100px; }
+
+    .proj-page__back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 13px; color: var(--muted);
+      text-decoration: none; margin-bottom: 48px; transition: color .2s;
+    }
+    .proj-page__back:hover { color: var(--accent); }
+
+    .proj-page__num { font-family: var(--font-mono); font-size: 13px; color: var(--accent); letter-spacing: .08em; margin-bottom: 8px; }
+
+    .proj-page__title {
+      font-family: var(--font-display); font-size: clamp(28px, 5vw, 52px);
+      font-weight: 500; color: var(--ink); margin: 0 0 20px; line-height: 1.15;
+    }
+
+    .proj-page__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .proj-page__tag {
+      font-family: var(--font-mono); font-size: 12px; padding: 4px 10px;
+      border: 1px solid var(--line); border-radius: 3px; color: var(--muted);
+    }
+
+    .proj-page__meta-row {
+      display: flex; gap: 40px; flex-wrap: wrap;
+      padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      margin-bottom: 56px;
+    }
+    .proj-page__meta-item { display: flex; flex-direction: column; gap: 5px; }
+    .proj-page__meta-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .proj-page__meta-value { font-size: 14px; font-weight: 500; color: var(--ink); }
+
+    .proj-page__section { margin-bottom: 56px; }
+    .proj-page__section-title { font-family: var(--font-display); font-size: 22px; font-weight: 500; margin-bottom: 20px; color: var(--ink); }
+
+    .proj-page__body p { font-size: 16px; line-height: 1.8; color: var(--muted); margin-bottom: 16px; }
+
+    .proj-page__gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .proj-page__img-wrap {
+      background: var(--paper-2); border: 1px solid var(--line); border-radius: 4px;
+      overflow: hidden; aspect-ratio: 16/10;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .proj-page__img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .proj-page__img-placeholder { font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-align: center; padding: 16px; }
+
+    .proj-page__results { list-style: none; padding: 0; margin: 0; }
+    .proj-page__results li {
+      font-size: 15px; line-height: 1.65; color: var(--muted);
+      padding: 12px 0 12px 24px; border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+    .proj-page__results li:first-child { border-top: 1px solid var(--line); }
+    .proj-page__results li::before {
+      content: "→"; position: absolute; left: 0; top: 13px;
+      color: var(--accent); font-family: var(--font-mono); font-size: 12px;
+    }
+
+    .proj-page__stack { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+    .proj-page__stack li {
+      font-family: var(--font-mono); font-size: 12px;
+      padding: 5px 12px; background: var(--paper-2); border: 1px solid var(--line);
+    }
+
+    .proj-page__org-logo { height: 28px; width: auto; max-width: 140px; object-fit: contain; opacity: 0.8; margin-bottom: 0; }
+
+    .proj-page__highlight {
+      background: var(--paper-2); border-left: 3px solid var(--accent);
+      padding: 20px 24px; border-radius: 0 4px 4px 0; margin-bottom: 16px;
+    }
+    .proj-page__highlight p { margin-bottom: 0; }
+
+    .proj-page__video-wrap {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .proj-page__video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .proj-page__video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="proj-page">
+    <div class="container">
+
+      <a href="../../index.html#projects" class="proj-page__back">← Retour au portfolio</a>
+
+      <p class="proj-page__num">P / 04</p>
+      <h1 class="proj-page__title">Véhicule autonome —<br>Du kit à la conception de zéro</h1>
+
+      <div class="proj-page__tags">
+        <span class="proj-page__tag">Behavioral cloning</span>
+        <span class="proj-page__tag">Régression & classification</span>
+        <span class="proj-page__tag">Vision embarquée</span>
+        <span class="proj-page__tag">ESP32 / Raspberry Pi</span>
+        <span class="proj-page__tag">CAO & électronique</span>
+      </div>
+
+      <div class="proj-page__meta-row">
+        <div class="proj-page__meta-item">
+          <span class="proj-page__meta-label">Contexte</span>
+          <span class="proj-page__meta-value">EEIA Summer School · Bénin</span>
+        </div>
+        <div class="proj-page__meta-item">
+          <span class="proj-page__meta-label">Années</span>
+          <span class="proj-page__meta-value">2021 – 2024</span>
+        </div>
+        <div class="proj-page__meta-item">
+          <span class="proj-page__meta-label">Rôle</span>
+          <span class="proj-page__meta-value">Participant (2021) · Concepteur &amp; formateur (2022 – 2024)</span>
+        </div>
+        <div class="proj-page__meta-item">
+          <span class="proj-page__meta-label">Organisation</span>
+          <img class="proj-page__org-logo" src="../images/logos/eeia.png" alt="EEIA — Fondation Vallet" />
+        </div>
+      </div>
+
+      <!-- ── Le point de départ ── -->
+      <div class="proj-page__section proj-page__body">
+        <h2 class="proj-page__section-title">Le point de départ</h2>
+        <p>En 2021, je participe à la <strong>première édition de l'EEIA</strong>. Le projet de fin de session utilise une <strong>Donkey Car de Waveshare</strong>, un kit tout prêt. On l'assemble en suivant une notice, on l'entraîne, et elle roule.</p>
+        <p>Le problème : personne ne sait vraiment <em>pourquoi</em> elle roule. On n'a touché ni à la mécanique, ni à l'électronique, ni au modèle. C'est une boîte noire qui fonctionne.</p>
+        <div class="proj-page__highlight">
+          <p>Monter un kit apprend à monter un kit. L'année suivante, je suis revenu avec une idée simple : pour comprendre une voiture autonome, il faut <strong>la refaire soi-même, de la première pièce jusqu'au réseau de neurones</strong>.</p>
+        </div>
+      </div>
+
+      <!-- ── Reconstruire de zéro ── -->
+      <div class="proj-page__section proj-page__body">
+        <h2 class="proj-page__section-title">Tout refaire nous-mêmes</h2>
+        <p>Nous abandonnons le kit. Le châssis et les pièces sont <strong>dessinés en CAO</strong> puis <strong>imprimés en 3D</strong>. L'électronique est volontairement basique : une carte <strong>ESP32</strong>, un <strong>moteur à courant continu</strong>, un <strong>L293D</strong> pour le commander, une batterie et un <strong>récepteur Flipsky</strong>.</p>
+        <p>Le résultat de cette première étape n'est même pas autonome : c'est une simple <strong>voiture radiocommandée</strong>. Mais nous savons expliquer chaque pièce, chaque fil et chaque ligne de code. C'est la base solide dont nous avons besoin pour la suite.</p>
+      </div>
+
+      <!-- ── Étape 1 ── -->
+      <div class="proj-page__section proj-page__body">
+        <h2 class="proj-page__section-title">Étape 1 — La voiture apprend en nous imitant</h2>
+        <p>Nous plaçons <strong>trois capteurs de distance</strong> à l'avant de la voiture : un à gauche, un au centre, un à droite. Ils mesurent en permanence l'espace disponible autour d'elle. Puis nous construisons un <strong>circuit en labyrinthe</strong> avec des barrières en bois.</p>
+        <p>La méthode tient en trois temps :</p>
+        <ul class="proj-page__results" style="margin-bottom:16px;">
+          <li><strong>Je conduis.</strong> Je pilote la voiture à la main dans le labyrinthe, plusieurs fois.</li>
+          <li><strong>Elle observe.</strong> À chaque instant, elle enregistre ce que voient les trois capteurs et ce que je fais aux commandes.</li>
+          <li><strong>Elle apprend.</strong> Un petit réseau de neurones cherche le lien entre les deux : « quand les capteurs voient <em>ça</em>, il faut faire <em>ça</em> ».</li>
+        </ul>
+        <p>Le réseau apprend ainsi à prédire deux choses : à quelle vitesse avancer, et de combien tourner. Une fois installé dans la voiture, il la conduit seul dans le labyrinthe. Elle a appris à conduire en nous regardant faire.</p>
+      </div>
+
+      <!-- ── Étape 2 ── -->
+      <div class="proj-page__section proj-page__body">
+        <h2 class="proj-page__section-title">Étape 2 — Remplacer les capteurs par une caméra</h2>
+        <p>Les capteurs de distance ont une limite : ils détectent des murs, mais ne savent pas lire une route. Les années suivantes, nous passons donc à la <strong>caméra</strong>.</p>
+        <p>Un <strong>Raspberry Pi 4</strong> vient épauler l'ESP32, et les deux cartes se parlent en <strong>UART</strong>. Chacune son rôle : le Raspberry Pi regarde et décide, l'ESP32 commande les moteurs.</p>
+        <p>Le circuit change lui aussi. Nous retirons les barrières et les remplaçons par de vraies <strong>pistes peintes sur une toile</strong> posée au sol, avec des <strong>panneaux de signalisation</strong>. La voiture ne longe plus des murs : elle doit lire la route.</p>
+        <p>Nous entraînons alors deux modèles, tous deux installés sur la voiture :</p>
+        <ul class="proj-page__results">
+          <li><strong>Le premier conduit</strong> — il regarde l'image de la caméra et en déduit directement la vitesse et l'angle du volant.</li>
+          <li><strong>Le second lit les panneaux</strong> — il reconnaît la signalisation et adapte le comportement de la voiture.</li>
+        </ul>
+      </div>
+
+      <!-- ── Démonstration ── -->
+      <div class="proj-page__section">
+        <h2 class="proj-page__section-title">Démonstration</h2>
+        <div class="proj-page__video-wrap">
+          <!--
+            Pour intégrer une vidéo YouTube :
+            1. Va sur ta vidéo YouTube
+            2. Clique "Partager" → "Intégrer"
+            3. Copie uniquement l'ID (ex: dQw4w9WgXcQ dans https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+            4. Remplace URL_VIDEO_AV ci-dessous par : https://www.youtube.com/embed/TON_ID_ICI
+          -->
+          <iframe
+            src="https://drive.google.com/file/d/1giYFzBZHcGXlXbD1mj9-swQh_gjjxHHT/preview"
+            title="Démonstration — Véhicule autonome"
+            allow="autoplay"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- ── Galerie ── -->
+      <div class="proj-page__section">
+        <h2 class="proj-page__section-title">Galerie</h2>
+        <div class="proj-page__gallery">
+
+          <div class="proj-page__img-wrap">
+            <img src="../images/projects/autonomous_car/autonomous-vehicle.jpg" alt="Modélisation CAO du châssis sous Fusion 360 — pièces conçues pour l'impression 3D" loading="lazy" />
+          </div>
+
+          <div class="proj-page__img-wrap">
+            <img src="../images/projects/autonomous_car/autonomous-vehicle-chassis.jpg" alt="Châssis du véhicule imprimé en 3D — Fondation Vallet · Bénin Excellence" loading="lazy" />
+          </div>
+
+          <div class="proj-page__img-wrap">
+            <img src="../images/projects/autonomous_car/08.jpg" alt="Câblage et assemblage du châssis — électronique embarquée montée à la main" loading="lazy" />
+          </div>
+
+          <div class="proj-page__img-wrap">
+            <img src="../images/projects/autonomous_car/IMG-20220811-WA0034.jpg" alt="Véhicule autonome dans le circuit en labyrinthe délimité par des barrières en bois — étape des capteurs de distance" loading="lazy" />
+          </div>
+
+          <div class="proj-page__img-wrap">
+            <img src="../images/projects/autonomous_car/06.jpg" alt="Présentation de l'architecture Deep Learning — pipeline caméra → Raspberry Pi → prédiction de la commande → ESP32" loading="lazy" />
+          </div>
+
+          <div class="proj-page__img-wrap">
+            <img src="../images/projects/autonomous_car/07.jpg" alt="Encadrement d'un participant sur le prototype de voiture autonome" loading="lazy" />
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Résultats clés ── -->
+      <div class="proj-page__section">
+        <h2 class="proj-page__section-title">Résultats clés</h2>
+        <ul class="proj-page__results">
+          <li>Voiture entièrement conçue par nos soins : CAO, impression 3D, électronique et code. Aucun kit.</li>
+          <li>Conduite autonome dans un labyrinthe, apprise en imitant un pilote humain.</li>
+          <li>Passage réussi des capteurs de distance à la caméra.</li>
+          <li>Deux modèles embarqués : un qui conduit, un qui lit les panneaux.</li>
+          <li>Deux cartes qui se répartissent le travail : le Raspberry Pi voit et décide, l'ESP32 commande les moteurs.</li>
+          <li>Projet repris comme support de formation à l'EEIA pendant trois éditions (2022 – 2024).</li>
+        </ul>
+      </div>
+
+      <!-- ── Ce que ce projet m'a appris ── -->
+      <div class="proj-page__section proj-page__body">
+        <h2 class="proj-page__section-title">Ce que ce projet m'a appris</h2>
+        <p>Refaire ce que le kit donnait déjà nous a pris beaucoup plus de temps. C'est exactement ce qui en a fait la valeur.</p>
+        <p>Aucune de ces étapes n'était prévue au départ. À chaque fois, c'est une limite qui a imposé la suivante : la radiocommande ne suffisait plus, alors sont venus les capteurs ; les capteurs ne savaient pas lire une route, alors est venue la caméra.</p>
+        <p>C'est là que j'ai compris ce qui me passionne aujourd'hui en <strong>Embodied AI</strong> : un modèle ne vaut jamais mieux que les capteurs qui le nourrissent et le matériel qui l'exécute.</p>
+      </div>
+
+      <!-- ── Technologies ── -->
+      <div class="proj-page__section">
+        <h2 class="proj-page__section-title">Technologies</h2>
+        <ul class="proj-page__stack">
+          <li>Python</li>
+          <li>TensorFlow</li>
+          <li>OpenCV</li>
+          <li>Fusion 360</li>
+          <li>Impression 3D</li>
+          <li>ESP32</li>
+          <li>Raspberry Pi 4</li>
+          <li>L293D · Moteur CC</li>
+          <li>UART</li>
+          <li>TinyML</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
