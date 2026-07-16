@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Risk-aware MPPI — Navigation autonome UGV | Justin Amen N'GBLOGNI</title>
-  <meta name="description" content="Contrôleur MPPI risk-aware pour la navigation autonome d'un UGV en environnement incertain — Politecnico di Torino · DIMEAS 2026" />
+  <title>Risk-aware MPPI - Navigation autonome UGV | Justin Amen N'GBLOGNI</title>
+  <meta name="description" content="Contrôleur MPPI risk-aware pour la navigation autonome d'un UGV en environnement incertain - Politecnico di Torino · DIMEAS 2026" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -129,7 +129,7 @@
       <a href="../../index.html#projects" class="proj-page__back">← Retour au portfolio</a>
 
       <p class="proj-page__num">P / 01</p>
-      <h1 class="proj-page__title">MPPI sémantique &amp; risk-aware —<br>Navigation autonome d'un UGV</h1>
+      <h1 class="proj-page__title">MPPI sémantique &amp; risk-aware -<br>Navigation autonome d'un UGV</h1>
 
       <div class="proj-page__tags">
         <span class="proj-page__tag">Embodied AI</span>
@@ -156,7 +156,7 @@
         </div>
         <div class="proj-page__meta-item">
           <span class="proj-page__meta-label">Rôle</span>
-          <span class="proj-page__meta-value">Stagiaire R&amp;D — Perception &amp; contrôle</span>
+          <span class="proj-page__meta-value">Stagiaire R&amp;D - Perception &amp; contrôle</span>
         </div>
         <div class="proj-page__meta-item">
           <span class="proj-page__meta-label">Institution</span>
@@ -168,29 +168,29 @@
       <img
         class="proj-page__hero-img"
         src="../images/projects/MPPI/TurtleBot4_web-9-scaled.jpg"
-        alt="Visualisation MPPI — trajectoires et zones de risque"
+        alt="Visualisation MPPI - trajectoires et zones de risque"
       />
 
       <!-- ── Le problème ── -->
       <div class="proj-page__section proj-page__body">
         <h2 class="proj-page__section-title">Le problème</h2>
         <p>Le <strong>MPPI</strong> (Model Predictive Path Integral) est un contrôleur d'échantillonnage stochastique très efficace pour la navigation d'un véhicule terrestre autonome (UGV) : il génère des milliers de trajectoires candidates à chaque pas de temps et retient le meilleur compromis selon une fonction de coût. Mais le MPPI classique raisonne sur une carte d'occupation purement <em>géométrique</em> : il voit un obstacle, sans jamais savoir si cet obstacle est réellement <strong>infranchissable</strong> (un mur, un poteau) ou simplement <strong>franchissable</strong> (une flaque, des feuilles mortes, une bordure basse).</p>
-        <p>Conséquence : <strong>L'erreur va dans les deux sens.</strong> D'un côté, le robot devient <strong>inutilement prudent</strong> — il contourne ou s'arrête devant des éléments qu'il pourrait traverser sans danger. De l'autre, et c'est plus critique, il traverse en toute confiance des zones <strong>dangereuses que le LiDAR ne peut pas percevoir</strong> : boue, sol mouillé ou glissant, sable meuble. Géométriquement, ces surfaces sont <em>plates</em> — le capteur les lit comme du sol libre, alors qu'elles peuvent faire déraper ou enliser le véhicule.</p>
-        <p>Mon stage au <strong>Politecnico di Torino (DIMEAS)</strong> a consisté à combler ce manque sémantique, en donnant au contrôleur une <strong>compréhension du terrain</strong> — sa <em>nature</em>, et non plus seulement sa géométrie.</p>
+        <p>Conséquence : <strong>L'erreur va dans les deux sens.</strong> D'un côté, le robot devient <strong>inutilement prudent</strong> - il contourne ou s'arrête devant des éléments qu'il pourrait traverser sans danger. De l'autre, et c'est plus critique, il traverse en toute confiance des zones <strong>dangereuses que le LiDAR ne peut pas percevoir</strong> : boue, sol mouillé ou glissant, sable meuble. Géométriquement, ces surfaces sont <em>plates</em> - le capteur les lit comme du sol libre, alors qu'elles peuvent faire déraper ou enliser le véhicule.</p>
+        <p>Mon stage au <strong>Politecnico di Torino (DIMEAS)</strong> a consisté à combler ce manque sémantique, en donnant au contrôleur une <strong>compréhension du terrain</strong> - sa <em>nature</em>, et non plus seulement sa géométrie.</p>
       </div>
 
       <!-- ── Mon approche ── -->
       <div class="proj-page__section proj-page__body">
         <h2 class="proj-page__section-title">Mon approche</h2>
         <p>Après une <strong>analyse approfondie de l'état de l'art</strong> (segmentation sémantique embarquée et coûts de traversabilité pour la navigation tout-terrain), j'ai conçu un pipeline en deux temps :</p>
-        <p><strong>1. Perception.</strong> Une couche de <strong>segmentation sémantique</strong> classe chaque pixel du flux de la caméra OAK-D (route, trottoir, obstacle dur, eau…). J'ai entraîné et <strong>comparé trois familles de modèles — SegFormer, MobileNet et YOLO</strong> — pour identifier le meilleur compromis précision / latence en vue d'un déploiement <strong>temps réel sur Raspberry Pi</strong> embarqué.</p>
+        <p><strong>1. Perception.</strong> Une couche de <strong>segmentation sémantique</strong> classe chaque pixel du flux de la caméra OAK-D (route, trottoir, obstacle dur, eau…). J'ai entraîné et <strong>comparé trois familles de modèles - SegFormer, MobileNet et YOLO</strong> - pour identifier le meilleur compromis précision / latence en vue d'un déploiement <strong>temps réel sur Raspberry Pi</strong> embarqué.</p>
         <p><strong>2. Contrôle.</strong> La carte sémantique est convertie en <strong>carte de traversabilité</strong>, puis injectée comme terme de coût <em>risk-aware</em> dans le MPPI : les zones franchissables ne sont plus pénalisées comme des obstacles, tandis que l'incertitude de perception augmente le coût des régions ambiguës. Le robot navigue ainsi de façon plus directe <em>et</em> plus sûre.</p>
       </div>
 
       <!-- ── Ce que j'ai construit ── -->
       <div class="proj-page__section proj-page__body">
         <h2 class="proj-page__section-title">Ce que j'ai construit</h2>
-        <p>J'ai mis en place une <strong>chaîne de simulation complète sous Gazebo Harmonic (v8.11.0) et ROS 2 Jazzy</strong>, autour d'un <strong>TurtleBot 4</strong> équipé d'un <strong>LiDAR</strong> et d'une <strong>caméra de profondeur OAK-D</strong>. J'ai modélisé des <strong>environnements urbains aux configurations complexes</strong>, mêlant obstacles franchissables et infranchissables, dans lesquels le robot doit <strong>arbitrer entre plusieurs chemins possibles</strong> et retenir celui au <strong>meilleur coût de traversabilité</strong> pour atteindre sa destination — dans des conditions réalistes et reproductibles, avant tout déploiement matériel.</p>
+        <p>J'ai mis en place une <strong>chaîne de simulation complète sous Gazebo Harmonic (v8.11.0) et ROS 2 Jazzy</strong>, autour d'un <strong>TurtleBot 4</strong> équipé d'un <strong>LiDAR</strong> et d'une <strong>caméra de profondeur OAK-D</strong>. J'ai modélisé des <strong>environnements urbains aux configurations complexes</strong>, mêlant obstacles franchissables et infranchissables, dans lesquels le robot doit <strong>arbitrer entre plusieurs chemins possibles</strong> et retenir celui au <strong>meilleur coût de traversabilité</strong> pour atteindre sa destination - dans des conditions réalistes et reproductibles, avant tout déploiement matériel.</p>
       </div>
 
       <!-- ── Démonstration ── -->
@@ -202,7 +202,7 @@
 
             <iframe
               src="https://www.youtube.com/embed/TON_ID_ICI"
-              title="Démonstration — MPPI sémantique risk-aware"
+              title="Démonstration - MPPI sémantique risk-aware"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
@@ -210,7 +210,7 @@
             (l'ID est la partie après v= dans l'URL YouTube, ex: dQw4w9WgXcQ.
              Pour Google Drive, garde le format .../preview comme sur la page du bras robotique.)
           -->
-          <span class="proj-page__video-placeholder">Démonstration vidéo — à venir<br>(simulation Gazebo + visualisation des trajectoires)</span>
+          <span class="proj-page__video-placeholder">Démonstration vidéo - à venir<br>(simulation Gazebo + visualisation des trajectoires)</span>
         </div>
       </div>
 
@@ -241,10 +241,10 @@
       <div class="proj-page__section">
         <h2 class="proj-page__section-title">Avancement <span style="font-family:var(--font-mono);font-size:13px;color:var(--accent);">· stage en cours</span></h2>
         <ul class="proj-page__results">
-          <li>Chaîne de simulation opérationnelle sous Gazebo Harmonic + ROS 2 Jazzy (TurtleBot 4, LiDAR + caméra de profondeur OAK-D) — environnements urbains aux configurations complexes modélisés</li>
-          <li>Couche de perception sémantique couplée au MPPI risk-aware — objectif : distinguer terrain franchissable et obstacle réel</li>
-          <li>Benchmark SegFormer / MobileNet / YOLO pour le déploiement temps réel sur Raspberry Pi — sélection du modèle et résultats chiffrés <strong>en cours</strong></li>
-          <li>Évaluation comparative vs MPPI géométrique de référence (trajectoires, arrêts évités) — <strong>en cours</strong>, métriques à venir</li>
+          <li>Chaîne de simulation opérationnelle sous Gazebo Harmonic + ROS 2 Jazzy (TurtleBot 4, LiDAR + caméra de profondeur OAK-D) - environnements urbains aux configurations complexes modélisés</li>
+          <li>Couche de perception sémantique couplée au MPPI risk-aware - objectif : distinguer terrain franchissable et obstacle réel</li>
+          <li>Benchmark SegFormer / MobileNet / YOLO pour le déploiement temps réel sur Raspberry Pi - sélection du modèle et résultats chiffrés <strong>en cours</strong></li>
+          <li>Évaluation comparative vs MPPI géométrique de référence (trajectoires, arrêts évités) - <strong>en cours</strong>, métriques à venir</li>
         </ul>
       </div>
 
@@ -267,7 +267,7 @@
       </div>
 
       <!-- ── Code source ──
-           ANCRAGE GITHUB — à activer à la fin du stage, quand le dépôt sera rendu public.
+           ANCRAGE GITHUB - à activer à la fin du stage, quand le dépôt sera rendu public.
            1. Supprime la ligne d'ouverture de ce commentaire et la ligne de fermeture en bas.
            2. Remplace NOM_DU_REPO par le nom réel du dépôt.
 

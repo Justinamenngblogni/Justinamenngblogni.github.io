@@ -1,4 +1,4 @@
-# Portfolio — Justin Amen N'GBLOGNI
+# Portfolio - Justin Amen N'GBLOGNI
 
 Personal website presenting my background and projects in mechatronics, robotics, and Embodied AI.
 
@@ -6,13 +6,13 @@ Personal website presenting my background and projects in mechatronics, robotics
 
 ## Overview
 
-I'm a mechatronics engineering student (ENSIL-ENSCI, currently on exchange at ISAE-Supméca), working at the intersection of perception and control for autonomous systems. This portfolio brings together my most representative projects — from a navigation controller developed at Politecnico di Torino to self-driving vehicles built entirely from scratch.
+I'm a mechatronics engineering student (ENSIL-ENSCI, currently on exchange at ISAE-Supméca), working at the intersection of perception and control for autonomous systems. This portfolio brings together my most representative projects - from a navigation controller developed at Politecnico di Torino to self-driving vehicles built entirely from scratch.
 
 The site is bilingual (English / French) and runs without a server: the translations are embedded directly in the JavaScript.
 
 ## Built with
 
-- HTML5, CSS3, and vanilla JavaScript — no framework, no build step
+- HTML5, CSS3, and vanilla JavaScript - no framework, no build step
 - Language switching (EN/FR) and animations handled in plain JavaScript
 - Standalone project pages, hosted on GitHub Pages
 - Only external dependency: Google Fonts (Fraunces, Manrope, JetBrains Mono)

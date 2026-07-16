@@ -21,7 +21,7 @@ dist/
 .env
 .env.local
 
-# Photos sources — expérience Formateur EEIA
+# Photos sources - expérience Formateur EEIA
 # Règle : seules les photos NUMÉROTÉES (1.jpg, 2.jpeg, ...) sont publiées.
 # Toute autre image (originaux WhatsApp, IMG_xxxx, etc.) reste locale.
 # Pour publier une nouvelle photo : il suffit de la renommer avec un chiffre.
