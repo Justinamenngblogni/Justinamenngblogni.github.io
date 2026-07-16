@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Justin Amen N'GBLOGNI — Mechatronics & Robotics Engineer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+  <meta name="theme-color" content="#0d1117" />
+
+  <meta name="description" content="Portfolio of Justin Amen N'GBLOGNI — mechatronics engineering student working in Embodied AI: semantic perception, autonomous navigation (risk-aware MPPI, ROS 2) and embedded robotics." />
+  <meta name="author" content="Justin Amen N'GBLOGNI" />
+  <meta name="keywords" content="Embodied AI, robotics, autonomous navigation, MPPI, model predictive control, ROS 2, semantic segmentation, perception, reinforcement learning, embedded AI, edge deployment, SLAM, mechatronics, robotics internship" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Justin Amen N'GBLOGNI — Embodied AI & Robotics" />
+  <meta property="og:description" content="Mechatronics engineer working in Embodied AI — semantic perception, risk-aware MPPI navigation and embedded robotics. Seeking a 2027 final-year internship." />
+  <meta property="og:image" content="assets/images/profile.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ============== NAV ============== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#top" class="nav__logo" aria-label="Home">
+        <span class="nav__logo-mark">JN</span>
+        <span class="nav__logo-sep">/</span>
+        <span class="nav__logo-text" data-i18n="nav.logo_tag">Portfolio</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about" data-i18n="nav.about">À propos</a>
+        <a href="#projects" data-i18n="nav.projects">Projets</a>
+        <a href="#skills" data-i18n="nav.skills">Compétences</a>
+        <a href="#experience" data-i18n="nav.experience">Expérience</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang-switch="fr" class="lang-switch__btn is-active">FR</button>
+          <span class="lang-switch__divider" aria-hidden="true">·</span>
+          <button type="button" data-lang-switch="en" class="lang-switch__btn">EN</button>
+        </div>
+        <a href="assets/docs/Cv%20Justin%20fr.pdf" id="cv-link" class="btn btn--ghost btn--small" target="_blank" rel="noopener" download data-i18n="nav.cv">CV</a>
+        <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============== HERO ============== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__main">
+            <p class="hero__tag" data-i18n="hero.tag">Élève-ingénieur · Mécatronique & systèmes complexes · M2 / 5ᵉ année</p>
+            <h1 class="hero__name">
+              <span>Justin Amen</span>
+              <span class="hero__name-line2">N'GBLOGNI</span>
+            </h1>
+            <p class="hero__subtitle" data-i18n="hero.subtitle">Embodied AI · Perception & navigation autonome · Robotique</p>
+
+            <div class="hero__cta">
+              <a href="#projects" class="btn btn--primary">
+                <span data-i18n="hero.cta_projects">Voir mes projets</span>
+                <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="#contact" class="btn btn--ghost" data-i18n="hero.cta_contact">Me contacter</a>
+            </div>
+          </div>
+
+          <aside class="hero__meta">
+            <div class="meta-item">
+              <span class="meta-item__label" data-i18n="hero.meta_status_label">Disponibilité</span>
+              <span class="meta-item__value" data-i18n="hero.meta_status_value">Stage de 6 mois : Mars – Sep 2027</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-item__label" data-i18n="hero.meta_mobility_label">Mobilité</span>
+              <span class="meta-item__value" data-i18n="hero.meta_mobility_value">Internationale</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-item__label" data-i18n="hero.meta_location_label">Basé à</span>
+              <span class="meta-item__value">Limoges · Paris, FR</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-item__label" data-i18n="hero.meta_school_label">École</span>
+              <span class="meta-item__value">ISAE-Supméca · ENSIL-ENSCI</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== ABOUT ============== -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__num">01</span>
+          <h2 class="section__title" data-i18n="about.heading">À propos</h2>
+        </header>
+
+        <div class="about__grid">
+          <div class="about__portrait">
+            <img src="assets/images/profile.jpg" alt="Justin Amen N'GBLOGNI" loading="lazy" />
+            <div class="about__portrait-frame" aria-hidden="true"></div>
+          </div>
+
+          <div class="about__body">
+            <p class="about__lead" data-i18n="about.lead">Élève-ingénieur en mécatronique passionné par l'Embodied AI : donner à des robots la perception et le contrôle nécessaires pour agir de façon autonome dans le monde réel.</p>
+            <p data-i18n="about.body">Mon travail se situe à la frontière entre la perception et la décision — de la segmentation sémantique embarquée jusqu'au contrôle prédictif sous incertitude. Actuellement au Politecnico di Torino (DIMEAS), je développe une couche de perception sémantique qui permet à un contrôleur MPPI de distinguer ce qui est franchissable de ce qui ne l'est pas. Je rejoins l'ISAE-Supméca ( Mécatronique & systèmes complexes ) à la rentrée 2026 pour mon année d'échange de fin d'études, et je recherche un stage de fin d'études (mars – septembre 2027) au sein d'une équipe de pointe en Embodied AI et robotique.</p>
+
+            <div class="stats">
+              <div class="stat">
+                <span class="stat__value">3<span class="stat__unit">+</span></span>
+                <span class="stat__label" data-i18n="about.stat2">Ans en IA & robotique</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">4</span>
+                <span class="stat__label" data-i18n="about.stat3">Langues parlées</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">5<span class="stat__unit">+</span></span>
+                <span class="stat__label" data-i18n="about.stat4">Projets techniques</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== PROJECTS ============== -->
+    <section class="section section--alt" id="projects">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__num">02</span>
+          <h2 class="section__title" data-i18n="projects.heading">Projets sélectionnés</h2>
+          <p class="section__sub" data-i18n="projects.sub">Quatre projets représentatifs de mon travail en robotique, IA et conception mécatronique.</p>
+        </header>
+
+        <!-- Project 1: Polito MPPI -->
+        <article class="project">
+          <div class="project__meta">
+            <span class="project__num">P / 01</span>
+            <span class="project__year">2026</span>
+          </div>
+          <div class="project__media">
+            <img src="assets/images/projects/MPPI/TurtleBot4_web-9-scaled.jpg" alt="Visualisation MPPI — trajectoires et zones de risque" loading="lazy" />
+          
+          </div>
+          <div class="project__body">
+            <img class="project__org-logo" src="assets/images/logos/polito.png" alt="Politecnico di Torino" />
+            <p class="project__context" data-i18n="projects.polito.context">Politecnico di Torino · DIMEAS · Italie</p>
+            <h3 class="project__title" data-i18n="projects.polito.title">MPPI sémantique & risk-aware — Navigation autonome d'un UGV</h3>
+            <p class="project__desc" data-i18n="projects.polito.desc">Un contrôleur MPPI classique raisonne sur la seule géométrie : il ignore si un obstacle est franchissable (flaque, feuilles mortes, bordure basse), et il ne voit pas les dangers plats que le LiDAR ne détecte pas (boue, sol mouillé ou glissant). J'ajoute une couche de perception sémantique embarquée qui évalue la traversabilité du terrain et alimente une fonction de coût risk-aware — pour une navigation à la fois plus sûre et moins conservatrice.</p>
+            <ul class="project__results">
+              <li data-i18n="projects.polito.r1">Pipeline de segmentation sémantique — benchmark SegFormer / MobileNet / YOLO pour le déploiement temps réel sur Raspberry Pi</li>
+              <li data-i18n="projects.polito.r2">Coût de traversabilité risk-aware injecté dans le MPPI — distingue obstacle infranchissable et terrain franchissable</li>
+              <li data-i18n="projects.polito.r3">Environnements urbains aux configurations complexes simulés sous Gazebo Harmonic + ROS 2 Jazzy (TurtleBot 4, LiDAR + caméra de profondeur OAK-D)</li>
+            </ul>
+            <ul class="project__stack">
+              <li>ROS 2 Jazzy</li><li>Gazebo Harmonic</li><li>C++</li><li>Python</li><li>PyTorch</li><li>Segmentation sémantique</li><li>MPPI</li><li>TurtleBot 4</li>
+            </ul>
+            <div class="project__links">
+              <a href="assets/projects/mppi.html" class="link-arrow" data-i18n="projects.cta_details">En savoir plus →</a>
+
+              <!-- ANCRAGE GITHUB — MPPI
+                   À ACTIVER à la fin du stage, quand le dépôt sera rendu public.
+                   1. Supprime la ligne d'ouverture de ce commentaire et la ligne de fermeture en dessous.
+                   2. Remplace NOM_DU_REPO par le nom réel du dépôt.
+
+              <a href="https://github.com/Justinamenngblogni/NOM_DU_REPO" class="link-arrow" target="_blank" rel="noopener" data-i18n="projects.cta_github">Code GitHub →</a>
+              -->
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Flyrenov -->
+        <article class="project project--reversed">
+          <div class="project__meta">
+            <span class="project__num">P / 02</span>
+            <span class="project__year">2025 – 2026</span>
+          </div>
+          <div class="project__media">
+            <img src="assets/images/projects/Flyrenov/flyrenov.png" alt="FlyRenov — modélisation CAO de l'enrouleur V2" loading="lazy" />
+            <img src="assets/images/projects/Flyrenov/flyrenov2.jpg" alt="FlyRenov — prototype physique, tambour et transmission sur le diable" loading="lazy" />
+            <img src="assets/images/projects/Flyrenov/flyrenov3.jpg" alt="FlyRenov — intégration de l'électronique de puissance et de commande" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__org-logos">
+              <img class="project__org-logo" src="assets/images/logos/ensil-ensci.png" alt="ENSIL-ENSCI" />
+              <img class="project__org-logo" src="assets/images/logos/FlyRenovLogo.jpg" alt="Flyrenov" />
+            </div>
+            <p class="project__context" data-i18n="projects.flyrenov.context">Projet industriel · ENSIL-ENSCI × FlyRenov</p>
+            <h3 class="project__title" data-i18n="projects.flyrenov.title">FlyRenov — Enrouleur de tuyau asservi pour drone</h3>
+            <p class="project__desc" data-i18n="projects.flyrenov.desc">L'entreprise FlyRenov nettoie les toitures avec un drone. Le drone reste relié au sol par un tuyau de 60 mètres, enroulé sur une machine. Cette machine pesait plus de 40 kg et il fallait être deux pour la déplacer. Avec un camarade, nous l'avons reconçue entièrement.</p>
+            <ul class="project__results">
+              <li data-i18n="projects.flyrenov.r1">Trois fois plus légère : 40 kg à 14 kg. Une seule personne suffit.</li>
+              <li data-i18n="projects.flyrenov.r2">Deux moteurs au lieu de quatre, sans perdre aucune fonction.</li>
+              <li data-i18n="projects.flyrenov.r3">Électronique simplifiée : une carte ESP32 remplace tout un réseau CAN.</li>
+            </ul>
+            <ul class="project__stack">
+              <li>3DEXPERIENCE</li><li>ESP32</li><li>VESC / FOC</li><li>UART</li><li>C / C++</li><li>Python</li><li>DFMA</li><li>Usinage CNC</li>
+            </ul>
+            <div class="project__links">
+              <a href="assets/projects/flyrenov.html" class="link-arrow" data-i18n="projects.cta_details">En savoir plus →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Robotic Arm -->
+        <article class="project">
+          <div class="project__meta">
+            <span class="project__num">P / 03</span>
+            <span class="project__year">2025</span>
+          </div>
+          <div class="project__media">
+            <img src="assets/images/projects/robotic-arm/robotic-arm.jpg" alt="Bras robotique jouant au Tic-Tac-Toe" loading="lazy" />
+            <img src="assets/images/projects/robotic-arm/robotic-arm_visuel.png" alt="Bras robotique — rendu technique" loading="lazy" />
+            <img src="assets/images/projects/robotic-arm/robotic_arm.jpg" alt="Bras robotique — démonstration en atelier" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <img class="project__org-logo" src="assets/images/logos/eeia.png" alt="EEIA Summer School — Fondation Vallet" />
+            <p class="project__context" data-i18n="projects.robotic_arm.context">EEIA Summer School · Bénin</p>
+            <h3 class="project__title" data-i18n="projects.robotic_arm.title">Bras robotique — Tic-Tac-Toe par renforcement</h3>
+            <p class="project__desc" data-i18n="projects.robotic_arm.desc">Développement d'un agent de Deep Reinforcement Learning (DQN/PPO) pour le contrôle autonome d'un bras robotique jouant au tic-tac-toe, avec détection visuelle de l'état du plateau.</p>
+            <ul class="project__results">
+              <li data-i18n="projects.robotic_arm.r1">Agent DQN entraîné — précision 98% sur partie complète</li>
+              <li data-i18n="projects.robotic_arm.r2">Pipeline vision YOLO pour la détection du plateau et des pièces</li>
+              <li data-i18n="projects.robotic_arm.r3">Inférence temps réel embarquée sur Raspberry Pi 5</li>
+            </ul>
+            <ul class="project__stack">
+              <li>Python</li><li>PyTorch</li><li>YOLO</li><li>RL (DQN / PPO)</li><li>Raspberry Pi 5</li>
+            </ul>
+            <div class="project__links">
+              <a href="assets/projects/robotic-arm.html" class="link-arrow" data-i18n="projects.cta_details">En savoir plus →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Autonomous Vehicle -->
+        <article class="project project--reversed">
+          <div class="project__meta">
+            <span class="project__num">P / 04</span>
+            <span class="project__year">2021 – 2024</span>
+          </div>
+          <div class="project__media">
+            <img src="assets/images/projects/autonomous_car/autonomous-vehicle.jpg" alt="Modélisation CAO du châssis sous Fusion 360" loading="lazy" />
+            <img src="assets/images/projects/autonomous_car/autonomous-vehicle-chassis.jpg" alt="Châssis du véhicule imprimé en 3D — Fondation Vallet · Bénin Excellence" loading="lazy" />
+            <img src="assets/images/projects/autonomous_car/IMG-20220811-WA0034.jpg" alt="Véhicule autonome dans le circuit en labyrinthe" loading="lazy" />
+            <img src="assets/images/projects/autonomous_car/06.jpg" alt="Architecture Deep Learning — pipeline caméra → Raspberry Pi → commande" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <img class="project__org-logo" src="assets/images/logos/eeia.png" alt="EEIA Summer School — Fondation Vallet" />
+            <p class="project__context" data-i18n="projects.av.context">EEIA Summer School · Bénin</p>
+            <h3 class="project__title" data-i18n="projects.av.title">Véhicule autonome — Du kit à la conception de zéro</h3>
+            <p class="project__desc" data-i18n="projects.av.desc">En 2021, j'ai monté une voiture autonome à partir d'un kit. Elle roulait, mais je ne comprenais pas comment. L'année suivante, je suis revenu la reconstruire entièrement : les pièces, l'électronique, le code. Rien acheté tout fait.</p>
+            <ul class="project__results">
+              <li data-i18n="projects.av.r1">Voiture conçue de zéro : CAO, impression 3D, électronique et code.</li>
+              <li data-i18n="projects.av.r2">Elle apprend à conduire en m'imitant : je pilote, elle observe, elle reproduit.</li>
+              <li data-i18n="projects.av.r3">D'abord guidée par trois capteurs de distance, puis par une caméra.</li>
+            </ul>
+            <ul class="project__stack">
+              <li>Python</li><li>TensorFlow</li><li>OpenCV</li><li>Fusion 360</li><li>ESP32</li><li>Raspberry Pi 4</li><li>UART</li><li>TinyML</li>
+            </ul>
+            <div class="project__links">
+              <a href="assets/projects/autonomous-vehicle.html" class="link-arrow" data-i18n="projects.cta_details">En savoir plus →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============== SKILLS ============== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__num">03</span>
+          <h2 class="section__title" data-i18n="skills.heading">Compétences techniques</h2>
+        </header>
+
+        <div class="skills__grid">
+          <div class="skill-cat">
+            <h3 class="skill-cat__title" data-i18n="skills.ai_title">Intelligence artificielle & vision</h3>
+            <ul class="skill-cat__list">
+              <li>PyTorch</li><li>TensorFlow</li><li>OpenCV</li>
+              <li data-i18n="skills.ai_segmentation">Segmentation sémantique (SegFormer · MobileNet)</li>
+              <li>YOLO</li>
+              <li data-i18n="skills.ai_regression">Modèles de régression</li>
+              <li data-i18n="skills.ai_rl">Apprentissage par renforcement</li>
+              <li>TinyML</li>
+            </ul>
+          </div>
+
+          <div class="skill-cat">
+            <h3 class="skill-cat__title" data-i18n="skills.robotics_title">Robotique & perception</h3>
+            <ul class="skill-cat__list">
+              <li>ROS 2 (Jazzy)</li>
+              <li>Gazebo Harmonic</li>
+              <li>NVIDIA Isaac Sim</li>
+              <li data-i18n="skills.robotics_mppi">MPPI · Contrôle prédictif</li>
+              <li>SLAM</li>
+              <li data-i18n="skills.robotics_planning">Path Planning</li>
+              <li data-i18n="skills.robotics_kalman">Filtre de Kalman</li>
+              <li data-i18n="skills.robotics_signal">Traitement du signal</li>
+              <li data-i18n="skills.robotics_sensors">Capteurs (IMU, GPS, LiDAR, caméra de profondeur OAK-D)</li>
+            </ul>
+          </div>
+
+          <div class="skill-cat">
+            <h3 class="skill-cat__title" data-i18n="skills.programming_title">Programmation & électronique</h3>
+            <ul class="skill-cat__list">
+              <li>Python</li><li>C / C++</li>
+              <li data-i18n="skills.programming_ai">Développement assisté par IA (LLMs)</li>
+              <li>Arduino</li><li>ESP32 / STM32</li>
+              <li>RTOS</li><li>Raspberry Pi</li>
+              <li data-i18n="skills.programming_linux">Linux embarqué</li>
+              <li>CAN · SPI · I²C · UART</li>
+            </ul>
+          </div>
+
+          <div class="skill-cat">
+            <h3 class="skill-cat__title" data-i18n="skills.design_title">Conception & R&D</h3>
+            <ul class="skill-cat__list">
+              <li>Matlab / Simulink</li>
+              <li>Simcenter Amesim</li>
+              <li>SolidWorks</li>
+              <li>Fusion 360</li>
+              <li>3DEXPERIENCE</li>
+              <li>EasyEDA · Altium · KiCad</li>
+              <li>VS Code</li>
+              <li>Git / GitLab</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== EXPERIENCE ============== -->
+    <section class="section section--alt" id="experience">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__num">04</span>
+          <h2 class="section__title" data-i18n="experience.heading">Expérience professionnelle</h2>
+        </header>
+
+       <ol class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__date">
+              <span data-i18n="experience.polito.dates">Mai – Juillet 2026</span>
+            </div>
+            <div class="timeline__body">
+              <img class="timeline__org-logo" src="assets/images/logos/polito.png" alt="Politecnico di Torino" />
+              <h3 class="timeline__role" data-i18n="experience.polito.role">Stagiaire R&D — Robotique autonome</h3>
+              <p class="timeline__company">Politecnico di Torino · DIMEAS<span class="timeline__loc"> — Italie</span></p>
+              <ul class="timeline__points">
+                <li data-i18n="experience.polito.p1">Développement d'un contrôleur risk-aware MPPI (Model Predictive Path Integral) pour la navigation autonome d'un UGV.</li>
+                <li data-i18n="experience.polito.p2">Implémentation en C++ / ROS 2, validation en simulation et étude des performances sous incertitude.</li>
+              </ul>
+              <p class="timeline__link">
+                <a href="assets/projects/mppi.html" class="link-arrow" data-i18n="projects.cta_details">En savoir plus →</a>
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__date">
+              <span data-i18n="experience.stellantis.dates">Juin – Juillet 2025</span>
+            </div>
+            <div class="timeline__body">
+              <img class="timeline__org-logo" src="assets/images/logos/stellantis.png" alt="Stellantis" />
+              <h3 class="timeline__role" data-i18n="experience.stellantis.role">Opérateur ligne d'assemblage — Stage</h3>
+              <p class="timeline__company">Stellantis Poissy · Groupe PSA<span class="timeline__loc"> — France</span></p>
+              <ul class="timeline__points">
+                <li data-i18n="experience.stellantis.p1">Opérations sur la ligne d'assemblage finale (Mokka, DS 3 Crossback).</li>
+                <li data-i18n="experience.stellantis.p2">Respect strict des quotas de production, des standards de qualité et des protocoles de sécurité.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__date">
+              <span>2021 – 2025</span>
+            </div>
+            <div class="timeline__body">
+              <div class="timeline__org-logos">
+                <img class="timeline__org-logo" src="assets/images/logos/fondation-vallet.png" alt="Fondation Vallet" />
+                <img class="timeline__org-logo" src="assets/images/logos/eeia.png" alt="EEIA Summer School" />
+              </div>
+              <p class="timeline__company">Fondation Vallet · EEIA Summer School<span class="timeline__loc"> — Bénin</span></p>
+
+              <div class="timeline__role-block">
+                <h3 class="timeline__role">
+                  <span data-i18n="experience.vallet.role">Formateur — Robotique & IA</span>
+                  <span class="timeline__role-period">· 2022 – 2025</span>
+                </h3>
+                <ul class="timeline__points">
+                  <li data-i18n="experience.vallet.p1">Animation d'ateliers pratiques d'IA et de robotique auprès d'un public de profils variés — collégiens (de la 6ᵉ à la 3ᵉ), étudiants et professionnels.</li>
+                </ul>
+                <p class="timeline__link">
+                  <a href="assets/experience/formateur-eeia.html" class="link-arrow" data-i18n="projects.cta_details">En savoir plus →</a>
+                </p>
+              </div>
+
+              <div class="timeline__role-block">
+                <h3 class="timeline__role">
+                  <span data-i18n="experience.vallet.participant_role">Participant — 2ᵉ prix national</span>
+                  <span class="timeline__role-period">· 2021</span>
+                </h3>
+                <ul class="timeline__points">
+                  <li data-i18n="experience.vallet.participant_p1">Lauréat du 2ᵉ prix de la cohorte EEIA 2021 — parcours intensif d'apprentissage en intelligence artificielle et robotique embarquée.</li>
+                </ul>
+                <p class="timeline__link">
+                  <a href="https://www.youtube.com/watch?v=acyq8fxtbKU&t=4s" target="_blank" rel="noopener" class="link-arrow" data-i18n="experience.vallet.ceremony_link">Voir la cérémonie de remise →</a>
+                </p>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============== EDUCATION ============== -->
+    <section class="section" id="education">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__num">05</span>
+          <h2 class="section__title" data-i18n="education.heading">Formation</h2>
+        </header>
+
+        <ul class="education">
+          <li class="edu-item">
+            <span class="edu-item__date">2026 – 2027</span>
+            <div>
+              <img class="edu-item__logo" src="assets/images/logos/isae-supmeca.png" alt="ISAE-Supméca" />
+              <h3 class="edu-item__degree" data-i18n="education.isae">5ᵉ année (M2) — Année d'échange · Mécatronique & systèmes complexes</h3>
+              <p class="edu-item__school">ISAE-Supméca — Institut Supérieur de Mécanique de Paris, France</p>
+            </div>
+          </li>
+          <li class="edu-item">
+            <span class="edu-item__date">2024 – 2027</span>
+            <div>
+              <img class="edu-item__logo" src="assets/images/logos/ensil-ensci.png" alt="ENSIL-ENSCI" />
+              <h3 class="edu-item__degree" data-i18n="education.engineering">Cycle ingénieur — Mécatronique & Robotique (4ᵉ année)</h3>
+              <p class="edu-item__school">ENSIL-ENSCI — École Nationale d'Ingénieurs de Limoges, France</p>
+            </div>
+          </li>
+          <li class="edu-item">
+            <span class="edu-item__date">2021 – 2024</span>
+            <div>
+              <div class="edu-item__logos">
+                <img class="edu-item__logo" src="assets/images/logos/ensil-ensci.png" alt="ENSIL-ENSCI" />
+                <img class="edu-item__logo" src="assets/images/logos/epac.png" alt="École Polytechnique d'Abomey-Calavi" />
+              </div>
+              <h3 class="edu-item__degree" data-i18n="education.prep">Classes préparatoires intégrées — Génie électrique</h3>
+              <p class="edu-item__school">ENSIL-ENSCI (France) / École Polytechnique d'Abomey-Calavi (Bénin)</p>
+            </div>
+          </li>
+          <li class="edu-item">
+            <span class="edu-item__date">2014 – 2021</span>
+            <div>
+              <img class="edu-item__logo" src="assets/images/logos/st-augustin.png" alt="St Augustin Secondary School" />
+              <h3 class="edu-item__degree" data-i18n="education.bac">Baccalauréat scientifique — GPA 3.332</h3>
+              <p class="edu-item__school">St Augustin Secondary School — Bénin</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============== CERTIFICATIONS ============== -->
+    <section class="section section--alt" id="certifications">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__num">06</span>
+          <h2 class="section__title" data-i18n="certifications.heading">Certifications</h2>
+        </header>
+
+        <div class="cert-grid">
+
+          <!-- Bourse d'excellence — Fondation Vallet -->
+          <div class="cert-card cert-card--award">
+            <img class="cert-card__logo" src="assets/images/logos/fondation-vallet.png" alt="Fondation Vallet" />
+            <div class="cert-card__header">
+              <span class="cert-card__issuer">Fondation Vallet</span>
+              <span class="cert-card__year">2023 – 2027</span>
+            </div>
+            <h3 class="cert-card__name" data-i18n="certifications.vallet.name">Bourse d'excellence</h3>
+            <p class="cert-card__desc" data-i18n="certifications.vallet.desc">Distinction attribuée aux étudiants africains à fort potentiel académique et scientifique — Fondation de France.</p>
+          </div>
+
+          <!-- MATLAB Onramp — MathWorks -->
+          <div class="cert-card">
+            <img class="cert-card__logo" src="assets/images/logos/mathworks.png" alt="MathWorks" />
+            <div class="cert-card__header">
+              <span class="cert-card__issuer">MathWorks</span>
+            </div>
+            <h3 class="cert-card__name" data-i18n="certifications.matlab.name">MATLAB Onramp</h3>
+            <p class="cert-card__desc" data-i18n="certifications.matlab.desc">Initiation au workflow MATLAB : scripts, fonctions et visualisation de données.</p>
+            <a href="https://matlabacademy.mathworks.com/progress/share/certificate.html?id=35b75515-284f-4021-9382-84ab20b4baec&" class="cert-card__link" target="_blank" rel="noopener" data-i18n="certifications.cta">Voir le certificat →</a>
+          </div>
+
+          <!-- Simulink Onramp — MathWorks -->
+          <div class="cert-card">
+            <img class="cert-card__logo" src="assets/images/logos/mathworks.png" alt="MathWorks" />
+            <div class="cert-card__header">
+              <span class="cert-card__issuer">MathWorks</span>
+            </div>
+            <h3 class="cert-card__name" data-i18n="certifications.simulink.name">Simulink Onramp</h3>
+            <p class="cert-card__desc" data-i18n="certifications.simulink.desc">Modélisation et simulation de systèmes dynamiques sous Simulink.</p>
+            <a href="https://matlabacademy.mathworks.com/progress/share/certificate.html?id=35b75515-284f-4021-9382-84ab20b4baec&" class="cert-card__link" target="_blank" rel="noopener" data-i18n="certifications.cta">Voir le certificat →</a>
+          </div>
+
+          <!-- Reinforcement Learning Onramp — MathWorks
+               MASQUÉ : certification pas encore passée. Invisible sur le site, conservée dans le code.
+               POUR L'AFFICHER : supprime la ligne d'ouverture de ce commentaire ainsi que la ligne
+               de fermeture située juste sous la carte, puis remplace URL_CERT_RL par le lien réel.
+               (Les textes FR/EN restent en place dans main.js sous la clé certifications.rl)
+
+          <div class="cert-card">
+            <img class="cert-card__logo" src="assets/images/logos/mathworks.png" alt="MathWorks" />
+            <div class="cert-card__header">
+              <span class="cert-card__issuer">MathWorks</span>
+            </div>
+            <h3 class="cert-card__name" data-i18n="certifications.rl.name">Reinforcement Learning Onramp</h3>
+            <p class="cert-card__desc" data-i18n="certifications.rl.desc">Entraînement d'agents par apprentissage par renforcement avec MATLAB & Simulink.</p>
+            <a href="URL_CERT_RL" class="cert-card__link" target="_blank" rel="noopener" data-i18n="certifications.cta">Voir le certificat →</a>
+          </div>
+          -->
+
+          <!-- Simscape Onramp — MathWorks -->
+          <div class="cert-card">
+            <img class="cert-card__logo" src="assets/images/logos/mathworks.png" alt="MathWorks" />
+            <div class="cert-card__header">
+              <span class="cert-card__issuer">MathWorks</span>
+            </div>
+            <h3 class="cert-card__name" data-i18n="certifications.simscape.name">Simscape Onramp</h3>
+            <p class="cert-card__desc" data-i18n="certifications.simscape.desc">Simulation physique de systèmes mécaniques, électriques et hydrauliques.</p>
+            <a href="https://matlabacademy.mathworks.com/progress/share/certificate.html?id=f8b92888-b283-425b-be5d-2878f498232b&" class="cert-card__link" target="_blank" rel="noopener" data-i18n="certifications.cta">Voir le certificat →</a>
+          </div>
+
+          <!-- Arduino -->
+          <div class="cert-card">
+            <img class="cert-card__logo" src="assets/images/logos/arduino.png" alt="Arduino" />
+            <div class="cert-card__header">
+              <span class="cert-card__issuer">Arduino</span>
+            </div>
+            <h3 class="cert-card__name" data-i18n="certifications.arduino.name">Arduino</h3>
+            <p class="cert-card__desc" data-i18n="certifications.arduino.desc">Programmation et contrôle de systèmes embarqués avec Arduino.</p>
+            <a href="https://certifications-assets-cf.arduino.cc/certificates/5e91e55b-75c1-4432-bbe3-33caacaed01d.pdf" class="cert-card__link" target="_blank" rel="noopener" data-i18n="certifications.cta">Voir le certificat →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CONTACT ============== -->
+    <section class="section section--alt section--contact" id="contact">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__num">07</span>
+          <h2 class="section__title" data-i18n="contact.heading">Travaillons ensemble</h2>
+        </header>
+
+        <p class="contact__lead" data-i18n="contact.lead">À la recherche d'un stage de fin d'études en robotique, automatisation ou IA embarquée — disponible de mars à septembre 2027, mobilité internationale.</p>
+
+        <div class="contact__links">
+          <a href="mailto:justin.ngblogni@etu.unilim.fr" class="contact-link">
+            <span class="contact-link__label">Email</span>
+            <span class="contact-link__value">justin.ngblogni@etu.unilim.fr</span>
+          </a>
+          <a href="https://linkedin.com/in/justin-ngblogni" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link__label">LinkedIn</span>
+            <span class="contact-link__value">in/justin-ngblogni</span>
+          </a>
+          <a href="https://github.com/Justinamenngblogni" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link__label">GitHub</span>
+            <span class="contact-link__value">@Justinamenngblogni</span>
+          </a>
+          <a href="tel:+33627060085" class="contact-link">
+            <span class="contact-link__label">Téléphone</span>
+            <span class="contact-link__value">+33 6 27 06 00 85</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__sig">© <span id="year">2026</span> Justin Amen N'GBLOGNI · Paris, FR</p>
+      <p class="footer__build" data-i18n="footer.build">Construit avec HTML, CSS & JavaScript</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

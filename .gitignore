@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs / temp
+*.log
+node_modules/
+.cache/
+dist/
+.tmp/
+
+# Local environment
+.env
+.env.local
+
+# Photos sources — expérience Formateur EEIA
+# Règle : seules les photos NUMÉROTÉES (1.jpg, 2.jpeg, ...) sont publiées.
+# Toute autre image (originaux WhatsApp, IMG_xxxx, etc.) reste locale.
+# Pour publier une nouvelle photo : il suffit de la renommer avec un chiffre.
+assets/images/experience/formateur/*
+!assets/images/experience/formateur/[0-9]*.jpg
+!assets/images/experience/formateur/[0-9]*.jpeg
