@@ -47,7 +47,7 @@ const TRANSLATIONS = {
       cta_details: "En savoir plus →",
       polito: {
         context: "Politecnico di Torino · DIMEAS · Italie",
-        title: "MPPI sémantique & risk-aware - Navigation autonome d'un UGV",
+        title: "MPPI sémantique & risk-aware: Navigation autonome d'un UGV",
         desc: "Un contrôleur MPPI classique raisonne sur la seule géométrie : il ignore si un obstacle est franchissable (flaque, feuilles mortes, bordure basse), et il ne voit pas les dangers plats que le LiDAR ne détecte pas (boue, sol mouillé ou glissant). J'ajoute une couche de perception sémantique embarquée qui évalue la traversabilité du terrain et alimente une fonction de coût risk-aware - pour une navigation à la fois plus sûre et moins conservatrice.",
         r1: "Pipeline de segmentation sémantique - benchmark SegFormer / MobileNet / YOLO pour le déploiement temps réel sur Raspberry Pi",
         r2: "Coût de traversabilité risk-aware injecté dans le MPPI - distingue obstacle infranchissable et terrain franchissable",
@@ -55,7 +55,7 @@ const TRANSLATIONS = {
       },
       robotic_arm: {
         context: "EEIA Summer School · Bénin",
-        title: "Bras robotique - Tic-Tac-Toe par renforcement",
+        title: "Bras robotique: Tic-Tac-Toe par renforcement",
         desc: "Développement d'un agent de Deep Reinforcement Learning (DQN/PPO) pour le contrôle autonome d'un bras robotique jouant au tic-tac-toe, avec détection visuelle de l'état du plateau.",
         r1: "Agent DQN entraîné - précision 98 % sur partie complète",
         r2: "Pipeline vision YOLO pour la détection du plateau et des pièces",
@@ -63,7 +63,7 @@ const TRANSLATIONS = {
       },
       av: {
         context: "EEIA Summer School · Bénin",
-        title: "Véhicule autonome - Du kit à la conception de zéro",
+        title: "Véhicule autonome: Du kit à la conception de zéro",
         desc: "En 2021, j'ai monté une voiture autonome à partir d'un kit. Elle roulait, mais je ne comprenais pas comment. L'année suivante, je suis revenu la reconstruire entièrement : les pièces, l'électronique, le code. Rien acheté tout fait.",
         r1: "Voiture conçue de zéro : CAO, impression 3D, électronique et code.",
         r2: "Elle apprend à conduire en m'imitant : je pilote, elle observe, elle reproduit.",
@@ -71,7 +71,7 @@ const TRANSLATIONS = {
       },
       flyrenov: {
         context: "Projet industriel · ENSIL-ENSCI × FlyRenov",
-        title: "FlyRenov - Enrouleur de tuyau asservi pour drone",
+        title: "FlyRenov: Enrouleur de tuyau asservi pour drone",
         desc: "L'entreprise FlyRenov nettoie les toitures avec un drone. Le drone reste relié au sol par un tuyau de 60 mètres, enroulé sur une machine. Cette machine pesait plus de 40 kg et il fallait être deux pour la déplacer. Avec un camarade, nous l'avons reconçue entièrement.",
         r1: "Trois fois plus légère : 40 kg à 14 kg. Une seule personne suffit.",
         r2: "Deux moteurs au lieu de quatre, sans perdre aucune fonction.",
@@ -99,30 +99,30 @@ const TRANSLATIONS = {
       heading: "Expérience professionnelle",
       polito: {
         dates: "Mai – Juillet 2026",
-        role: "Stagiaire R&D - Robotique autonome",
+        role: "Stagiaire R&D: Robotique autonome",
         p1: "Développement d'un contrôleur risk-aware MPPI (Model Predictive Path Integral) pour la navigation autonome d'un UGV.",
         p2: "Implémentation en C++ / ROS 2, validation en simulation et étude des performances sous incertitude."
       },
       stellantis: {
         dates: "Juin – Juillet 2025",
-        role: "Opérateur ligne d'assemblage - Stage",
+        role: "Opérateur ligne d'assemblage: Stage",
         p1: "Opérations sur la ligne d'assemblage finale (Mokka, DS 3 Crossback).",
         p2: "Respect strict des quotas de production, des standards de qualité et des protocoles de sécurité."
       },
       vallet: {
-        role: "Formateur - Robotique & IA",
+        role: "Formateur: Robotique & IA",
         p1: "Animation d'ateliers pratiques d'IA et de robotique auprès d'un public de profils variés - collégiens (de la 6ᵉ à la 3ᵉ), étudiants et professionnels.",
-        participant_role: "Participant - 2ᵉ prix national",
+        participant_role: "Participant: 2ᵉ prix national",
         participant_p1: "Lauréat du 2ᵉ prix de la cohorte EEIA 2021 - parcours intensif d'apprentissage en intelligence artificielle et robotique embarquée.",
         ceremony_link: "Voir la cérémonie de remise →"
       }
     },
     education: {
       heading: "Formation",
-      isae: "5ᵉ année (M2) - Année d'échange · Mécatronique & systèmes complexes",
-      engineering: "Cycle ingénieur - Mécatronique & Robotique (4ᵉ année)",
-      prep: "Classes préparatoires intégrées - Génie électrique",
-      bac: "Baccalauréat scientifique - GPA 3.332"
+      isae: "5ᵉ année (M2): Année d'échange · Mécatronique & systèmes complexes",
+      engineering: "Cycle ingénieur: Mécatronique & Robotique (4ᵉ année)",
+      prep: "Classes préparatoires intégrées: Génie électrique",
+      bac: "Baccalauréat scientifique: GPA 3.332"
     },
     certifications: {
       heading: "Certifications",
@@ -198,7 +198,7 @@ const TRANSLATIONS = {
       cta_details: "Learn more →",
       polito: {
         context: "Politecnico di Torino · DIMEAS · Italy",
-        title: "Semantic risk-aware MPPI - Autonomous UGV navigation",
+        title: "Semantic risk-aware MPPI: Autonomous UGV navigation",
         desc: "A classic MPPI controller reasons on geometry alone: it can't tell whether an obstacle is traversable (a puddle, dead leaves, a low curb), and it misses flat hazards a LiDAR simply cannot see (mud, wet or slippery ground). I add an on-device semantic perception layer that scores terrain traversability and feeds a risk-aware cost function - for navigation that is both safer and less conservative.",
         r1: "Semantic segmentation pipeline - SegFormer / MobileNet / YOLO benchmarked for real-time deployment on Raspberry Pi",
         r2: "Risk-aware traversability cost fed into the MPPI - separates hard obstacles from traversable terrain",
@@ -206,7 +206,7 @@ const TRANSLATIONS = {
       },
       robotic_arm: {
         context: "EEIA Summer School · Benin",
-        title: "Robotic arm - Reinforcement-learned Tic-Tac-Toe",
+        title: "Robotic arm: Reinforcement-learned Tic-Tac-Toe",
         desc: "Development of a Deep Reinforcement Learning agent (DQN/PPO) for the autonomous control of a robotic arm playing tic-tac-toe, with vision-based board state detection.",
         r1: "Trained DQN agent - 98% accuracy on full games",
         r2: "YOLO vision pipeline for board and piece detection",
@@ -214,7 +214,7 @@ const TRANSLATIONS = {
       },
       av: {
         context: "EEIA Summer School · Benin",
-        title: "Autonomous vehicle - From kit to built-from-scratch",
+        title: "Autonomous vehicle: From kit to built-from-scratch",
         desc: "In 2021 I built a self-driving car from a kit. It drove, but I had no idea how. The year after, I came back and rebuilt it entirely: the parts, the electronics, the code. Nothing bought ready-made.",
         r1: "Car designed from scratch: CAD, 3D printing, electronics and code.",
         r2: "It learns to drive by copying me: I drive, it watches, it reproduces.",
@@ -222,7 +222,7 @@ const TRANSLATIONS = {
       },
       flyrenov: {
         context: "Industry project · ENSIL-ENSCI × FlyRenov",
-        title: "FlyRenov - Position-controlled hose reel for drones",
+        title: "FlyRenov: Position-controlled hose reel for drones",
         desc: "FlyRenov cleans rooftops with a drone. The drone stays tethered to the ground by a 60-metre hose, wound onto a machine. That machine weighed over 40 kg and took two people to move. With a classmate, I redesigned it from the ground up.",
         r1: "Three times lighter: 40 kg down to 14 kg. One person is now enough.",
         r2: "Two motors instead of four, without losing a single function.",
@@ -250,30 +250,30 @@ const TRANSLATIONS = {
       heading: "Professional experience",
       polito: {
         dates: "May – July 2026",
-        role: "R&D Intern - Autonomous Robotics",
+        role: "R&D Intern: Autonomous Robotics",
         p1: "Development of a risk-aware MPPI (Model Predictive Path Integral) controller for autonomous UGV navigation.",
         p2: "Implementation in C++ / ROS 2, simulation validation and performance analysis under uncertainty."
       },
       stellantis: {
         dates: "June – July 2025",
-        role: "Assembly line operator - Internship",
+        role: "Assembly line operator: Internship",
         p1: "Operated on the final assembly line (Mokka, DS 3 Crossback).",
         p2: "Strict adherence to production quotas, quality standards and safety protocols."
       },
       vallet: {
         role: "Robotics & AI trainer",
         p1: "Ran hands-on AI and robotics workshops for a diverse audience - secondary-school students (grades 6–9), university students and working professionals.",
-        participant_role: "Participant - 2nd national prize",
+        participant_role: "Participant: 2nd national prize",
         participant_p1: "Winner of the 2nd prize at the EEIA 2021 cohort - intensive training in artificial intelligence and embedded robotics.",
         ceremony_link: "Watch the award ceremony →"
       }
     },
     education: {
       heading: "Education",
-      isae: "Final year (M2) - Exchange year · Mechatronics & Complex Systems",
-      engineering: "Engineering cycle - Mechatronics & Robotics (4th year)",
-      prep: "Integrated preparatory courses - Electrical engineering",
-      bac: "Scientific high school diploma - GPA 3.332"
+      isae: "Final year (M2): Exchange year · Mechatronics & Complex Systems",
+      engineering: "Engineering cycle: Mechatronics & Robotics (4th year)",
+      prep: "Integrated preparatory courses: Electrical engineering",
+      bac: "Scientific high school diploma: GPA 3.332"
     },
     certifications: {
       heading: "Certifications",

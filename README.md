@@ -1,4 +1,4 @@
-# Portfolio - Justin Amen N'GBLOGNI
+# Portfolio: Justin Amen N'GBLOGNI
 
 Personal website presenting my background and projects in mechatronics, robotics, and Embodied AI.
 
