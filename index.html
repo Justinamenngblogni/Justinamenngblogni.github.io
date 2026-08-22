@@ -125,7 +125,7 @@
 
           <div class="about__body">
             <p class="about__lead" data-i18n="about.lead">Élève-ingénieur en mécatronique passionné par l'Embodied AI : donner à des robots la perception et le contrôle nécessaires pour agir de façon autonome dans le monde réel.</p>
-            <p data-i18n="about.body">Mon travail se situe à la frontière entre la perception et la décision - de la segmentation sémantique embarquée jusqu'au contrôle prédictif sous incertitude. Actuellement au Politecnico di Torino (DIMEAS), je développe une couche de perception sémantique qui permet à un contrôleur MPPI de distinguer ce qui est franchissable de ce qui ne l'est pas. Je rejoins l'ISAE-Supméca ( Mécatronique & systèmes complexes ) à la rentrée 2026 pour mon année d'échange de fin d'études, et je recherche un stage de fin d'études (mars – septembre 2027) au sein d'une équipe de pointe en Embodied AI et robotique.</p>
+            <p data-i18n="about.body">Mon travail se situe à la frontière entre la perception et la décision - de la segmentation sémantique embarquée jusqu'au contrôle prédictif sous incertitude. Au Politecnico di Torino (DIMEAS), j'ai développé une carte de risque par caméra RGB-D et un contrôleur GPU MPPI qui en tient compte, avec un modèle mathématique validé qui prédit son comportement. Je rejoins l'ISAE-Supméca ( Mécatronique & systèmes complexes ) à la rentrée 2026 pour mon année d'échange de fin d'études, et je recherche un stage de fin d'études (mars – septembre 2027) en robotique, perception ou contrôle au sein d'une équipe de pointe en Embodied AI.</p>
 
             <div class="stats">
               <div class="stat">
@@ -168,15 +168,16 @@
           <div class="project__body">
             <img class="project__org-logo" src="assets/images/logos/polito.png" alt="Politecnico di Torino" />
             <p class="project__context" data-i18n="projects.polito.context">Politecnico di Torino · DIMEAS · Italie</p>
-            <h3 class="project__title" data-i18n="projects.polito.title">MPPI sémantique & risk-aware: Navigation autonome d'un UGV</h3>
-            <p class="project__desc" data-i18n="projects.polito.desc">Un contrôleur MPPI classique raisonne sur la seule géométrie : il ignore si un obstacle est franchissable (flaque, feuilles mortes, bordure basse), et il ne voit pas les dangers plats que le LiDAR ne détecte pas (boue, sol mouillé ou glissant). J'ajoute une couche de perception sémantique embarquée qui évalue la traversabilité du terrain et alimente une fonction de coût risk-aware - pour une navigation à la fois plus sûre et moins conservatrice.</p>
+            <h3 class="project__title" data-i18n="projects.polito.title">Navigation risk-aware d'un UGV: Perception, MPPI & modélisation</h3>
+            <p class="project__desc" data-i18n="projects.polito.desc">Un LiDAR 2D ne distingue pas un sol mouillé, de la boue ou un tapis épais d'un sol sec : ce sont des dangers plats en apparence, mais physiquement dangereux. J'ai construit une carte de risque à deux couches (sémantique par caméra + géométrique par profondeur) et un contrôleur GPU MPPI qui arbitre entre avancer vite et éviter le danger. Le point fort : un modèle mathématique du comportement du contrôleur, dérivé, testé contre les mesures réelles, corrigé, puis revalidé.</p>
             <ul class="project__results">
-              <li data-i18n="projects.polito.r1">Pipeline de segmentation sémantique - benchmark SegFormer / MobileNet / YOLO pour le déploiement temps réel sur Raspberry Pi</li>
-              <li data-i18n="projects.polito.r2">Coût de traversabilité risk-aware injecté dans le MPPI - distingue obstacle infranchissable et terrain franchissable</li>
-              <li data-i18n="projects.polito.r3">Environnements urbains aux configurations complexes simulés sous Gazebo Harmonic + ROS 2 Jazzy (TurtleBot 4, LiDAR + caméra de profondeur OAK-D)</li>
+              <li data-i18n="projects.polito.r1">Carte de risque à deux couches (sémantique YOLO26 + géométrique) publiée en temps réel sur ROS 2 - YOLO26 retenu pour un déploiement embarqué sans GPU (≈46 FPS vs 7-10 FPS sur CPU)</li>
+              <li data-i18n="projects.polito.r2">Contrôleur GPU risk-aware MPPI (5120 trajectoires/cycle, 14 Hz) - un modèle d'arbitrage de coût dérivé puis validé prédit le seuil exact où le robot passe de « traverser » à « contourner »</li>
+              <li data-i18n="projects.polito.r3">Réduction mesurée de l'exposition au risque réel : 44 % en traversée forcée, 100 % en zone évitable - pour un surcoût de seulement 2-9 % en distance et en temps</li>
+              <li data-i18n="projects.polito.r4">Démonstration sur TurtleBot 4 physique, piloté par une carte de risque injectée directement dans le costmap</li>
             </ul>
             <ul class="project__stack">
-              <li>ROS 2 Jazzy</li><li>Gazebo Harmonic</li><li>C++</li><li>Python</li><li>PyTorch</li><li>Segmentation sémantique</li><li>MPPI</li><li>TurtleBot 4</li>
+              <li>ROS 2 Jazzy</li><li>Gazebo Harmonic</li><li>C++ / CUDA</li><li>Python</li><li>PyTorch</li><li>Segmentation sémantique</li><li>MPPI-Generic (GPU)</li><li>TurtleBot 4</li>
             </ul>
             <div class="project__links">
               <a href="assets/projects/mppi.html" class="link-arrow" data-i18n="projects.cta_details">En savoir plus →</a>
@@ -369,11 +370,11 @@
             </div>
             <div class="timeline__body">
               <img class="timeline__org-logo" src="assets/images/logos/polito.png" alt="Politecnico di Torino" />
-              <h3 class="timeline__role" data-i18n="experience.polito.role">Stagiaire R&D: Robotique autonome</h3>
+              <h3 class="timeline__role" data-i18n="experience.polito.role">Stagiaire R&D: Perception & navigation risk-aware</h3>
               <p class="timeline__company">Politecnico di Torino · DIMEAS<span class="timeline__loc">: Italie</span></p>
               <ul class="timeline__points">
-                <li data-i18n="experience.polito.p1">Développement d'un contrôleur risk-aware MPPI (Model Predictive Path Integral) pour la navigation autonome d'un UGV.</li>
-                <li data-i18n="experience.polito.p2">Implémentation en C++ / ROS 2, validation en simulation et étude des performances sous incertitude.</li>
+                <li data-i18n="experience.polito.p1">Sous la supervision des Prof. Fausto Francesco Lizzio et Elisa Capello, conception d'une chaîne de navigation risk-aware pour TurtleBot 4 : carte de risque par caméra RGB-D et contrôleur GPU MPPI.</li>
+                <li data-i18n="experience.polito.p2">Contribution principale : un modèle mathématique d'arbitrage de coût prédisant le comportement du contrôleur, validé et corrigé contre des mesures réelles (réduction du risque de 44-100 % démontrée).</li>
               </ul>
               <p class="timeline__link">
                 <a href="assets/projects/mppi.html" class="link-arrow" data-i18n="projects.cta_details">En savoir plus →</a>
@@ -580,7 +581,7 @@
           <h2 class="section__title" data-i18n="contact.heading">Travaillons ensemble</h2>
         </header>
 
-        <p class="contact__lead" data-i18n="contact.lead">À la recherche d'un stage de fin d'études en robotique, automatisation ou IA embarquée - disponible de mars à septembre 2027, mobilité internationale.</p>
+        <p class="contact__lead" data-i18n="contact.lead">Fort d'un stage en perception et contrôle risk-aware au Politecnico di Torino, je recherche un stage de fin d'études en robotique, perception ou contrôle - disponible de mars à septembre 2027, mobilité internationale.</p>
 
         <div class="contact__links">
           <a href="mailto:justin.ngblogni@etu.unilim.fr" class="contact-link">
