@@ -35,7 +35,7 @@ const TRANSLATIONS = {
     about: {
       heading: "À propos",
       lead: "Élève-ingénieur en mécatronique passionné par l'Embodied AI : donner à des robots la perception et le contrôle nécessaires pour agir de façon autonome dans le monde réel.",
-      body: "Mon travail se situe à la frontière entre la perception et la décision - de la segmentation sémantique embarquée jusqu'au contrôle prédictif sous incertitude. Actuellement au Politecnico di Torino (DIMEAS), je développe une couche de perception sémantique qui permet à un contrôleur MPPI de distinguer ce qui est franchissable de ce qui ne l'est pas. Je rejoins l'ISAE-Supméca (« Mécatronique & systèmes complexes ») à la rentrée 2026 pour mon année d'échange de fin d'études, et je recherche un stage de fin d'études (mars – septembre 2027) au sein d'une équipe de pointe en Embodied AI et robotique.",
+      body: "Mon travail se situe à la frontière entre la perception et la décision - de la segmentation sémantique embarquée jusqu'au contrôle prédictif sous incertitude. Au Politecnico di Torino (DIMEAS), j'ai développé une carte de risque par caméra RGB-D et un contrôleur GPU MPPI qui en tient compte, avec un modèle mathématique validé qui prédit son comportement. Je rejoins l'ISAE-Supméca (« Mécatronique & systèmes complexes ») à la rentrée 2026 pour mon année d'échange de fin d'études, et je recherche un stage de fin d'études (mars – septembre 2027) en robotique, perception ou contrôle au sein d'une équipe de pointe en Embodied AI.",
       stat2: "Ans en IA & robotique",
       stat3: "Langues parlées",
       stat4: "Projets techniques"
@@ -47,11 +47,12 @@ const TRANSLATIONS = {
       cta_details: "En savoir plus →",
       polito: {
         context: "Politecnico di Torino · DIMEAS · Italie",
-        title: "MPPI sémantique & risk-aware: Navigation autonome d'un UGV",
-        desc: "Un contrôleur MPPI classique raisonne sur la seule géométrie : il ignore si un obstacle est franchissable (flaque, feuilles mortes, bordure basse), et il ne voit pas les dangers plats que le LiDAR ne détecte pas (boue, sol mouillé ou glissant). J'ajoute une couche de perception sémantique embarquée qui évalue la traversabilité du terrain et alimente une fonction de coût risk-aware - pour une navigation à la fois plus sûre et moins conservatrice.",
-        r1: "Pipeline de segmentation sémantique - benchmark SegFormer / MobileNet / YOLO pour le déploiement temps réel sur Raspberry Pi",
-        r2: "Coût de traversabilité risk-aware injecté dans le MPPI - distingue obstacle infranchissable et terrain franchissable",
-        r3: "Environnements urbains aux configurations complexes simulés sous Gazebo Harmonic + ROS 2 Jazzy (TurtleBot 4, LiDAR + caméra de profondeur OAK-D)"
+        title: "Navigation risk-aware d'un UGV: Perception, MPPI & modélisation",
+        desc: "Un LiDAR 2D ne distingue pas un sol mouillé, de la boue ou un tapis épais d'un sol sec : ce sont des dangers plats en apparence, mais physiquement dangereux. J'ai construit une carte de risque à deux couches (sémantique par caméra + géométrique par profondeur) et un contrôleur GPU MPPI qui arbitre entre avancer vite et éviter le danger. Le point fort : un modèle mathématique du comportement du contrôleur, dérivé, testé contre les mesures réelles, corrigé, puis revalidé.",
+        r1: "Carte de risque à deux couches (sémantique YOLO26 + géométrique) publiée en temps réel sur ROS 2 - YOLO26 retenu pour un déploiement embarqué sans GPU (≈46 FPS vs 7-10 FPS sur CPU)",
+        r2: "Contrôleur GPU risk-aware MPPI (5120 trajectoires/cycle, 14 Hz) - un modèle d'arbitrage de coût dérivé puis validé prédit le seuil exact où le robot passe de « traverser » à « contourner »",
+        r3: "Réduction mesurée de l'exposition au risque réel : 44 % en traversée forcée, 100 % en zone évitable - pour un surcoût de seulement 2-9 % en distance et en temps",
+        r4: "Démonstration sur TurtleBot 4 physique, piloté par une carte de risque injectée directement dans le costmap"
       },
       robotic_arm: {
         context: "EEIA Summer School · Bénin",
@@ -99,9 +100,9 @@ const TRANSLATIONS = {
       heading: "Expérience professionnelle",
       polito: {
         dates: "Mai – Juillet 2026",
-        role: "Stagiaire R&D: Robotique autonome",
-        p1: "Développement d'un contrôleur risk-aware MPPI (Model Predictive Path Integral) pour la navigation autonome d'un UGV.",
-        p2: "Implémentation en C++ / ROS 2, validation en simulation et étude des performances sous incertitude."
+        role: "Stagiaire R&D: Perception & navigation risk-aware",
+        p1: "Sous la supervision des Prof. Fausto Francesco Lizzio et Elisa Capello, conception d'une chaîne de navigation risk-aware pour TurtleBot 4 : carte de risque par caméra RGB-D et contrôleur GPU MPPI.",
+        p2: "Contribution principale : un modèle mathématique d'arbitrage de coût prédisant le comportement du contrôleur, validé et corrigé contre des mesures réelles (réduction du risque de 44-100 % démontrée)."
       },
       stellantis: {
         dates: "Juin – Juillet 2025",
@@ -154,7 +155,7 @@ const TRANSLATIONS = {
     },
     contact: {
       heading: "Travaillons ensemble",
-      lead: "À la recherche d'un stage de fin d'études en robotique, automatisation ou IA embarquée - disponible de mars à septembre 2027, mobilité internationale."
+      lead: "Fort d'un stage en perception et contrôle risk-aware au Politecnico di Torino, je recherche un stage de fin d'études en robotique, perception ou contrôle - disponible de mars à septembre 2027, mobilité internationale."
     },
     footer: {
       build: "Construit avec HTML, CSS & JavaScript"
@@ -186,7 +187,7 @@ const TRANSLATIONS = {
     about: {
       heading: "About",
       lead: "Mechatronics engineering student driven by Embodied AI - giving robots the perception and control they need to act autonomously in the real world.",
-      body: "My work sits at the boundary between perception and decision-making - from on-device semantic segmentation to predictive control under uncertainty. At Politecnico di Torino (DIMEAS), I am building a semantic perception layer that lets an MPPI controller tell traversable terrain from genuine obstacles. I join ISAE-Supméca (\"Mechatronics & Complex Systems\") in autumn 2026 for my final exchange year, and I am seeking a final-year internship (March – September 2027) with a leading Embodied AI and robotics team.",
+      body: "My work sits at the boundary between perception and decision-making - from on-device semantic segmentation to predictive control under uncertainty. At Politecnico di Torino (DIMEAS), I built an RGB-D camera-based risk map and a GPU MPPI controller that acts on it, backed by a validated quantitative model of its behaviour. I join ISAE-Supméca (\"Mechatronics & Complex Systems\") in autumn 2026 for my final exchange year, and I am seeking a final-year internship (March – September 2027) in robotics, perception or control with a leading Embodied AI team.",
       stat2: "Years in AI & robotics",
       stat3: "Languages spoken",
       stat4: "Technical projects"
@@ -198,11 +199,12 @@ const TRANSLATIONS = {
       cta_details: "Learn more →",
       polito: {
         context: "Politecnico di Torino · DIMEAS · Italy",
-        title: "Semantic risk-aware MPPI: Autonomous UGV navigation",
-        desc: "A classic MPPI controller reasons on geometry alone: it can't tell whether an obstacle is traversable (a puddle, dead leaves, a low curb), and it misses flat hazards a LiDAR simply cannot see (mud, wet or slippery ground). I add an on-device semantic perception layer that scores terrain traversability and feeds a risk-aware cost function - for navigation that is both safer and less conservative.",
-        r1: "Semantic segmentation pipeline - SegFormer / MobileNet / YOLO benchmarked for real-time deployment on Raspberry Pi",
-        r2: "Risk-aware traversability cost fed into the MPPI - separates hard obstacles from traversable terrain",
-        r3: "Urban environments with complex layouts simulated in Gazebo Harmonic + ROS 2 Jazzy (TurtleBot 4, LiDAR + OAK-D depth camera)"
+        title: "Risk-aware UGV navigation: Perception, MPPI & modelling",
+        desc: "A 2D LiDAR can't tell wet ground, mud or thick carpet from dry floor: hazards that look flat but are physically dangerous. I built a two-layer risk map (camera-based semantic layer + depth-based geometric layer) and a GPU MPPI controller that trades speed against risk avoidance. The strongest result: a quantitative model of the controller's behaviour, derived, tested against real measurements, corrected, and revalidated.",
+        r1: "Two-layer risk map (semantic YOLO26 + geometric) published live over ROS 2 - YOLO26 chosen for GPU-free embedded deployment (≈46 FPS vs 7-10 FPS on CPU)",
+        r2: "GPU risk-aware MPPI controller (5,120 rollouts/cycle, 14 Hz) - a derived and validated cost-arbitrage model predicts the exact threshold where the robot switches from crossing to detouring",
+        r3: "Measured reduction in real risk exposure: 44% on a forced crossing, 100% on an avoidable zone - at a cost of only 2-9% in distance and time",
+        r4: "Demonstrated on a physical TurtleBot 4, driven by a risk map injected directly into the costmap"
       },
       robotic_arm: {
         context: "EEIA Summer School · Benin",
@@ -250,9 +252,9 @@ const TRANSLATIONS = {
       heading: "Professional experience",
       polito: {
         dates: "May – July 2026",
-        role: "R&D Intern: Autonomous Robotics",
-        p1: "Development of a risk-aware MPPI (Model Predictive Path Integral) controller for autonomous UGV navigation.",
-        p2: "Implementation in C++ / ROS 2, simulation validation and performance analysis under uncertainty."
+        role: "R&D Intern: Perception & Risk-Aware Navigation",
+        p1: "Under the supervision of Prof. Fausto Francesco Lizzio and Prof. Elisa Capello, designed a risk-aware navigation stack for a TurtleBot 4: RGB-D camera-based risk mapping and a GPU MPPI controller.",
+        p2: "Main contribution: a quantitative cost-arbitrage model predicting the controller's behaviour, validated and corrected against real measurements (44-100% measured risk reduction)."
       },
       stellantis: {
         dates: "June – July 2025",
@@ -305,7 +307,7 @@ const TRANSLATIONS = {
     },
     contact: {
       heading: "Let's work together",
-      lead: "Seeking a final-year internship in robotics, automation or embedded AI - available March to September 2027, worldwide mobility."
+      lead: "Backed by an internship in risk-aware perception and control at Politecnico di Torino, I'm seeking a final-year internship in robotics, perception or control - available March to September 2027, worldwide mobility."
     },
     footer: {
       build: "Built with HTML, CSS & JavaScript"
