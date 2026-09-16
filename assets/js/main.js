@@ -73,9 +73,9 @@ const TRANSLATIONS = {
       flyrenov: {
         context: "Projet industriel · ENSIL-ENSCI × FlyRenov",
         title: "FlyRenov: Enrouleur de tuyau asservi pour drone",
-        desc: "L'entreprise FlyRenov nettoie les toitures avec un drone. Le drone reste relié au sol par un tuyau de 60 mètres, enroulé sur une machine. Cette machine pesait plus de 40 kg et il fallait être deux pour la déplacer. Avec un camarade, nous l'avons reconçue entièrement.",
-        r1: "Trois fois plus légère : 40 kg à 14 kg. Une seule personne suffit.",
-        r2: "Deux moteurs au lieu de quatre, sans perdre aucune fonction.",
+        desc: "L'entreprise FlyRenov nettoie les toitures avec un drone. Le drone reste relié au sol par un tuyau de 60 mètres, enroulé sur une machine. La première version était trop lourde (il fallait être deux pour la déplacer) et inutilement complexe. Avec un camarade, nous l'avons reconçue entièrement.",
+        r1: "Un diable du commerce remplace le chariot sur mesure, pour qu'une seule personne puisse déplacer la machine.",
+        r2: "Deux moteurs au lieu de quatre : la répartition du tuyau est entraînée mécaniquement par l'axe principal.",
         r3: "Électronique simplifiée : une carte ESP32 remplace tout un réseau CAN."
       }
     },
@@ -225,9 +225,9 @@ const TRANSLATIONS = {
       flyrenov: {
         context: "Industry project · ENSIL-ENSCI × FlyRenov",
         title: "FlyRenov: Position-controlled hose reel for drones",
-        desc: "FlyRenov cleans rooftops with a drone. The drone stays tethered to the ground by a 60-metre hose, wound onto a machine. That machine weighed over 40 kg and took two people to move. With a classmate, I redesigned it from the ground up.",
-        r1: "Three times lighter: 40 kg down to 14 kg. One person is now enough.",
-        r2: "Two motors instead of four, without losing a single function.",
+        desc: "FlyRenov cleans rooftops with a drone. The drone stays tethered to the ground by a 60-metre hose, wound onto a machine. The first version was too heavy (it took two people to move) and needlessly complex. With a classmate, I redesigned it from the ground up.",
+        r1: "An off-the-shelf hand truck replaces the custom cart, so a single person can move the machine.",
+        r2: "Two motors instead of four: the hose guide is driven mechanically by the main shaft.",
         r3: "Simpler electronics: one ESP32 board replaces an entire CAN network."
       }
     },
