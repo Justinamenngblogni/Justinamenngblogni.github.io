@@ -28,3 +28,6 @@ dist/
 assets/images/experience/formateur/*
 !assets/images/experience/formateur/[0-9]*.jpg
 !assets/images/experience/formateur/[0-9]*.jpeg
+
+# Sources Typst du CV : seuls les PDF compilés sont publiés
+assets/docs/*.typ
