@@ -63,6 +63,11 @@
     }
     .proj-page__img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .proj-page__img-placeholder { font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-align: center; padding: 16px; }
+    .proj-page__gallery { grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 24px; }
+    .proj-page__fig { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+    .proj-page__img-wrap--figure { background: #fff; }
+    .proj-page__img-wrap--figure img { object-fit: contain; padding: 8px; }
+    .proj-page__fig figcaption { font-family: var(--font-mono); font-size: 12px; line-height: 1.5; color: var(--muted); }
 
     .proj-page__results { list-style: none; padding: 0; margin: 0; }
     .proj-page__results li {
@@ -224,20 +229,33 @@
         <h2 class="proj-page__section-title">Galerie</h2>
         <div class="proj-page__gallery">
 
-          <div class="proj-page__img-wrap">
-            <!-- Quand tu auras le visuel : <img src="../images/projects/mppi/segmentation.jpg" alt="Carte de risque sémantique YOLO26" /> -->
-            <span class="proj-page__img-placeholder">Image à venir<br>Carte de risque sémantique (YOLO26)</span>
-          </div>
+          <figure class="proj-page__fig">
+            <a class="proj-page__img-wrap proj-page__img-wrap--figure" href="../images/projects/MPPI/architecture.jpg" target="_blank" rel="noopener">
+              <img src="../images/projects/MPPI/architecture.jpg" alt="Architecture du système : perception sémantique (YOLO26) et géométrique (profondeur OAK-D) fusionnées dans une costmap de risque, qui alimente le contrôleur MPPI sur GPU" loading="lazy" />
+            </a>
+            <figcaption>Architecture : perception sémantique + géométrique → costmap de risque → MPPI sur GPU</figcaption>
+          </figure>
 
-          <div class="proj-page__img-wrap">
-            <!-- Quand tu auras le visuel : <img src="../images/projects/mppi/gazebo.jpg" alt="Environnement Gazebo warehouse_risk" /> -->
-            <span class="proj-page__img-placeholder">Image à venir<br>Environnement Gazebo (warehouse_risk)</span>
-          </div>
+          <figure class="proj-page__fig">
+            <a class="proj-page__img-wrap proj-page__img-wrap--figure" href="../images/projects/MPPI/risk-map-yolo26.jpg" target="_blank" rel="noopener">
+              <img src="../images/projects/MPPI/risk-map-yolo26.jpg" alt="Carte de risque sémantique YOLO26 : image RGB, segmentation, risque attendu par pixel et incertitude (entropie)" loading="lazy" />
+            </a>
+            <figcaption>Carte de risque sémantique (YOLO26) : segmentation, risque par pixel, incertitude</figcaption>
+          </figure>
 
-          <div class="proj-page__img-wrap">
-            <!-- Quand tu auras le visuel : <img src="../images/projects/mppi/trajectoires.jpg" alt="Rollout cloud MPPI et costmap de risque" /> -->
-            <span class="proj-page__img-placeholder">Image à venir<br>Trajectoires MPPI & costmap de risque</span>
-          </div>
+          <figure class="proj-page__fig">
+            <a class="proj-page__img-wrap" href="../images/projects/MPPI/gazebo-rviz.jpg" target="_blank" rel="noopener">
+              <img src="../images/projects/MPPI/gazebo-rviz.jpg" alt="Simulation Gazebo Harmonic de l'entrepôt avec zones à risque, et costmap de risque avec trajectoire dans RViz" loading="lazy" />
+            </a>
+            <figcaption>Simulation Gazebo (warehouse_risk) et costmap de risque dans RViz</figcaption>
+          </figure>
+
+          <figure class="proj-page__fig">
+            <a class="proj-page__img-wrap" href="../images/projects/MPPI/real-robot-mppi.jpg" target="_blank" rel="noopener">
+              <img src="../images/projects/MPPI/real-robot-mppi.jpg" alt="TurtleBot 4 réel en salle de test, avec les trajectoires candidates du MPPI projetées au-dessus" loading="lazy" />
+            </a>
+            <figcaption>TurtleBot 4 réel : trajectoires candidates du MPPI autour des zones à risque</figcaption>
+          </figure>
 
         </div>
       </div>
