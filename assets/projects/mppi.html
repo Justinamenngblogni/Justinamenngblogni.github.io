@@ -86,7 +86,8 @@
     }
     .proj-page__img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .proj-page__img-placeholder { font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-align: center; padding: 16px; }
-    .proj-page__gallery { grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 24px; }
+    .proj-page__gallery { grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 24px; }
+    .proj-page__hero-img--photo { aspect-ratio: auto; max-width: 960px; }
     .proj-page__fig { margin: 0; display: flex; flex-direction: column; gap: 8px; }
     .proj-page__img-wrap--figure { background: #fff; }
     .proj-page__img-wrap--figure img { object-fit: contain; padding: 8px; }
@@ -192,11 +193,11 @@
         </div>
       </div>
 
-      <!-- Image principale (déjà disponible depuis le portfolio) -->
+      <!-- Image principale : le vrai TurtleBot 4 en salle de test (tirée du rapport de stage) -->
       <img
-        class="proj-page__hero-img"
-        src="../images/projects/MPPI/TurtleBot4_web-9-scaled.jpg"
-        alt="Visualisation MPPI: trajectoires et zones de risque"
+        class="proj-page__hero-img proj-page__hero-img--photo"
+        src="../images/projects/MPPI/real-robot-mppi.jpg"
+        alt="TurtleBot 4 réel en salle de test, avec les trajectoires candidates du MPPI projetées au-dessus"
       />
 
       <!-- ── Le problème ── -->
@@ -273,12 +274,6 @@
             <figcaption>Simulation Gazebo (warehouse_risk) et costmap de risque dans RViz</figcaption>
           </figure>
 
-          <figure class="proj-page__fig">
-            <a class="proj-page__img-wrap" href="../images/projects/MPPI/real-robot-mppi.jpg" target="_blank" rel="noopener">
-              <img src="../images/projects/MPPI/real-robot-mppi.jpg" alt="TurtleBot 4 réel en salle de test, avec les trajectoires candidates du MPPI projetées au-dessus" loading="lazy" />
-            </a>
-            <figcaption>TurtleBot 4 réel : trajectoires candidates du MPPI autour des zones à risque</figcaption>
-          </figure>
 
         </div>
       </div>

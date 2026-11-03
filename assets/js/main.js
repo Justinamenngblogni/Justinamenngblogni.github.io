@@ -35,7 +35,7 @@ const TRANSLATIONS = {
     about: {
       heading: "À propos",
       lead: "Élève-ingénieur en mécatronique passionné par l'Embodied AI : donner à des robots la perception et le contrôle nécessaires pour agir de façon autonome dans le monde réel.",
-      body: "Mon travail se situe à la frontière entre la perception et la décision - de la segmentation sémantique embarquée jusqu'au contrôle prédictif sous incertitude. Au Politecnico di Torino (DIMEAS), j'ai développé une carte de risque par caméra RGB-D et un contrôleur GPU MPPI qui en tient compte, avec un modèle mathématique validé qui prédit son comportement. Je rejoins l'ISAE-Supméca (« Mécatronique & systèmes complexes ») à la rentrée 2026 pour mon année d'échange de fin d'études, et je recherche un stage de fin d'études (mars – septembre 2027) en robotique, perception ou contrôle au sein d'une équipe de pointe en Embodied AI.",
+      body: "Mon travail se situe à la frontière entre la perception et la décision - de la segmentation sémantique embarquée jusqu'au contrôle prédictif sous incertitude. Au Politecnico di Torino (DIMEAS), j'ai développé une carte de risque par caméra RGB-D et un contrôleur GPU MPPI qui en tient compte, avec un modèle mathématique validé qui prédit son comportement. Je suis actuellement en année d'échange de fin d'études à l'ISAE-Supméca (« Mécatronique & systèmes complexes »), et je recherche un stage de fin d'études (mars – septembre 2027) en robotique, perception ou contrôle au sein d'une équipe de pointe en Embodied AI.",
       stat2: "Ans en IA & robotique",
       stat3: "Langues parlées",
       stat4: "Projets techniques"
@@ -121,9 +121,9 @@ const TRANSLATIONS = {
     education: {
       heading: "Formation",
       isae: "5ᵉ année (M2): Année d'échange · Mécatronique & systèmes complexes",
-      engineering: "Cycle ingénieur: Mécatronique & Robotique (4ᵉ année)",
+      engineering: "Cycle ingénieur: Mécatronique, Robotique & Automatisation",
       prep: "Classes préparatoires intégrées: Génie électrique",
-      bac: "Baccalauréat scientifique: GPA 3.332"
+      bac: "Baccalauréat scientifique (série C): mention Très Bien, 16,66/20"
     },
     certifications: {
       heading: "Certifications",
@@ -155,6 +155,8 @@ const TRANSLATIONS = {
     },
     contact: {
       heading: "Travaillons ensemble",
+      phone_label: "Téléphone",
+      cv_value: "Télécharger (PDF)",
       lead: "Fort d'un stage en perception et contrôle risk-aware au Politecnico di Torino, je recherche un stage de fin d'études en robotique, perception ou contrôle - disponible de mars à septembre 2027, mobilité internationale."
     },
     footer: {
@@ -187,7 +189,7 @@ const TRANSLATIONS = {
     about: {
       heading: "About",
       lead: "Mechatronics engineering student driven by Embodied AI - giving robots the perception and control they need to act autonomously in the real world.",
-      body: "My work sits at the boundary between perception and decision-making - from on-device semantic segmentation to predictive control under uncertainty. At Politecnico di Torino (DIMEAS), I built an RGB-D camera-based risk map and a GPU MPPI controller that acts on it, backed by a validated quantitative model of its behaviour. I join ISAE-Supméca (\"Mechatronics & Complex Systems\") in autumn 2026 for my final exchange year, and I am seeking a final-year internship (March – September 2027) in robotics, perception or control with a leading Embodied AI team.",
+      body: "My work sits at the boundary between perception and decision-making - from on-device semantic segmentation to predictive control under uncertainty. At Politecnico di Torino (DIMEAS), I built an RGB-D camera-based risk map and a GPU MPPI controller that acts on it, backed by a validated quantitative model of its behaviour. I am currently in my final-year exchange at ISAE-Supméca (\"Mechatronics & Complex Systems\"), and I am seeking a final-year internship (March – September 2027) in robotics, perception or control with a leading Embodied AI team.",
       stat2: "Years in AI & robotics",
       stat3: "Languages spoken",
       stat4: "Technical projects"
@@ -273,9 +275,9 @@ const TRANSLATIONS = {
     education: {
       heading: "Education",
       isae: "Final year (M2): Exchange year · Mechatronics & Complex Systems",
-      engineering: "Engineering cycle: Mechatronics & Robotics (4th year)",
+      engineering: "Engineering degree (M.Eng.): Mechatronics, Robotics & Automation",
       prep: "Integrated preparatory courses: Electrical engineering",
-      bac: "Scientific high school diploma: GPA 3.332"
+      bac: "Scientific baccalaureate (Series C): highest honours, 16.66/20"
     },
     certifications: {
       heading: "Certifications",
@@ -307,6 +309,8 @@ const TRANSLATIONS = {
     },
     contact: {
       heading: "Let's work together",
+      phone_label: "Phone",
+      cv_value: "Download (PDF)",
       lead: "Backed by an internship in risk-aware perception and control at Politecnico di Torino, I'm seeking a final-year internship in robotics, perception or control - available March to September 2027, worldwide mobility."
     },
     footer: {
@@ -340,12 +344,13 @@ function applyTranslations(lang) {
   });
 
   // Update CV link to match active language
-  const cvLink = document.getElementById("cv-link");
-  if (cvLink) {
-    cvLink.href = lang === "fr"
-      ? "assets/docs/Cv%20Justin%20fr.pdf"
-      : "assets/docs/Cv%20Justin%20en.pdf";
-  }
+  const cvHref = lang === "fr"
+    ? "assets/docs/Cv%20Justin%20fr.pdf"
+    : "assets/docs/Cv%20Justin%20en.pdf";
+  ["cv-link", "cv-link-contact"].forEach((id) => {
+    const link = document.getElementById(id);
+    if (link) link.href = cvHref;
+  });
 
   // Update meta description
   const metaDesc = document.querySelector('meta[name="description"]');
