@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-title-fr="Formateur EEIA: Robotique &amp; IA | Justin Amen N&#x27;GBLOGNI" data-title-en="EEIA instructor: Robotics &amp; AI | Justin Amen N&#x27;GBLOGNI">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,6 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/subpage.js"></script>
 
   <style>
     body { background: var(--paper); }
@@ -121,18 +122,28 @@
   <main class="proj-page">
     <div class="container">
 
-      <a href="../../index.html#experience" class="proj-page__back">← Retour au portfolio</a>
+      <div class="proj-page__topbar">
+        <a href="../../index.html#experience" class="proj-page__back"><span data-lang="fr">← Retour au portfolio</span><span data-lang="en">← Back to portfolio</span></a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang-switch="fr" class="lang-switch__btn">FR</button>
+          <span class="lang-switch__divider" aria-hidden="true">·</span>
+          <button type="button" data-lang-switch="en" class="lang-switch__btn">EN</button>
+        </div>
+      </div>
 
-      <p class="proj-page__eyebrow">Expérience · 2022 – 2025</p>
-      <h1 class="proj-page__title">Formateur -<br>Robotique & IA embarquée</h1>
+      <p class="proj-page__eyebrow"><span data-lang="fr">Expérience · 2022 – 2025</span><span data-lang="en">Experience · 2022 – 2025</span></p>
+      <h1 class="proj-page__title">
+        <span data-lang="fr">Formateur -<br>Robotique &amp; IA embarquée</span>
+        <span data-lang="en">Instructor -<br>Robotics &amp; embedded AI</span>
+      </h1>
 
       <div class="proj-page__tags">
-        <span class="proj-page__tag">Enseignement</span>
-        <span class="proj-page__tag">Robotique</span>
-        <span class="proj-page__tag">Électronique embarquée</span>
-        <span class="proj-page__tag">Intelligence artificielle</span>
-        <span class="proj-page__tag">Domotique</span>
-        <span class="proj-page__tag">Ateliers pratiques</span>
+        <span class="proj-page__tag"><span data-lang="fr">Enseignement</span><span data-lang="en">Teaching</span></span>
+        <span class="proj-page__tag"><span data-lang="fr">Robotique</span><span data-lang="en">Robotics</span></span>
+        <span class="proj-page__tag"><span data-lang="fr">Électronique embarquée</span><span data-lang="en">Embedded electronics</span></span>
+        <span class="proj-page__tag"><span data-lang="fr">Intelligence artificielle</span><span data-lang="en">Artificial intelligence</span></span>
+        <span class="proj-page__tag"><span data-lang="fr">Domotique</span><span data-lang="en">Home automation</span></span>
+        <span class="proj-page__tag"><span data-lang="fr">Ateliers pratiques</span><span data-lang="en">Hands-on workshops</span></span>
       </div>
 
       <div class="proj-page__meta-row">
@@ -144,43 +155,48 @@
           </div>
         </div>
         <div class="proj-page__meta-item">
-          <span class="proj-page__meta-label">Lieu</span>
-          <span class="proj-page__meta-value">Bénin</span>
+          <span class="proj-page__meta-label"><span data-lang="fr">Lieu</span><span data-lang="en">Location</span></span>
+          <span class="proj-page__meta-value"><span data-lang="fr">Bénin</span><span data-lang="en">Benin</span></span>
         </div>
         <div class="proj-page__meta-item">
-          <span class="proj-page__meta-label">Période</span>
+          <span class="proj-page__meta-label"><span data-lang="fr">Période</span><span data-lang="en">Period</span></span>
           <span class="proj-page__meta-value">2022 – 2025</span>
         </div>
         <div class="proj-page__meta-item">
-          <span class="proj-page__meta-label">Public</span>
-          <span class="proj-page__meta-value">Collégiens · Étudiants · Professionnels</span>
+          <span class="proj-page__meta-label"><span data-lang="fr">Public</span><span data-lang="en">Audience</span></span>
+          <span class="proj-page__meta-value"><span data-lang="fr">Collégiens · Étudiants · Professionnels</span><span data-lang="en">Middle-school students · University students · Professionals</span></span>
         </div>
       </div>
 
       <!-- ── Le programme ── -->
       <div class="proj-page__section proj-page__body">
-        <h2 class="proj-page__section-title">Le programme</h2>
-        <p>L'<strong>EEIA</strong> (École d'Été sur l'Intelligence Artificielle) est le plus grand rendez-vous éducatif consacré à l'IA en Afrique de l'Ouest. Organisée au Bénin par la <strong>Fondation Vallet</strong>, <strong>Bénin Excellence</strong> et le <strong>PNUD</strong>, elle réunit chaque été une centaine de jeunes sélectionnés sur dossier, pendant <strong>quatre semaines</strong>, autour d'une pédagogie délibérément pratique - <strong>25 % de théorie, 75 % de pratique</strong>. En cinq éditions, le programme a formé plus de <strong>1 800 participants venus de 15 pays</strong>.</p>
-        <p>Le cursus s'articule en quatre temps : <strong>programmation en Python</strong>, <strong>machine learning</strong>, <strong>robotique et électronique embarquée</strong>, puis <strong>projets d'application</strong>. En parallèle, l'<strong>EEIA Junior</strong> accueille des collégiens de la 6ᵉ à la 3ᵉ pour une initiation à l'informatique, à Scratch et à l'électronique.</p>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Le programme</span><span data-lang="en">The programme</span></h2>
+        <p data-lang="fr">L'<strong>EEIA</strong> (École d'Été sur l'Intelligence Artificielle) est le plus grand rendez-vous éducatif consacré à l'IA en Afrique de l'Ouest. Organisée au Bénin par la <strong>Fondation Vallet</strong>, <strong>Bénin Excellence</strong> et le <strong>PNUD</strong>, elle réunit chaque été une centaine de jeunes sélectionnés sur dossier, pendant <strong>quatre semaines</strong>, autour d'une pédagogie délibérément pratique - <strong>25 % de théorie, 75 % de pratique</strong>. En cinq éditions, le programme a formé plus de <strong>1 800 participants venus de 15 pays</strong>.</p>
+        <p data-lang="en">The <strong>EEIA</strong> (École d'Été sur l'Intelligence Artificielle, the AI Summer School) is the largest educational event dedicated to AI in West Africa. Organised in Benin by the <strong>Fondation Vallet</strong>, <strong>Bénin Excellence</strong> and <strong>UNDP</strong>, it brings together about a hundred selected young people every summer for <strong>four weeks</strong>, with a deliberately hands-on approach - <strong>25% theory, 75% practice</strong>. Over five editions, the programme has trained more than <strong>1,800 participants from 15 countries</strong>.</p>
+        <p data-lang="fr">Le cursus s'articule en quatre temps : <strong>programmation en Python</strong>, <strong>machine learning</strong>, <strong>robotique et électronique embarquée</strong>, puis <strong>projets d'application</strong>. En parallèle, l'<strong>EEIA Junior</strong> accueille des collégiens de la 6ᵉ à la 3ᵉ pour une initiation à l'informatique, à Scratch et à l'électronique.</p>
+        <p data-lang="en">The curriculum has four stages: <strong>Python programming</strong>, <strong>machine learning</strong>, <strong>robotics and embedded electronics</strong>, then <strong>applied projects</strong>. In parallel, <strong>EEIA Junior</strong> welcomes middle-school students (ages 11 to 15) for an introduction to computing, Scratch and electronics.</p>
         <p style="margin-top:24px;">
-          <a href="https://eeia.bj/" target="_blank" rel="noopener" class="proj-page__ext-link">Découvrir l'EEIA - eeia.bj →</a>
+          <a href="https://eeia.bj/" target="_blank" rel="noopener" class="proj-page__ext-link"><span data-lang="fr">Découvrir l'EEIA - eeia.bj →</span><span data-lang="en">Discover the EEIA - eeia.bj →</span></a>
         </p>
       </div>
 
       <!-- ── Mon rôle ── -->
       <div class="proj-page__section proj-page__body">
-        <h2 class="proj-page__section-title">Mon rôle</h2>
-        <p>J'interviens comme <strong>formateur depuis 2022</strong>. J'assiste le professeur principal sur le volet <strong>programmation</strong>, puis je prends en charge des cours durant la semaine consacrée à la <strong>robotique et à l'électronique embarquée</strong> : LED et composants, capteurs et circuits, microcontrôleurs, robotique, domotique, drones et véhicules à évitement d'obstacles. J'encadre également les plus jeunes de l'<strong>EEIA Junior</strong>.</p>
-        <p>La dernière semaine est le point d'orgue : les participants conçoivent un projet complet, du concept au prototype fonctionnel, en quelques jours. J'ai encadré le projet de <strong>véhicule autonome</strong> de 2022 à 2024 - celui présenté dans mes projets - puis, en 2025, le <strong>bras robotique jouant au tic-tac-toe</strong>.</p>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Mon rôle</span><span data-lang="en">My role</span></h2>
+        <p data-lang="fr">J'interviens comme <strong>formateur depuis 2022</strong>. J'assiste le professeur principal sur le volet <strong>programmation</strong>, puis je prends en charge des cours durant la semaine consacrée à la <strong>robotique et à l'électronique embarquée</strong> : LED et composants, capteurs et circuits, microcontrôleurs, robotique, domotique, drones et véhicules à évitement d'obstacles. J'encadre également les plus jeunes de l'<strong>EEIA Junior</strong>.</p>
+        <p data-lang="en">I have been an <strong>instructor since 2022</strong>. I assist the lead teacher on the <strong>programming</strong> track, then take charge of classes during the week dedicated to <strong>robotics and embedded electronics</strong>: LEDs and components, sensors and circuits, microcontrollers, robotics, home automation, drones and obstacle-avoiding vehicles. I also mentor the youngest participants of <strong>EEIA Junior</strong>.</p>
+        <p data-lang="fr">La dernière semaine est le point d'orgue : les participants conçoivent un projet complet, du concept au prototype fonctionnel, en quelques jours. J'ai encadré le projet de <strong>véhicule autonome</strong> de 2022 à 2024 - celui présenté dans mes projets - puis, en 2025, le <strong>bras robotique jouant au tic-tac-toe</strong>.</p>
+        <p data-lang="en">The final week is the highlight: participants build a complete project, from concept to working prototype, in a few days. I supervised the <strong>autonomous vehicle</strong> project from 2022 to 2024 - the one shown in my projects - and then, in 2025, the <strong>tic-tac-toe robotic arm</strong>.</p>
 
         <div class="proj-page__highlight">
-          <p>Un même concept - un microcontrôleur, un capteur - ne s'explique pas de la même façon aux collégiens de l'EEIA Junior et aux participants du programme Senior. Passer d'un public à l'autre est ce qui m'a le plus appris sur ma propre compréhension : on ne peut pas simplifier ce qu'on n'a pas vraiment compris.</p>
+          <p data-lang="fr">Un même concept - un microcontrôleur, un capteur - ne s'explique pas de la même façon aux collégiens de l'EEIA Junior et aux participants du programme Senior. Passer d'un public à l'autre est ce qui m'a le plus appris sur ma propre compréhension : on ne peut pas simplifier ce qu'on n'a pas vraiment compris.</p>
+          <p data-lang="en">The same concept - a microcontroller, a sensor - is not explained the same way to EEIA Junior pupils and to participants of the Senior programme. Switching from one audience to the other taught me the most about my own understanding: you cannot simplify what you have not truly understood.</p>
         </div>
       </div>
 
       <!-- ── Photos d'enseignement ── -->
       <div class="proj-page__section">
-        <h2 class="proj-page__section-title">En action</h2>
+        <h2 class="proj-page__section-title"><span data-lang="fr">En action</span><span data-lang="en">In action</span></h2>
         <div class="proj-page__gallery">
 
           <div class="proj-page__img-wrap">
@@ -208,8 +224,8 @@
 
       <!-- ── Ce que j'ai transmis ── -->
       <div class="proj-page__section">
-        <h2 class="proj-page__section-title">Ce que j'ai transmis</h2>
-        <ul class="proj-page__results">
+        <h2 class="proj-page__section-title"><span data-lang="fr">Ce que j'ai transmis</span><span data-lang="en">What I taught</span></h2>
+        <ul class="proj-page__results" data-lang="fr">
           <li>Programmation Python - assistance du professeur principal en travaux pratiques</li>
           <li>Électronique de base - LED, composants, capteurs et circuits</li>
           <li>Microcontrôleurs et systèmes embarqués</li>
@@ -218,20 +234,30 @@
           <li>Encadrement des projets de fin de session - véhicule autonome (2022 – 2024), bras robotique tic-tac-toe (2025)</li>
           <li>EEIA Junior - initiation des collégiens (6ᵉ à 3ᵉ) à l'informatique et à l'électronique</li>
         </ul>
+        <ul class="proj-page__results" data-lang="en">
+          <li>Python programming - assisting the lead teacher in lab sessions</li>
+          <li>Basic electronics - LEDs, components, sensors and circuits</li>
+          <li>Microcontrollers and embedded systems</li>
+          <li>Robotics and home automation</li>
+          <li>Drones and obstacle-avoiding vehicles</li>
+          <li>Supervising the end-of-session projects - autonomous vehicle (2022 – 2024), tic-tac-toe robotic arm (2025)</li>
+          <li>EEIA Junior - introducing middle-school students (ages 11 to 15) to computing and electronics</li>
+        </ul>
       </div>
 
       <!-- ── Cérémonie de remise (lien externe) ── -->
       <div class="proj-page__section">
-        <h2 class="proj-page__section-title">Cérémonie EEIA 2021</h2>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Cérémonie EEIA 2021</span><span data-lang="en">EEIA 2021 ceremony</span></h2>
         <div class="proj-page__body">
-          <p>Lauréat du 2ᵉ prix national de la cohorte EEIA 2021 - parcours intensif d'apprentissage en intelligence artificielle et robotique embarquée.</p>
+          <p data-lang="fr">Lauréat du 2ᵉ prix national de la cohorte EEIA 2021 - parcours intensif d'apprentissage en intelligence artificielle et robotique embarquée.</p>
+          <p data-lang="en">Winner of the 2nd national prize of the EEIA 2021 cohort - an intensive programme in artificial intelligence and embedded robotics.</p>
         </div>
         <a
           href="https://www.youtube.com/watch?v=acyq8fxtbKU&t=4s"
           target="_blank"
           rel="noopener"
           class="proj-page__ext-link"
-        >Voir la cérémonie de remise →</a>
+        ><span data-lang="fr">Voir la cérémonie de remise →</span><span data-lang="en">Watch the award ceremony →</span></a>
       </div>
 
     </div>

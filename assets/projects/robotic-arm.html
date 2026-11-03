@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-title-fr="Bras robotique: Tic-Tac-Toe | Justin Amen N&#x27;GBLOGNI" data-title-en="Robotic arm: Tic-tac-toe | Justin Amen N&#x27;GBLOGNI">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,6 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/subpage.js"></script>
 
   <style>
     body { background: var(--paper); }
@@ -135,30 +136,40 @@
   <main class="proj-page">
     <div class="container">
 
-      <a href="../../index.html#projects" class="proj-page__back">← Retour au portfolio</a>
+      <div class="proj-page__topbar">
+        <a href="../../index.html#projects" class="proj-page__back"><span data-lang="fr">← Retour au portfolio</span><span data-lang="en">← Back to portfolio</span></a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang-switch="fr" class="lang-switch__btn">FR</button>
+          <span class="lang-switch__divider" aria-hidden="true">·</span>
+          <button type="button" data-lang-switch="en" class="lang-switch__btn">EN</button>
+        </div>
+      </div>
 
       <p class="proj-page__num">P / 03</p>
-      <h1 class="proj-page__title">Bras robotique -<br>Tic-Tac-Toe par renforcement</h1>
+      <h1 class="proj-page__title">
+        <span data-lang="fr">Bras robotique -<br>Tic-Tac-Toe par renforcement</span>
+        <span data-lang="en">Robotic arm -<br>Tic-tac-toe by reinforcement learning</span>
+      </h1>
 
       <div class="proj-page__tags">
         <span class="proj-page__tag">Deep Reinforcement Learning</span>
-        <span class="proj-page__tag">Vision par ordinateur</span>
-        <span class="proj-page__tag">Robotique</span>
-        <span class="proj-page__tag">Embarqué</span>
+        <span class="proj-page__tag"><span data-lang="fr">Vision par ordinateur</span><span data-lang="en">Computer vision</span></span>
+        <span class="proj-page__tag"><span data-lang="fr">Robotique</span><span data-lang="en">Robotics</span></span>
+        <span class="proj-page__tag"><span data-lang="fr">Embarqué</span><span data-lang="en">Embedded</span></span>
       </div>
 
       <div class="proj-page__meta-row">
         <div class="proj-page__meta-item">
-          <span class="proj-page__meta-label">Contexte</span>
-          <span class="proj-page__meta-value">EEIA Summer School · Bénin</span>
+          <span class="proj-page__meta-label"><span data-lang="fr">Contexte</span><span data-lang="en">Context</span></span>
+          <span class="proj-page__meta-value"><span data-lang="fr">EEIA Summer School · Bénin</span><span data-lang="en">EEIA Summer School · Benin</span></span>
         </div>
         <div class="proj-page__meta-item">
-          <span class="proj-page__meta-label">Année</span>
+          <span class="proj-page__meta-label"><span data-lang="fr">Année</span><span data-lang="en">Year</span></span>
           <span class="proj-page__meta-value">2025</span>
         </div>
         <div class="proj-page__meta-item">
-          <span class="proj-page__meta-label">Rôle</span>
-          <span class="proj-page__meta-value">Formateur · équipe d'encadrement EEIA 2025</span>
+          <span class="proj-page__meta-label"><span data-lang="fr">Rôle</span><span data-lang="en">Role</span></span>
+          <span class="proj-page__meta-value"><span data-lang="fr">Formateur · équipe d'encadrement EEIA 2025</span><span data-lang="en">Instructor · EEIA 2025 teaching team</span></span>
         </div>
         <div class="proj-page__meta-item">
           <span class="proj-page__meta-label">Organisation</span>
@@ -169,24 +180,19 @@
       <!-- ── Description ── -->
       <div class="proj-page__section proj-page__body">
         <h2 class="proj-page__section-title">Description</h2>
-        <p>Développement d'un agent de Deep Reinforcement Learning (DQN/PPO) pour le contrôle autonome d'un bras robotique jouant au tic-tac-toe, avec détection visuelle de l'état du plateau.</p>
-        <p>C'était le projet de fin de session de l'EEIA 2025, mené par l'équipe de formateurs dont je faisais partie. La chaîne complète tient en trois étapes : une caméra filme le plateau et un modèle YOLO détecte la grille et les pièces ; l'agent d'apprentissage par renforcement choisit le coup à jouer ; le bras robotique exécute ce coup. Toute l'inférence tourne en temps réel sur une Raspberry Pi 5.</p>
+        <p data-lang="fr">Développement d'un agent de Deep Reinforcement Learning (DQN/PPO) pour le contrôle autonome d'un bras robotique jouant au tic-tac-toe, avec détection visuelle de l'état du plateau.</p>
+        <p data-lang="en">Development of a Deep Reinforcement Learning agent (DQN/PPO) for the autonomous control of a robotic arm playing tic-tac-toe, with vision-based detection of the board state.</p>
+        <p data-lang="fr">C'était le projet de fin de session de l'EEIA 2025, mené par l'équipe de formateurs dont je faisais partie. La chaîne complète tient en trois étapes : une caméra filme le plateau et un modèle YOLO détecte la grille et les pièces ; l'agent d'apprentissage par renforcement choisit le coup à jouer ; le bras robotique exécute ce coup. Toute l'inférence tourne en temps réel sur une Raspberry Pi 5.</p>
+        <p data-lang="en">It was the closing project of the EEIA 2025 session, led by the team of instructors I was part of. The full pipeline has three steps: a camera films the board and a YOLO model detects the grid and the pieces; the reinforcement learning agent chooses the move; the robotic arm plays it. All inference runs in real time on a Raspberry Pi 5.</p>
       </div>
 
       <!-- ── Démonstration ── -->
       <div class="proj-page__section">
-        <h2 class="proj-page__section-title">Démonstration</h2>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Démonstration</span><span data-lang="en">Demo</span></h2>
         <div class="proj-page__video-wrap">
-          <!--
-            Pour intégrer une vidéo YouTube :
-            1. Va sur ta vidéo YouTube
-            2. Clique "Partager" → "Intégrer"
-            3. Copie uniquement l'ID (ex: dQw4w9WgXcQ dans https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-            4. Remplace URL_VIDEO_ROBOTIC_ARM ci-dessous par : https://www.youtube.com/embed/TON_ID_ICI
-          -->
           <iframe
             src="https://drive.google.com/file/d/1oFCt66Ttod_nlEp-puCXlosYgaX1EPI1/preview"
-            title="Démonstration: Bras robotique Tic-Tac-Toe"
+            title="Démonstration: Bras robotique Tic-Tac-Toe / Demo: tic-tac-toe robotic arm"
             allow="autoplay"
             allowfullscreen
           ></iframe>
@@ -195,7 +201,7 @@
 
       <!-- ── Galerie ── -->
       <div class="proj-page__section">
-        <h2 class="proj-page__section-title">Galerie</h2>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Galerie</span><span data-lang="en">Gallery</span></h2>
         <div class="proj-page__gallery">
 
           <div class="proj-page__img-wrap">
@@ -203,7 +209,7 @@
           </div>
 
           <div class="proj-page__img-wrap">
-            <img src="../images/projects/robotic-arm/robotic-arm_visuel.png" alt="Bras robotique: rendu technique" />
+            <img src="../images/projects/robotic-arm/robotic-arm_visuel.jpg" alt="Bras robotique: rendu technique" />
           </div>
 
           <div class="proj-page__img-wrap">
@@ -215,12 +221,16 @@
 
       <!-- ── Résultats clés ── -->
       <div class="proj-page__section">
-        <h2 class="proj-page__section-title">Résultats clés</h2>
-        <ul class="proj-page__results">
+        <h2 class="proj-page__section-title"><span data-lang="fr">Résultats clés</span><span data-lang="en">Key results</span></h2>
+        <ul class="proj-page__results" data-lang="fr">
           <li>Agent DQN entraîné - précision 98 % sur partie complète</li>
           <li>Pipeline vision YOLO pour la détection du plateau et des pièces</li>
           <li>Inférence temps réel embarquée sur Raspberry Pi 5</li>
-          <!-- Ajoute d'autres résultats ici -->
+        </ul>
+        <ul class="proj-page__results" data-lang="en">
+          <li>Trained DQN agent - 98% accuracy on complete games</li>
+          <li>YOLO vision pipeline for board and piece detection</li>
+          <li>Real-time on-board inference on a Raspberry Pi 5</li>
         </ul>
       </div>
 

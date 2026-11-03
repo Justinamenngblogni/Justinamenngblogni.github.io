@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-title-fr="FlyRenov: Enrouleur de tuyau asservi pour drone | Justin Amen N&#x27;GBLOGNI" data-title-en="FlyRenov: Servo-controlled hose reel for a drone | Justin Amen N&#x27;GBLOGNI">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,6 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/subpage.js"></script>
 
   <style>
     body { background: var(--paper); }
@@ -150,36 +151,46 @@
   <main class="proj-page">
     <div class="container">
 
-      <a href="../../index.html#projects" class="proj-page__back">← Retour au portfolio</a>
+      <div class="proj-page__topbar">
+        <a href="../../index.html#projects" class="proj-page__back"><span data-lang="fr">← Retour au portfolio</span><span data-lang="en">← Back to portfolio</span></a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang-switch="fr" class="lang-switch__btn">FR</button>
+          <span class="lang-switch__divider" aria-hidden="true">·</span>
+          <button type="button" data-lang-switch="en" class="lang-switch__btn">EN</button>
+        </div>
+      </div>
 
       <p class="proj-page__num">P / 02</p>
-      <h1 class="proj-page__title">FlyRenov -<br>Enrouleur de tuyau asservi pour drone</h1>
+      <h1 class="proj-page__title">
+        <span data-lang="fr">FlyRenov -<br>Enrouleur de tuyau asservi pour drone</span>
+        <span data-lang="en">FlyRenov -<br>Servo-controlled hose reel for a drone</span>
+      </h1>
 
       <div class="proj-page__tags">
-        <span class="proj-page__tag">Mécatronique</span>
+        <span class="proj-page__tag"><span data-lang="fr">Mécatronique</span><span data-lang="en">Mechatronics</span></span>
         <span class="proj-page__tag">Value Engineering</span>
-        <span class="proj-page__tag">CAO 3DEXPERIENCE</span>
-        <span class="proj-page__tag">Dimensionnement</span>
+        <span class="proj-page__tag"><span data-lang="fr">CAO 3DEXPERIENCE</span><span data-lang="en">3DEXPERIENCE CAD</span></span>
+        <span class="proj-page__tag"><span data-lang="fr">Dimensionnement</span><span data-lang="en">Sizing</span></span>
         <span class="proj-page__tag">ESP32 / VESC</span>
-        <span class="proj-page__tag">Preuve de concept</span>
+        <span class="proj-page__tag"><span data-lang="fr">Preuve de concept</span><span data-lang="en">Proof of concept</span></span>
       </div>
 
       <div class="proj-page__meta-row">
         <div class="proj-page__meta-item">
-          <span class="proj-page__meta-label">Contexte</span>
-          <span class="proj-page__meta-value">Projet académique · ENSIL-ENSCI</span>
+          <span class="proj-page__meta-label"><span data-lang="fr">Contexte</span><span data-lang="en">Context</span></span>
+          <span class="proj-page__meta-value"><span data-lang="fr">Projet académique · ENSIL-ENSCI</span><span data-lang="en">Academic project · ENSIL-ENSCI</span></span>
         </div>
         <div class="proj-page__meta-item">
-          <span class="proj-page__meta-label">Partenaire</span>
+          <span class="proj-page__meta-label"><span data-lang="fr">Partenaire</span><span data-lang="en">Partner</span></span>
           <span class="proj-page__meta-value">Flyrenov</span>
         </div>
         <div class="proj-page__meta-item">
-          <span class="proj-page__meta-label">Période</span>
-          <span class="proj-page__meta-value">2025 – 2026 · Projet de 4ᵉ année</span>
+          <span class="proj-page__meta-label"><span data-lang="fr">Période</span><span data-lang="en">Period</span></span>
+          <span class="proj-page__meta-value"><span data-lang="fr">2025 – 2026 · Projet de 4ᵉ année</span><span data-lang="en">2025 – 2026 · 4th-year project</span></span>
         </div>
         <div class="proj-page__meta-item">
-          <span class="proj-page__meta-label">Rôle</span>
-          <span class="proj-page__meta-value">Conception mécatronique: projet en binôme</span>
+          <span class="proj-page__meta-label"><span data-lang="fr">Rôle</span><span data-lang="en">Role</span></span>
+          <span class="proj-page__meta-value"><span data-lang="fr">Conception mécatronique: projet en binôme</span><span data-lang="en">Mechatronic design: two-person project</span></span>
         </div>
         <div class="proj-page__meta-item">
           <span class="proj-page__meta-label">Organisations</span>
@@ -192,70 +203,104 @@
 
       <!-- ── Le contexte ── -->
       <div class="proj-page__section proj-page__body">
-        <h2 class="proj-page__section-title">Le contexte</h2>
-        <p><strong>FlyRenov</strong> nettoie les toitures avec un drone. Le drone ne transporte pas son eau : elle lui arrive du sol par un <strong>tuyau de 60 mètres</strong> sous haute pression. Ce tuyau est enroulé sur une machine posée au sol, appelée <strong>enrouleur</strong>.</p>
-        <p>Cette machine est le maillon faible de tout le système. Si elle est trop lourde à transporter ou trop lente à dérouler le tuyau, le drone ne peut pas travailler.</p>
-        <p>L'entreprise nous a confié sa <strong>refonte complète</strong>, à deux, dans le cadre de notre projet de 4ᵉ année. Nous étions encadrés par M. Mourioux (responsable de la spécialité Mécatronique à l'ENSIL-ENSCI) et par Mme Postec, ingénieure mécatronique R&amp;D chez FlyRenov.</p>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Le contexte</span><span data-lang="en">The context</span></h2>
+        <p data-lang="fr"><strong>FlyRenov</strong> nettoie les toitures avec un drone. Le drone ne transporte pas son eau : elle lui arrive du sol par un <strong>tuyau de 60 mètres</strong> sous haute pression. Ce tuyau est enroulé sur une machine posée au sol, appelée <strong>enrouleur</strong>.</p>
+        <p data-lang="en"><strong>FlyRenov</strong> cleans roofs with a drone. The drone does not carry its own water: it comes from the ground through a <strong>60-metre high-pressure hose</strong>. That hose is wound on a machine standing on the ground, the <strong>hose reel</strong>.</p>
+        <p data-lang="fr">Cette machine est le maillon faible de tout le système. Si elle est trop lourde à transporter ou trop lente à dérouler le tuyau, le drone ne peut pas travailler.</p>
+        <p data-lang="en">This machine is the weak link of the whole system. If it is too heavy to carry or too slow to pay out the hose, the drone cannot work.</p>
+        <p data-lang="fr">L'entreprise nous a confié sa <strong>refonte complète</strong>, à deux, dans le cadre de notre projet de 4ᵉ année. Nous étions encadrés par M. Mourioux (responsable de la spécialité Mécatronique à l'ENSIL-ENSCI) et par Mme Postec, ingénieure mécatronique R&amp;D chez FlyRenov.</p>
+        <p data-lang="en">The company entrusted the two of us with its <strong>complete redesign</strong> as our 4th-year project. We were supervised by Mr Mourioux (head of the Mechatronics programme at ENSIL-ENSCI) and Ms Postec, R&amp;D mechatronics engineer at FlyRenov.</p>
       </div>
 
       <!-- ── Le problème ── -->
       <div class="proj-page__section proj-page__body">
-        <h2 class="proj-page__section-title">Le problème de la machine existante</h2>
-        <p>La première version fonctionnait, mais restait inutilisable sur le terrain. Nous avons relevé quatre défauts :</p>
-        <ul class="proj-page__results" style="margin-bottom:16px;">
+        <h2 class="proj-page__section-title"><span data-lang="fr">Le problème de la machine existante</span><span data-lang="en">What was wrong with the existing machine</span></h2>
+        <p data-lang="fr">La première version fonctionnait, mais restait inutilisable sur le terrain. Nous avons relevé quatre défauts :</p>
+        <p data-lang="en">The first version worked, but was unusable in the field. We identified four flaws:</p>
+        <ul class="proj-page__results" style="margin-bottom:16px;" data-lang="fr">
           <li><strong>Beaucoup trop lourde.</strong> Montée sur un gros chariot fait sur mesure, elle demandait deux techniciens pour la bouger - et la hisser sur un toit devenait impossible.</li>
           <li><strong>Trop de moteurs.</strong> Quatre en tout, dont un dédié uniquement à répartir le tuyau proprement sur la bobine. Ce mouvement peut pourtant être obtenu sans moteur du tout.</li>
           <li><strong>Électronique trop compliquée.</strong> Un réseau de communication complet (bus CAN) reliait ces quatre moteurs. Pour une machine tenant sur un chariot, c'est une usine à gaz : plus de code, plus cher, et plus de pannes possibles.</li>
           <li><strong>Impossible à entretenir.</strong> Les moteurs étaient vissés sur des supports fixes. Résultat : impossible de retendre la courroie quand elle se détend, ni de la changer.</li>
         </ul>
-        <p>Notre conclusion : inutile de réparer cette version. Il fallait tout reprendre.</p>
+        <ul class="proj-page__results" style="margin-bottom:16px;" data-lang="en">
+          <li><strong>Far too heavy.</strong> Mounted on a large custom cart, it took two technicians to move it - and lifting it onto a roof was impossible.</li>
+          <li><strong>Too many motors.</strong> Four in total, one of them dedicated solely to spreading the hose evenly on the drum. That motion can be obtained with no motor at all.</li>
+          <li><strong>Overcomplicated electronics.</strong> A full communication network (CAN bus) linked the four motors. For a machine that fits on a cart, that is overkill: more code, more cost and more possible failures.</li>
+          <li><strong>Impossible to maintain.</strong> The motors were bolted to fixed brackets, so the belt could be neither re-tensioned when it slackened nor replaced.</li>
+        </ul>
+        <p data-lang="fr">Notre conclusion : inutile de réparer cette version. Il fallait tout reprendre.</p>
+        <p data-lang="en">Our conclusion: there was no point patching this version. It had to be redone from scratch.</p>
       </div>
 
       <!-- ── Notre approche ── -->
       <div class="proj-page__section proj-page__body">
-        <h2 class="proj-page__section-title">Notre approche : simplifier</h2>
-        <p>Une règle a guidé toute la refonte : <strong>supprimer ce qui n'apporte rien</strong>. Chaque pièce devait justifier sa présence. Quatre décisions en ont découlé.</p>
-        <ul class="proj-page__results">
+        <h2 class="proj-page__section-title"><span data-lang="fr">Notre approche : simplifier</span><span data-lang="en">Our approach: simplify</span></h2>
+        <p data-lang="fr">Une règle a guidé toute la refonte : <strong>supprimer ce qui n'apporte rien</strong>. Chaque pièce devait justifier sa présence. Quatre décisions en ont découlé.</p>
+        <p data-lang="en">One rule drove the whole redesign: <strong>remove whatever adds nothing</strong>. Every part had to justify its place. Four decisions followed.</p>
+        <ul class="proj-page__results" data-lang="fr">
           <li><strong>Un diable du commerce à la place du chariot.</strong> Robuste et bon marché, il est pensé pour qu'une personne seule puisse transporter l'enrouleur, y compris jusqu'à un toit. Couché à plat, il sert aussi de base stable pendant le travail.</li>
           <li><strong>Deux moteurs au lieu de quatre.</strong> Nous avons supprimé le moteur qui répartissait le tuyau sur la bobine. À la place, une courroie relie ce mécanisme à l'axe principal : sa vitesse suit automatiquement celle de la bobine, sans moteur ni code. Le rapport exact de cette courroie reste à fixer, faute de données du fournisseur.</li>
           <li><strong>Une carte au lieu d'un réseau.</strong> Le bus CAN laisse place à un <strong>ESP32</strong> qui parle directement aux contrôleurs des moteurs. C'est plus simple, plus fiable, plus facile à déboguer - et l'ESP32 a le Wi-Fi, indispensable pour la suite du projet.</li>
           <li><strong>Un support moteur réglable.</strong> Nous l'avons dessiné et usiné nous-mêmes à l'école. Il coulisse, ce qui permet de retendre la courroie en quelques secondes - l'un des défauts de l'ancienne version.</li>
         </ul>
+        <ul class="proj-page__results" data-lang="en">
+          <li><strong>An off-the-shelf hand truck instead of the cart.</strong> Sturdy and cheap, it is designed so that one person can carry the reel, even up to a roof. Laid flat, it also serves as a stable base during work.</li>
+          <li><strong>Two motors instead of four.</strong> We removed the motor that spread the hose on the drum. Instead, a belt links that mechanism to the main shaft: its speed automatically follows the drum, with no motor and no code. The exact belt ratio is still to be set, for lack of supplier data.</li>
+          <li><strong>One board instead of a network.</strong> The CAN bus gives way to an <strong>ESP32</strong> that talks directly to the motor controllers. It is simpler, more reliable, easier to debug - and the ESP32 has Wi-Fi, which the next phase of the project needs.</li>
+          <li><strong>An adjustable motor mount.</strong> We designed and machined it ourselves at school. It slides, so the belt can be re-tensioned in seconds - one of the old version's flaws.</li>
+        </ul>
       </div>
 
       <!-- ── Dimensionnement ── -->
       <div class="proj-page__section proj-page__body">
-        <h2 class="proj-page__section-title">Choisir le moteur : partir du pire scénario</h2>
-        <p>Pour choisir le moteur, nous avons imaginé la situation la plus difficile qu'il aurait à affronter : la machine posée sur un toit, la bobine pleine, et les 60 mètres de tuyau qui pendent dans le vide. C'est là que le moteur force le plus.</p>
-        <p>Le calcul se déroule ainsi :</p>
-        <ul class="proj-page__results">
+        <h2 class="proj-page__section-title"><span data-lang="fr">Choisir le moteur : partir du pire scénario</span><span data-lang="en">Choosing the motor: start from the worst case</span></h2>
+        <p data-lang="fr">Pour choisir le moteur, nous avons imaginé la situation la plus difficile qu'il aurait à affronter : la machine posée sur un toit, la bobine pleine, et les 60 mètres de tuyau qui pendent dans le vide. C'est là que le moteur force le plus.</p>
+        <p data-lang="en">To choose the motor, we pictured the hardest situation it would face: the machine on a roof, the drum full, and the 60 metres of hose hanging in the air. That is where the motor works hardest.</p>
+        <p data-lang="fr">Le calcul se déroule ainsi :</p>
+        <p data-lang="en">The calculation goes as follows:</p>
+        <ul class="proj-page__results" data-lang="fr">
           <li>60 mètres de tuyau remplis d'eau pèsent <strong>7,09 kg</strong> - c'est ce que le moteur doit retenir.</li>
           <li>Plus la bobine est pleine, plus l'effort demandé au moteur augmente. Un petit script Python simule l'enroulement couche par couche et donne le cas le plus défavorable.</li>
           <li>De là, on obtient l'effort nécessaire, que nous majorons de <strong>50 % par sécurité</strong> : le moteur doit fournir <strong>25 Nm</strong>.</li>
           <li>Le drone monte à 3 m/s : la bobine doit donc tourner à <strong>180 tours/minute</strong>.</li>
           <li>Ces deux chiffres donnent la puissance nécessaire : <strong>475 W</strong>. Nous avons choisi un moteur Nanotec de 534 W, qui garde ainsi une marge.</li>
         </ul>
-        <p>Un compromis assumé : avec notre transmission (réduction totale de 20:1), la bobine plafonne à <strong>150 tours/minute</strong>, un peu sous la cible de 180. Nous avons préféré garder du couple et laisser le moteur dans sa zone de bon rendement.</p>
+        <ul class="proj-page__results" data-lang="en">
+          <li>60 metres of water-filled hose weigh <strong>7.09 kg</strong> - that is what the motor has to hold.</li>
+          <li>The fuller the drum, the higher the load on the motor. A short Python script simulates the winding layer by layer and gives the worst case.</li>
+          <li>From there we get the required torque, which we increase by a <strong>50% safety margin</strong>: the motor must deliver <strong>25 Nm</strong>.</li>
+          <li>The drone climbs at 3 m/s, so the drum must turn at <strong>180 rpm</strong>.</li>
+          <li>Those two figures give the required power: <strong>475 W</strong>. We picked a 534 W Nanotec motor, which keeps a margin.</li>
+        </ul>
+        <p data-lang="fr">Un compromis assumé : avec notre transmission (réduction totale de 20:1), la bobine plafonne à <strong>150 tours/minute</strong>, un peu sous la cible de 180. Nous avons préféré garder du couple et laisser le moteur dans sa zone de bon rendement.</p>
+        <p data-lang="en">A deliberate trade-off: with our transmission (20:1 overall reduction), the drum tops out at <strong>150 rpm</strong>, slightly below the 180 rpm target. We chose to keep torque and leave the motor in its efficient operating range.</p>
       </div>
 
       <!-- ── Architecture électronique ── -->
       <div class="proj-page__section proj-page__body">
-        <h2 class="proj-page__section-title">L'électronique et la commande</h2>
-        <p>Trois éléments composent le système : une <strong>alimentation Mean Well</strong> de 960 W qui fournit le courant, un <strong>contrôleur Flipsky VESC</strong> qui pilote le moteur, et une carte <strong>ESP32</strong> qui donne les ordres. L'ESP32 parle au contrôleur en <strong>UART</strong>. Nous avons soudé tout le circuit sur une plaque plutôt que d'utiliser une breadboard : les vibrations de la machine auraient fini par créer des faux contacts.</p>
-        <p>L'opérateur dispose d'un bouton pour chaque sens de rotation et d'une molette pour régler la vitesse. Deux sécurités sont écrites dans le code :</p>
-        <ul class="proj-page__results">
+        <h2 class="proj-page__section-title"><span data-lang="fr">L'électronique et la commande</span><span data-lang="en">Electronics and control</span></h2>
+        <p data-lang="fr">Trois éléments composent le système : une <strong>alimentation Mean Well</strong> de 960 W qui fournit le courant, un <strong>contrôleur Flipsky VESC</strong> qui pilote le moteur, et une carte <strong>ESP32</strong> qui donne les ordres. L'ESP32 parle au contrôleur en <strong>UART</strong>. Nous avons soudé tout le circuit sur une plaque plutôt que d'utiliser une breadboard : les vibrations de la machine auraient fini par créer des faux contacts.</p>
+        <p data-lang="en">The system has three parts: a 960 W <strong>Mean Well power supply</strong>, a <strong>Flipsky VESC controller</strong> that drives the motor, and an <strong>ESP32</strong> board that gives the commands. The ESP32 talks to the controller over <strong>UART</strong>. We soldered the whole circuit on a board instead of using a breadboard: the machine's vibrations would eventually have caused loose contacts.</p>
+        <p data-lang="fr">L'opérateur dispose d'un bouton pour chaque sens de rotation et d'une molette pour régler la vitesse. Deux sécurités sont écrites dans le code :</p>
+        <p data-lang="en">The operator has one button per direction of rotation and a knob to set the speed. Two safety rules are written into the code:</p>
+        <ul class="proj-page__results" data-lang="fr">
           <li><strong>Le moteur ne tourne que si un seul bouton est enfoncé.</strong> Aucun bouton, ou les deux à la fois par erreur : arrêt immédiat.</li>
           <li><strong>La vitesse monte toujours progressivement.</strong> Même si l'opérateur pousse la molette à fond d'un coup, le moteur accélère en douceur. Sans cela, le à-coup pourrait casser les dents de la courroie ou abîmer le réducteur.</li>
+        </ul>
+        <ul class="proj-page__results" data-lang="en">
+          <li><strong>The motor only runs when exactly one button is pressed.</strong> No button, or both at once by mistake: immediate stop.</li>
+          <li><strong>Speed always ramps up gradually.</strong> Even if the operator turns the knob fully at once, the motor accelerates smoothly. Otherwise the jolt could break the belt teeth or damage the gearbox.</li>
         </ul>
       </div>
 
       <!-- ── Démonstration ── -->
       <div class="proj-page__section">
-        <h2 class="proj-page__section-title">Démonstration</h2>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Démonstration</span><span data-lang="en">Demo</span></h2>
         <div class="proj-page__video-wrap">
           <iframe
             src="https://drive.google.com/file/d/1OLgfx7na_NiyKXVI1iLqjzif7EHjpNSR/preview"
-            title="Démonstration: Enrouleur FlyRenov V2"
+            title="Démonstration: Enrouleur FlyRenov V2 / Demo: FlyRenov hose reel V2"
             allow="autoplay"
             allowfullscreen
           ></iframe>
@@ -264,11 +309,11 @@
 
       <!-- ── Galerie ── -->
       <div class="proj-page__section">
-        <h2 class="proj-page__section-title">Galerie</h2>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Galerie</span><span data-lang="en">Gallery</span></h2>
         <div class="proj-page__gallery">
 
           <div class="proj-page__img-wrap">
-            <img src="../images/projects/Flyrenov/flyrenov.png" alt="FlyRenov: modélisation CAO de l'enrouleur V2 sous 3DEXPERIENCE" loading="lazy" />
+            <img src="../images/projects/Flyrenov/flyrenov.jpg" alt="FlyRenov: modélisation CAO de l'enrouleur V2 sous 3DEXPERIENCE" loading="lazy" />
           </div>
 
           <div class="proj-page__img-wrap">
@@ -284,48 +329,64 @@
 
       <!-- ── Résultats ── -->
       <div class="proj-page__section">
-        <h2 class="proj-page__section-title">Résultats : avant / après</h2>
-        <ul class="proj-page__results">
+        <h2 class="proj-page__section-title"><span data-lang="fr">Résultats : avant / après</span><span data-lang="en">Results: before / after</span></h2>
+        <ul class="proj-page__results" data-lang="fr">
           <li>Châssis : <strong>chariot sur mesure → diable du commerce</strong>, conçu pour être déplacé par une seule personne</li>
           <li>Nombre de moteurs prévus : <strong>4 → 2</strong></li>
           <li>Électronique de commande : <strong>un réseau CAN à 4 nœuds → une seule carte ESP32</strong></li>
           <li>Coût de la motorisation : réduit d'après notre nomenclature estimative, en supprimant le matériel surdimensionné</li>
         </ul>
+        <ul class="proj-page__results" data-lang="en">
+          <li>Frame: <strong>custom cart → off-the-shelf hand truck</strong>, designed to be moved by one person</li>
+          <li>Number of planned motors: <strong>4 → 2</strong></li>
+          <li>Control electronics: <strong>a 4-node CAN network → a single ESP32 board</strong></li>
+          <li>Drive-train cost: reduced according to our estimated bill of materials, by removing oversized hardware</li>
+        </ul>
       </div>
 
       <!-- ── Statut ── -->
       <div class="proj-page__section proj-page__body">
-        <h2 class="proj-page__section-title">Statut : preuve de concept</h2>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Statut : preuve de concept</span><span data-lang="en">Status: proof of concept</span></h2>
         <div class="proj-page__highlight">
-          <p>Ce que nous avons livré est une <strong>preuve de concept</strong>, pas une machine finie. Le but était de valider l'architecture, pas de la produire en série.</p>
+          <p data-lang="fr">Ce que nous avons livré est une <strong>preuve de concept</strong>, pas une machine finie. Le but était de valider l'architecture, pas de la produire en série.</p>
+          <p data-lang="en">What we delivered is a <strong>proof of concept</strong>, not a finished machine. The goal was to validate the architecture, not to mass-produce it.</p>
         </div>
-        <p>C'est pourquoi le support moteur a été usiné en <strong>PVC</strong>, une matière peu chère, et non en aluminium. Ce prototype est fait pour être jeté : il sert à vérifier que les pièces s'ajustent bien et que le réglage de la courroie est pratique. Une fois ces points confirmés, on peut passer à l'aluminium sans risquer de gâcher une matière coûteuse et des heures de machine.</p>
-        <p>Nous avons aussi conçu les pièces pour qu'elles soient <strong>simples à fabriquer</strong> : tous les trous de passage ont le même diamètre, ce qui permet de tout usiner avec un seul outil, sans jamais le changer. Et toutes les pièces ont la même épaisseur, pour être découpées dans une seule plaque.</p>
+        <p data-lang="fr">C'est pourquoi le support moteur a été usiné en <strong>PVC</strong>, une matière peu chère, et non en aluminium. Ce prototype est fait pour être jeté : il sert à vérifier que les pièces s'ajustent bien et que le réglage de la courroie est pratique. Une fois ces points confirmés, on peut passer à l'aluminium sans risquer de gâcher une matière coûteuse et des heures de machine.</p>
+        <p data-lang="en">That is why the motor mount was machined from <strong>PVC</strong>, a cheap material, rather than aluminium. This prototype is meant to be thrown away: it checks that the parts fit and that belt adjustment is practical. Once that is confirmed, we can move to aluminium without wasting expensive material and machine hours.</p>
+        <p data-lang="fr">Nous avons aussi conçu les pièces pour qu'elles soient <strong>simples à fabriquer</strong> : tous les trous de passage ont le même diamètre, ce qui permet de tout usiner avec un seul outil, sans jamais le changer. Et toutes les pièces ont la même épaisseur, pour être découpées dans une seule plaque.</p>
+        <p data-lang="en">We also designed the parts to be <strong>easy to manufacture</strong>: all clearance holes share the same diameter, so everything can be machined with a single tool without ever changing it. And all parts have the same thickness, so they can be cut from a single plate.</p>
       </div>
 
       <!-- ── Perspectives ── -->
       <div class="proj-page__section proj-page__body">
-        <h2 class="proj-page__section-title">Perspectives</h2>
-        <p>Le but final de FlyRenov est un enrouleur qui suit le drone tout seul. Le choix de l'ESP32, avec son Wi-Fi, ouvre déjà cette porte. Trois chantiers restent à mener :</p>
-        <ul class="proj-page__results">
+        <h2 class="proj-page__section-title"><span data-lang="fr">Perspectives</span><span data-lang="en">Next steps</span></h2>
+        <p data-lang="fr">Le but final de FlyRenov est un enrouleur qui suit le drone tout seul. Le choix de l'ESP32, avec son Wi-Fi, ouvre déjà cette porte. Trois chantiers restent à mener :</p>
+        <p data-lang="en">FlyRenov's end goal is a reel that follows the drone on its own. Choosing the ESP32, with its Wi-Fi, already opens that door. Three work streams remain:</p>
+        <ul class="proj-page__results" data-lang="fr">
           <li><strong>Suivre le drone automatiquement.</strong> Le drone enverrait sa position GPS à l'enrouleur, qui déroulerait juste ce qu'il faut de tuyau. La contrainte : toujours laisser 1 à 2 mètres de mou au sol, pour ne jamais tirer sur le drone en vol.</li>
           <li><strong>Enrouler le tuyau bien serré, sans tirer sur le drone.</strong> Deux besoins contradictoires. La solution envisagée est un système à galets qui sépare la machine en deux zones : le tuyau est tendu côté bobine, détendu côté drone.</li>
           <li><strong>Protéger l'électronique.</strong> Au rembobinage, le tuyau entraîne le moteur du système à galets, qui se met alors à produire du courant au lieu d'en consommer. Ce courant peut détruire l'alimentation. Il faudra soit le dissiper en chaleur, soit le stocker dans une batterie.</li>
+        </ul>
+        <ul class="proj-page__results" data-lang="en">
+          <li><strong>Follow the drone automatically.</strong> The drone would send its GPS position to the reel, which would pay out just the right amount of hose. The constraint: always leave 1 to 2 metres of slack on the ground, so the drone is never pulled in flight.</li>
+          <li><strong>Wind the hose tightly without pulling on the drone.</strong> Two conflicting needs. The solution under consideration is a roller system that splits the machine into two zones: the hose is tensioned on the drum side and slack on the drone side.</li>
+          <li><strong>Protect the electronics.</strong> When rewinding, the hose drives the roller motor, which then generates current instead of consuming it. That current can destroy the power supply. It will have to be either dissipated as heat or stored in a battery.</li>
         </ul>
       </div>
 
       <!-- ── Rapport ── -->
       <div class="proj-page__section">
-        <h2 class="proj-page__section-title">Rapport de projet</h2>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Rapport de projet</span><span data-lang="en">Project report</span></h2>
         <div class="proj-page__body">
-          <p>Le rapport complet (34 pages) détaille l'état de l'art, les notes de calcul, la modélisation CAO, l'architecture électronique et les annexes de dimensionnement.</p>
+          <p data-lang="fr">Le rapport complet (34 pages) détaille l'état de l'art, les notes de calcul, la modélisation CAO, l'architecture électronique et les annexes de dimensionnement.</p>
+          <p data-lang="en">The full report (34 pages, in French) covers the state of the art, the calculations, the CAD model, the electronic architecture and the sizing appendices.</p>
         </div>
         <a
           href="../docs/Flyrenov-Rapport-Projet.pdf"
           target="_blank"
           rel="noopener"
           class="proj-page__ext-link"
-        >Lire le rapport complet (PDF) →</a>
+        ><span data-lang="fr">Lire le rapport complet (PDF) →</span><span data-lang="en">Read the full report (PDF, French) →</span></a>
       </div>
 
       <!-- ── Technologies ── -->
@@ -338,9 +399,9 @@
           <li>UART</li>
           <li>C / C++</li>
           <li>Python</li>
-          <li>Usinage CNC 3 axes</li>
+          <li><span data-lang="fr">Usinage CNC 3 axes</span><span data-lang="en">3-axis CNC machining</span></li>
           <li>DFMA</li>
-          <li>Dimensionnement mécanique (RDM)</li>
+          <li><span data-lang="fr">Dimensionnement mécanique (RDM)</span><span data-lang="en">Mechanical sizing (strength of materials)</span></li>
         </ul>
       </div>
 

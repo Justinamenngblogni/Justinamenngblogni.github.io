@@ -1013,3 +1013,17 @@ h1, h2, h3, h4, p { margin: 0; }
   .cert-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 }
+
+
+/* ---------- Pages projet / expérience : contenu bilingue ---------- */
+html[lang="fr"] [data-lang="en"],
+html[lang="en"] [data-lang="fr"] { display: none !important; }
+
+.proj-page__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.proj-page__topbar .proj-page__back { margin-bottom: 0; }

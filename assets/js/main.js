@@ -36,9 +36,9 @@ const TRANSLATIONS = {
       heading: "À propos",
       lead: "Élève-ingénieur en mécatronique passionné par l'Embodied AI : donner à des robots la perception et le contrôle nécessaires pour agir de façon autonome dans le monde réel.",
       body: "Mon travail se situe à la frontière entre la perception et la décision - de la segmentation sémantique embarquée jusqu'au contrôle prédictif sous incertitude. Au Politecnico di Torino (DIMEAS), j'ai développé une carte de risque par caméra RGB-D et un contrôleur GPU MPPI qui en tient compte, avec un modèle mathématique validé qui prédit son comportement. Je suis actuellement en année d'échange de fin d'études à l'ISAE-Supméca (« Mécatronique & systèmes complexes »), et je recherche un stage de fin d'études (mars – septembre 2027) en robotique, perception ou contrôle au sein d'une équipe de pointe en Embodied AI.",
-      stat2: "Ans en IA & robotique",
-      stat3: "Langues parlées",
-      stat4: "Projets techniques"
+      stat2: "d'exposition au risque, mesurée sur robot réel",
+      stat3: "trajectoires évaluées par cycle, à 14 Hz",
+      stat4: "éditions comme formateur (~100 participants chacune)"
     },
     projects: {
       heading: "Projets sélectionnés",
@@ -98,6 +98,8 @@ const TRANSLATIONS = {
     },
     experience: {
       heading: "Expérience professionnelle",
+      loc_italy: ": Italie",
+      loc_benin: ": Bénin",
       polito: {
         dates: "Mai – Juillet 2026",
         role: "Stagiaire R&D: Perception & navigation risk-aware",
@@ -190,9 +192,9 @@ const TRANSLATIONS = {
       heading: "About",
       lead: "Mechatronics engineering student driven by Embodied AI - giving robots the perception and control they need to act autonomously in the real world.",
       body: "My work sits at the boundary between perception and decision-making - from on-device semantic segmentation to predictive control under uncertainty. At Politecnico di Torino (DIMEAS), I built an RGB-D camera-based risk map and a GPU MPPI controller that acts on it, backed by a validated quantitative model of its behaviour. I am currently in my final-year exchange at ISAE-Supméca (\"Mechatronics & Complex Systems\"), and I am seeking a final-year internship (March – September 2027) in robotics, perception or control with a leading Embodied AI team.",
-      stat2: "Years in AI & robotics",
-      stat3: "Languages spoken",
-      stat4: "Technical projects"
+      stat2: "risk exposure, measured on a real robot",
+      stat3: "trajectories evaluated per cycle, at 14 Hz",
+      stat4: "editions as an instructor (~100 participants each)"
     },
     projects: {
       heading: "Selected work",
@@ -252,6 +254,8 @@ const TRANSLATIONS = {
     },
     experience: {
       heading: "Professional experience",
+      loc_italy: ": Italy",
+      loc_benin: ": Benin",
       polito: {
         dates: "May – July 2026",
         role: "R&D Intern: Perception & Risk-Aware Navigation",

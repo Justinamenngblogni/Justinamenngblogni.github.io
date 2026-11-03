@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-title-fr="Navigation risk-aware d&#x27;un UGV | Justin Amen N&#x27;GBLOGNI" data-title-en="Risk-aware UGV navigation | Justin Amen N&#x27;GBLOGNI">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,6 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/subpage.js"></script>
 
   <style>
     body { background: var(--paper); }
@@ -155,15 +156,25 @@
   <main class="proj-page">
     <div class="container">
 
-      <a href="../../index.html#projects" class="proj-page__back">← Retour au portfolio</a>
+      <div class="proj-page__topbar">
+        <a href="../../index.html#projects" class="proj-page__back"><span data-lang="fr">← Retour au portfolio</span><span data-lang="en">← Back to portfolio</span></a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang-switch="fr" class="lang-switch__btn">FR</button>
+          <span class="lang-switch__divider" aria-hidden="true">·</span>
+          <button type="button" data-lang-switch="en" class="lang-switch__btn">EN</button>
+        </div>
+      </div>
 
       <p class="proj-page__num">P / 01</p>
-      <h1 class="proj-page__title">Navigation risk-aware d'un UGV -<br>Perception, MPPI &amp; modélisation</h1>
+      <h1 class="proj-page__title">
+        <span data-lang="fr">Navigation risk-aware d'un UGV -<br>Perception, MPPI &amp; modélisation</span>
+        <span data-lang="en">Risk-aware UGV navigation -<br>Perception, MPPI &amp; modelling</span>
+      </h1>
 
       <div class="proj-page__tags">
         <span class="proj-page__tag">Embodied AI</span>
-        <span class="proj-page__tag">Perception sémantique</span>
-        <span class="proj-page__tag">Traversabilité</span>
+        <span class="proj-page__tag"><span data-lang="fr">Perception sémantique</span><span data-lang="en">Semantic perception</span></span>
+        <span class="proj-page__tag"><span data-lang="fr">Traversabilité</span><span data-lang="en">Traversability</span></span>
         <span class="proj-page__tag">MPPI GPU / CUDA</span>
         <span class="proj-page__tag">ROS 2 Jazzy</span>
         <span class="proj-page__tag">Gazebo Harmonic</span>
@@ -172,20 +183,20 @@
 
       <div class="proj-page__meta-row">
         <div class="proj-page__meta-item">
-          <span class="proj-page__meta-label">Contexte</span>
-          <span class="proj-page__meta-value">Stage · Politecnico di Torino</span>
+          <span class="proj-page__meta-label"><span data-lang="fr">Contexte</span><span data-lang="en">Context</span></span>
+          <span class="proj-page__meta-value"><span data-lang="fr">Stage · Politecnico di Torino</span><span data-lang="en">Internship · Politecnico di Torino</span></span>
         </div>
         <div class="proj-page__meta-item">
-          <span class="proj-page__meta-label">Laboratoire</span>
+          <span class="proj-page__meta-label"><span data-lang="fr">Laboratoire</span><span data-lang="en">Department</span></span>
           <span class="proj-page__meta-value">DIMEAS</span>
         </div>
         <div class="proj-page__meta-item">
-          <span class="proj-page__meta-label">Période</span>
-          <span class="proj-page__meta-value">Mai – Juillet 2026</span>
+          <span class="proj-page__meta-label"><span data-lang="fr">Période</span><span data-lang="en">Period</span></span>
+          <span class="proj-page__meta-value"><span data-lang="fr">Mai – Juillet 2026</span><span data-lang="en">May – July 2026</span></span>
         </div>
         <div class="proj-page__meta-item">
-          <span class="proj-page__meta-label">Rôle</span>
-          <span class="proj-page__meta-value">Stagiaire R&amp;D: Perception &amp; contrôle</span>
+          <span class="proj-page__meta-label"><span data-lang="fr">Rôle</span><span data-lang="en">Role</span></span>
+          <span class="proj-page__meta-value"><span data-lang="fr">Stagiaire R&amp;D: Perception &amp; contrôle</span><span data-lang="en">R&amp;D intern: Perception &amp; control</span></span>
         </div>
         <div class="proj-page__meta-item">
           <span class="proj-page__meta-label">Institution</span>
@@ -197,43 +208,54 @@
       <img
         class="proj-page__hero-img proj-page__hero-img--photo"
         src="../images/projects/MPPI/real-robot-mppi.jpg"
-        alt="TurtleBot 4 réel en salle de test, avec les trajectoires candidates du MPPI projetées au-dessus"
+        alt="TurtleBot 4 réel en salle de test, avec les trajectoires candidates du MPPI projetées au-dessus / Real TurtleBot 4 in the test room, with the MPPI candidate trajectories projected above"
       />
 
       <!-- ── Le problème ── -->
       <div class="proj-page__section proj-page__body">
-        <h2 class="proj-page__section-title">Le problème</h2>
-        <p>Un robot mobile d'intérieur doit éviter des dangers qu'un <strong>LiDAR 2D standard ne peut tout simplement pas percevoir</strong> : sol mouillé, boue, tapis épais, seuils de porte. Le faisceau LiDAR balaie un seul plan horizontal et ne réagit qu'aux obstacles rigides verticaux - il ne fait aucune différence entre un carrelage sec et un carrelage mouillé, et ne perçoit un escalier que par sa première marche. Géométriquement, ces surfaces sont <em>plates</em> ; physiquement, elles peuvent faire déraper ou enliser le robot.</p>
-        <p>Le <strong>MPPI</strong> (Model Predictive Path Integral) est un contrôleur d'échantillonnage stochastique massivement parallèle, très efficace pour la navigation d'un véhicule terrestre autonome (UGV) : il génère des milliers de trajectoires candidates à chaque pas de temps sur GPU et retient le meilleur compromis selon une fonction de coût. Mais le MPPI classique ne raisonne que sur une carte d'occupation géométrique : sans perception sémantique, il ne peut tout simplement pas voir le danger.</p>
-        <p>Mon stage au <strong>Politecnico di Torino (DIMEAS)</strong>, sous la supervision des Prof. Fausto Francesco Lizzio et Elisa Capello, a consisté à combler ce manque de perception, en donnant au contrôleur une <strong>compréhension du terrain</strong> - sa nature, et non plus seulement sa géométrie.</p>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Le problème</span><span data-lang="en">The problem</span></h2>
+        <p data-lang="fr">Un robot mobile d'intérieur doit éviter des dangers qu'un <strong>LiDAR 2D standard ne peut tout simplement pas percevoir</strong> : sol mouillé, boue, tapis épais, seuils de porte. Le faisceau LiDAR balaie un seul plan horizontal et ne réagit qu'aux obstacles rigides verticaux - il ne fait aucune différence entre un carrelage sec et un carrelage mouillé, et ne perçoit un escalier que par sa première marche. Géométriquement, ces surfaces sont <em>plates</em> ; physiquement, elles peuvent faire déraper ou enliser le robot.</p>
+        <p data-lang="en">An indoor mobile robot has to avoid hazards that a <strong>standard 2D LiDAR simply cannot perceive</strong>: wet floors, mud, thick carpet, door thresholds. The LiDAR beam sweeps a single horizontal plane and only reacts to rigid vertical obstacles - it cannot tell dry tiles from wet ones, and it only sees a staircase through its first step. Geometrically these surfaces are <em>flat</em>; physically, they can make the robot slip or get stuck.</p>
+        <p data-lang="fr">Le <strong>MPPI</strong> (Model Predictive Path Integral) est un contrôleur d'échantillonnage stochastique massivement parallèle, très efficace pour la navigation d'un véhicule terrestre autonome (UGV) : il génère des milliers de trajectoires candidates à chaque pas de temps sur GPU et retient le meilleur compromis selon une fonction de coût. Mais le MPPI classique ne raisonne que sur une carte d'occupation géométrique : sans perception sémantique, il ne peut tout simplement pas voir le danger.</p>
+        <p data-lang="en"><strong>MPPI</strong> (Model Predictive Path Integral) is a massively parallel, sampling-based stochastic controller that works very well for unmanned ground vehicle (UGV) navigation: at every time step it rolls out thousands of candidate trajectories on the GPU and keeps the best trade-off according to a cost function. But standard MPPI only reasons over a geometric occupancy map: without semantic perception, it simply cannot see the hazard.</p>
+        <p data-lang="fr">Mon stage au <strong>Politecnico di Torino (DIMEAS)</strong>, sous la supervision des Prof. Fausto Francesco Lizzio et Elisa Capello, a consisté à combler ce manque de perception, en donnant au contrôleur une <strong>compréhension du terrain</strong> - sa nature, et non plus seulement sa géométrie.</p>
+        <p data-lang="en">My internship at <strong>Politecnico di Torino (DIMEAS)</strong>, supervised by Prof. Fausto Francesco Lizzio and Prof. Elisa Capello, was about closing that perception gap by giving the controller an <strong>understanding of the terrain</strong> - what it is made of, not just its geometry.</p>
       </div>
 
       <!-- ── Mon approche ── -->
       <div class="proj-page__section proj-page__body">
-        <h2 class="proj-page__section-title">Mon approche</h2>
-        <p>J'ai construit un pipeline en deux temps, connectés par une seule interface : une carte de coût publiée en temps réel sur ROS 2.</p>
-        <p><strong>1. Perception - une carte de risque à deux couches.</strong> Une couche <strong>sémantique</strong> : un réseau de segmentation transforme chaque pixel caméra en un risque attendu R(p) = Σ r_c · P(c|p). J'ai entraîné et comparé trois architectures - <strong>SegFormer-B0, DeepLabV3+/MobileNetV2 et YOLO26</strong> - et retenu YOLO26 pour le déploiement : à précision quasi identique, il est <strong>5 à 6× plus rapide en inférence CPU</strong> (≈46 FPS contre 7-10 FPS), ce qui permet un fonctionnement embarqué sans GPU. Une couche <strong>géométrique</strong> : les obstacles rigides (murs, objets) sont détectés depuis le nuage de points de la caméra de profondeur OAK-D Pro. Les deux couches sont fusionnées par un maximum prudent et accumulées dans une carte de coût persistante en vue de dessus (costmap).</p>
-        <p><strong>2. Contrôle - un contrôleur GPU risk-aware MPPI.</strong> Construit sur la bibliothèque MPPI-Generic, avec une fonction de coût personnalisée en CUDA qui échantillonne directement la carte de risque comme une texture GPU. Un unique paramètre, λ_risk, règle le comportement du robot, du risque-aveugle (MPPI standard) au fortement risque-averse. Le contrôleur simule 5120 trajectoires en parallèle à chaque cycle de décision, à 14 Hz, sur un horizon de ~14 secondes.</p>
-        <p><strong>3. Le point le plus différenciant - un modèle d'arbitrage de coût.</strong> Au-delà de l'implémentation, j'ai dérivé analytiquement un modèle qui prédit, pour un danger et une géométrie donnés, le seuil exact de λ_risk auquel le robot bascule de « traverser » à « faire un détour ». Testé contre des mesures réelles, ce modèle initial sous-estimait le seuil d'un ordre de grandeur ; corrigé en identifiant le facteur manquant (le poids de distance à l'objectif du contrôleur), il prédit ensuite le bon ordre de grandeur du seuil mesuré. Une vraie démarche scientifique - hypothèse, test, correction, revalidation, discussion des limites restantes - plutôt qu'un réglage empirique par essai-erreur.</p>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Mon approche</span><span data-lang="en">My approach</span></h2>
+        <p data-lang="fr">J'ai construit un pipeline en deux temps, connectés par une seule interface : une carte de coût publiée en temps réel sur ROS 2.</p>
+        <p data-lang="en">I built a two-stage pipeline joined by a single interface: a cost map published in real time over ROS 2.</p>
+        <p data-lang="fr"><strong>1. Perception - une carte de risque à deux couches.</strong> Une couche <strong>sémantique</strong> : un réseau de segmentation transforme chaque pixel caméra en un risque attendu R(p) = Σ r_c · P(c|p). J'ai entraîné et comparé trois architectures - <strong>SegFormer-B0, DeepLabV3+/MobileNetV2 et YOLO26</strong> - et retenu YOLO26 pour le déploiement : à précision quasi identique, il est <strong>5 à 6× plus rapide en inférence CPU</strong> (≈46 FPS contre 7-10 FPS), ce qui permet un fonctionnement embarqué sans GPU. Une couche <strong>géométrique</strong> : les obstacles rigides (murs, objets) sont détectés depuis le nuage de points de la caméra de profondeur OAK-D Pro. Les deux couches sont fusionnées par un maximum prudent et accumulées dans une carte de coût persistante en vue de dessus (costmap).</p>
+        <p data-lang="en"><strong>1. Perception - a two-layer risk map.</strong> A <strong>semantic</strong> layer: a segmentation network turns every camera pixel into an expected risk R(p) = Σ r_c · P(c|p). I trained and compared three architectures - <strong>SegFormer-B0, DeepLabV3+/MobileNetV2 and YOLO26</strong> - and selected YOLO26 for deployment: at nearly the same accuracy it is <strong>5 to 6× faster on CPU inference</strong> (≈46 FPS vs 7-10 FPS), which allows GPU-free embedded operation. A <strong>geometric</strong> layer: rigid obstacles (walls, objects) are detected from the OAK-D Pro depth point cloud. Both layers are fused with a conservative maximum and accumulated into a persistent bird's-eye-view cost map (costmap).</p>
+        <p data-lang="fr"><strong>2. Contrôle - un contrôleur GPU risk-aware MPPI.</strong> Construit sur la bibliothèque MPPI-Generic, avec une fonction de coût personnalisée en CUDA qui échantillonne directement la carte de risque comme une texture GPU. Un unique paramètre, λ_risk, règle le comportement du robot, du risque-aveugle (MPPI standard) au fortement risque-averse. Le contrôleur simule 5120 trajectoires en parallèle à chaque cycle de décision, à 14 Hz, sur un horizon de ~14 secondes.</p>
+        <p data-lang="en"><strong>2. Control - a risk-aware GPU MPPI controller.</strong> Built on the MPPI-Generic library, with a custom CUDA cost function that samples the risk map directly as a GPU texture. A single parameter, λ_risk, tunes the robot's behaviour from risk-blind (standard MPPI) to strongly risk-averse. The controller simulates 5,120 trajectories in parallel at every decision cycle, at 14 Hz, over a ~14-second horizon.</p>
+        <p data-lang="fr"><strong>3. Le point le plus différenciant - un modèle d'arbitrage de coût.</strong> Au-delà de l'implémentation, j'ai dérivé analytiquement un modèle qui prédit, pour un danger et une géométrie donnés, le seuil exact de λ_risk auquel le robot bascule de « traverser » à « faire un détour ». Testé contre des mesures réelles, ce modèle initial sous-estimait le seuil d'un ordre de grandeur ; corrigé en identifiant le facteur manquant (le poids de distance à l'objectif du contrôleur), il prédit ensuite le bon ordre de grandeur du seuil mesuré. Une vraie démarche scientifique - hypothèse, test, correction, revalidation, discussion des limites restantes - plutôt qu'un réglage empirique par essai-erreur.</p>
+        <p data-lang="en"><strong>3. What sets it apart - a cost-arbitration model.</strong> Beyond the implementation, I analytically derived a model that predicts, for a given hazard and geometry, the exact λ_risk threshold at which the robot switches from "cross" to "detour". Tested against real measurements, this first model underestimated the threshold by an order of magnitude; once corrected by identifying the missing factor (the controller's goal-distance weight), it then predicted the right order of magnitude of the measured threshold. A genuine scientific loop - hypothesis, test, correction, revalidation, discussion of the remaining limits - rather than trial-and-error tuning.</p>
       </div>
 
       <!-- ── Ce que j'ai construit ── -->
       <div class="proj-page__section proj-page__body">
-        <h2 class="proj-page__section-title">Ce que j'ai construit</h2>
-        <p>J'ai mis en place une <strong>chaîne de simulation complète sous Gazebo Harmonic et ROS 2 Jazzy</strong>, autour d'un <strong>TurtleBot 4</strong> (base iRobot Create 3, caméra OAK-D Pro RGB-D, LiDAR RPLIDAR A1, Raspberry Pi 4). Plusieurs mondes de simulation ont servi de bancs d'essai : un entrepôt multi-pièces pour la capture du jeu de données, une arène nue reproduisant les dimensions du cage de test réel, et des scénarios contrôlés isolant chacun une décision précise du contrôleur (traversée forcée, détour évitable, slalom).</p>
-        <p>Sur deux scénarios contrôlés, comparer le MPPI standard (λ_risk = 0) au MPPI risk-aware réglé donne des résultats chiffrés nets : <strong>44 % de réduction</strong> de l'exposition au risque réel sur une traversée forcée mur-à-mur, et <strong>100 % de réduction</strong> sur une zone évitable en champ ouvert (le robot l'évite entièrement via un léger détour) - pour un surcoût de seulement <strong>2 à 9 %</strong> en distance et en temps. J'ai aussi identifié un régime de λ_risk trop élevé où plus de prudence n'apporte plus aucun bénéfice de sécurité et déstabilise au contraire le contrôleur dans une hésitation indéfinie (le robot tourne en rond sans avancer) - un phénomène de blocage documenté et expliqué par le modèle théorique.</p>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Ce que j'ai construit</span><span data-lang="en">What I built</span></h2>
+        <p data-lang="fr">J'ai mis en place une <strong>chaîne de simulation complète sous Gazebo Harmonic et ROS 2 Jazzy</strong>, autour d'un <strong>TurtleBot 4</strong> (base iRobot Create 3, caméra OAK-D Pro RGB-D, LiDAR RPLIDAR A1, Raspberry Pi 4). Plusieurs mondes de simulation ont servi de bancs d'essai : un entrepôt multi-pièces pour la capture du jeu de données, une arène nue reproduisant les dimensions du cage de test réel, et des scénarios contrôlés isolant chacun une décision précise du contrôleur (traversée forcée, détour évitable, slalom).</p>
+        <p data-lang="en">I set up a <strong>complete simulation pipeline in Gazebo Harmonic and ROS 2 Jazzy</strong> around a <strong>TurtleBot 4</strong> (iRobot Create 3 base, OAK-D Pro RGB-D camera, RPLIDAR A1 LiDAR, Raspberry Pi 4). Several simulated worlds served as test benches: a multi-room warehouse for dataset capture, a bare arena matching the dimensions of the real test cage, and controlled scenarios each isolating one specific controller decision (forced crossing, avoidable detour, slalom).</p>
+        <p data-lang="fr">Sur deux scénarios contrôlés, comparer le MPPI standard (λ_risk = 0) au MPPI risk-aware réglé donne des résultats chiffrés nets : <strong>44 % de réduction</strong> de l'exposition au risque réel sur une traversée forcée mur-à-mur, et <strong>100 % de réduction</strong> sur une zone évitable en champ ouvert (le robot l'évite entièrement via un léger détour) - pour un surcoût de seulement <strong>2 à 9 %</strong> en distance et en temps. J'ai aussi identifié un régime de λ_risk trop élevé où plus de prudence n'apporte plus aucun bénéfice de sécurité et déstabilise au contraire le contrôleur dans une hésitation indéfinie (le robot tourne en rond sans avancer) - un phénomène de blocage documenté et expliqué par le modèle théorique.</p>
+        <p data-lang="en">On two controlled scenarios, comparing standard MPPI (λ_risk = 0) with the tuned risk-aware MPPI gives clear figures: a <strong>44% reduction</strong> in real risk exposure on a wall-to-wall forced crossing, and a <strong>100% reduction</strong> on an avoidable zone in open space (the robot avoids it entirely with a slight detour) - for an overhead of only <strong>2 to 9%</strong> in distance and time. I also identified a regime where λ_risk is too high: extra caution no longer brings any safety benefit and instead destabilises the controller into endless hesitation (the robot circles without making progress) - a deadlock documented and explained by the theoretical model.</p>
       </div>
 
       <!-- ── Démonstration ── -->
       <div class="proj-page__section proj-page__body">
-        <h2 class="proj-page__section-title">Démonstration sur robot réel</h2>
-        <p>Le contrôleur a été démontré sur un <strong>TurtleBot 4 physique</strong> : piloté par une carte de risque « vérité terrain » injectée directement dans le costmap (sans caméra pour cette démonstration précise), le robot navigue réellement dans une pièce en évitant des obstacles qui n'existent que virtuellement dans la carte de coût - une façon contrôlée, reproductible et sans danger matériel de valider le comportement d'évitement de risque sur du vrai hardware.</p>
-        <p>L'intégration complète (perception embarquée par caméra + contrôle, simultanément sur le robot réel) a été tentée via une architecture « ghost-twin » avec un jumeau numérique Gazebo télé-porté en temps réel, mais n'a pas abouti dans le temps du stage à cause de problèmes de fiabilité réseau (DDS) entre le robot réel et la simulation - c'est le prochain travail à faire.</p>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Démonstration sur robot réel</span><span data-lang="en">Real-robot demonstration</span></h2>
+        <p data-lang="fr">Le contrôleur a été démontré sur un <strong>TurtleBot 4 physique</strong> : piloté par une carte de risque « vérité terrain » injectée directement dans le costmap (sans caméra pour cette démonstration précise), le robot navigue réellement dans une pièce en évitant des obstacles qui n'existent que virtuellement dans la carte de coût - une façon contrôlée, reproductible et sans danger matériel de valider le comportement d'évitement de risque sur du vrai hardware.</p>
+        <p data-lang="en">The controller was demonstrated on a <strong>physical TurtleBot 4</strong>: driven by a ground-truth risk map injected directly into the costmap (no camera for this particular demo), the robot really navigates a room while avoiding obstacles that only exist virtually in the cost map - a controlled, repeatable and hardware-safe way to validate the risk-avoidance behaviour on real hardware.</p>
+        <p data-lang="fr">L'intégration complète (perception embarquée par caméra + contrôle, simultanément sur le robot réel) a été tentée via une architecture « ghost-twin » avec un jumeau numérique Gazebo télé-porté en temps réel, mais n'a pas abouti dans le temps du stage à cause de problèmes de fiabilité réseau (DDS) entre le robot réel et la simulation - c'est le prochain travail à faire.</p>
+        <p data-lang="en">Full integration (on-board camera perception + control, simultaneously on the real robot) was attempted through a "ghost-twin" architecture with a Gazebo digital twin teleported in real time, but it could not be completed within the internship because of network reliability issues (DDS) between the real robot and the simulation - that is the next piece of work.</p>
 
         <div class="proj-page__video-wrap">
           <iframe
             src="https://drive.google.com/file/d/1EgCXSaA-Gcz2t4EypNRYb2ZLguNzFEVu/preview"
-            title="Démonstration: navigation risk-aware sur TurtleBot 4"
+            title="Démonstration: navigation risk-aware sur TurtleBot 4 / Demo: risk-aware navigation on TurtleBot 4"
             allow="autoplay"
             allowfullscreen
           ></iframe>
@@ -245,43 +267,42 @@
           target="_blank"
           rel="noopener"
           style="margin-top: 20px; display: inline-flex;"
-        >Voir toutes les vidéos de démonstration (simulation + robot réel) →</a>
+        ><span data-lang="fr">Voir toutes les vidéos de démonstration (simulation + robot réel) →</span><span data-lang="en">Watch all demo videos (simulation + real robot) →</span></a>
       </div>
 
       <!-- ── Galerie ── -->
       <div class="proj-page__section">
-        <h2 class="proj-page__section-title">Galerie</h2>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Galerie</span><span data-lang="en">Gallery</span></h2>
         <div class="proj-page__gallery">
 
           <figure class="proj-page__fig">
             <a class="proj-page__img-wrap proj-page__img-wrap--figure" href="../images/projects/MPPI/architecture.jpg" target="_blank" rel="noopener">
               <img src="../images/projects/MPPI/architecture.jpg" alt="Architecture du système : perception sémantique (YOLO26) et géométrique (profondeur OAK-D) fusionnées dans une costmap de risque, qui alimente le contrôleur MPPI sur GPU" loading="lazy" />
             </a>
-            <figcaption>Architecture : perception sémantique + géométrique → costmap de risque → MPPI sur GPU</figcaption>
+            <figcaption><span data-lang="fr">Architecture : perception sémantique + géométrique → costmap de risque → MPPI sur GPU</span><span data-lang="en">Architecture: semantic + geometric perception → risk costmap → GPU MPPI</span></figcaption>
           </figure>
 
           <figure class="proj-page__fig">
             <a class="proj-page__img-wrap proj-page__img-wrap--figure" href="../images/projects/MPPI/risk-map-yolo26.jpg" target="_blank" rel="noopener">
               <img src="../images/projects/MPPI/risk-map-yolo26.jpg" alt="Carte de risque sémantique YOLO26 : image RGB, segmentation, risque attendu par pixel et incertitude (entropie)" loading="lazy" />
             </a>
-            <figcaption>Carte de risque sémantique (YOLO26) : segmentation, risque par pixel, incertitude</figcaption>
+            <figcaption><span data-lang="fr">Carte de risque sémantique (YOLO26) : segmentation, risque par pixel, incertitude</span><span data-lang="en">Semantic risk map (YOLO26): segmentation, per-pixel risk, uncertainty</span></figcaption>
           </figure>
 
           <figure class="proj-page__fig">
             <a class="proj-page__img-wrap" href="../images/projects/MPPI/gazebo-rviz.jpg" target="_blank" rel="noopener">
               <img src="../images/projects/MPPI/gazebo-rviz.jpg" alt="Simulation Gazebo Harmonic de l'entrepôt avec zones à risque, et costmap de risque avec trajectoire dans RViz" loading="lazy" />
             </a>
-            <figcaption>Simulation Gazebo (warehouse_risk) et costmap de risque dans RViz</figcaption>
+            <figcaption><span data-lang="fr">Simulation Gazebo (warehouse_risk) et costmap de risque dans RViz</span><span data-lang="en">Gazebo simulation (warehouse_risk) and risk costmap in RViz</span></figcaption>
           </figure>
-
 
         </div>
       </div>
 
       <!-- ── Résultats ── -->
       <div class="proj-page__section">
-        <h2 class="proj-page__section-title">Résultats</h2>
-        <ul class="proj-page__results">
+        <h2 class="proj-page__section-title"><span data-lang="fr">Résultats</span><span data-lang="en">Results</span></h2>
+        <ul class="proj-page__results" data-lang="fr">
           <li>Carte de risque à deux couches (sémantique + géométrique) avec implémentation ROS 2 temps réel, publiant un costmap persistant en vue de dessus</li>
           <li>Comparaison de trois backbones de segmentation (SegFormer-B0, DeepLabV3+/MobileNetV2, YOLO26) - YOLO26 retenu pour le déploiement, 5-6× plus rapide en inférence CPU (≈46 FPS vs 7-10 FPS)</li>
           <li>Contrôleur GPU risk-aware MPPI (bibliothèque MPPI-Generic, fonction de coût CUDA personnalisée, 5120 trajectoires/cycle à 14 Hz) avec diagnostics en direct</li>
@@ -289,20 +310,29 @@
           <li>Réduction de l'exposition au risque réel de 44 % (traversée forcée) et 100 % (zone évitable), pour un surcoût de seulement 2-9 % en distance et en temps</li>
           <li>Démonstration sur TurtleBot 4 physique, naviguant un champ de risque virtuel injecté dans le costmap</li>
         </ul>
+        <ul class="proj-page__results" data-lang="en">
+          <li>Two-layer risk map (semantic + geometric) implemented in real time on ROS 2, publishing a persistent bird's-eye-view costmap</li>
+          <li>Comparison of three segmentation backbones (SegFormer-B0, DeepLabV3+/MobileNetV2, YOLO26) - YOLO26 selected for deployment, 5-6× faster on CPU inference (≈46 FPS vs 7-10 FPS)</li>
+          <li>Risk-aware GPU MPPI controller (MPPI-Generic library, custom CUDA cost function, 5,120 trajectories/cycle at 14 Hz) with live diagnostics</li>
+          <li>Quantitative cost-arbitration model, derived then corrected and revalidated against real measurements - it turns controller tuning into a calculation instead of trial and error</li>
+          <li>Real risk exposure reduced by 44% (forced crossing) and 100% (avoidable zone), for only 2-9% overhead in distance and time</li>
+          <li>Demonstrated on a physical TurtleBot 4 navigating a virtual risk field injected into the costmap</li>
+        </ul>
       </div>
 
       <!-- ── Rapport ── -->
       <div class="proj-page__section">
-        <h2 class="proj-page__section-title">Rapport de stage</h2>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Rapport de stage</span><span data-lang="en">Internship report</span></h2>
         <div class="proj-page__body">
-          <p>Le rapport complet (31 pages) détaille l'état de l'art, l'architecture du système, la carte de risque à deux couches, le contrôleur GPU MPPI, le modèle d'arbitrage de coût et l'ensemble de la campagne expérimentale.</p>
+          <p data-lang="fr">Le rapport complet (31 pages) détaille l'état de l'art, l'architecture du système, la carte de risque à deux couches, le contrôleur GPU MPPI, le modèle d'arbitrage de coût et l'ensemble de la campagne expérimentale.</p>
+          <p data-lang="en">The full report (31 pages) covers the state of the art, the system architecture, the two-layer risk map, the GPU MPPI controller, the cost-arbitration model and the whole experimental campaign.</p>
         </div>
         <a
           href="../docs/Report_RIsk_Aware_MPPI.pdf"
           target="_blank"
           rel="noopener"
           class="proj-page__ext-link"
-        >Lire le rapport complet (PDF) →</a>
+        ><span data-lang="fr">Lire le rapport complet (PDF) →</span><span data-lang="en">Read the full report (PDF) →</span></a>
       </div>
 
       <!-- ── Technologies ── -->
@@ -315,10 +345,10 @@
           <li>Python</li>
           <li>PyTorch</li>
           <li>SegFormer-B0 / DeepLabV3+ / YOLO26</li>
-          <li>Segmentation sémantique</li>
+          <li><span data-lang="fr">Segmentation sémantique</span><span data-lang="en">Semantic segmentation</span></li>
           <li>MPPI-Generic (GPU)</li>
           <li>TurtleBot 4 · Create 3</li>
-          <li>OAK-D Pro (caméra RGB-D)</li>
+          <li><span data-lang="fr">OAK-D Pro (caméra RGB-D)</span><span data-lang="en">OAK-D Pro (RGB-D camera)</span></li>
           <li>RPLIDAR A1</li>
           <li>Raspberry Pi 4</li>
         </ul>
@@ -330,16 +360,17 @@
            2. Remplace NOM_DU_REPO par le nom réel du dépôt.
 
       <div class="proj-page__section">
-        <h2 class="proj-page__section-title">Code source</h2>
+        <h2 class="proj-page__section-title"><span data-lang="fr">Code source</span><span data-lang="en">Source code</span></h2>
         <div class="proj-page__body">
-          <p>Implémentation, environnements de simulation et scripts d'entraînement des modèles de segmentation.</p>
+          <p data-lang="fr">Implémentation, environnements de simulation et scripts d'entraînement des modèles de segmentation.</p>
+          <p data-lang="en">Implementation, simulation environments and training scripts for the segmentation models.</p>
         </div>
         <a
           href="https://github.com/Justinamenngblogni/NOM_DU_REPO"
           target="_blank"
           rel="noopener"
           class="proj-page__ext-link"
-        >Voir le dépôt GitHub →</a>
+        ><span data-lang="fr">Voir le dépôt GitHub →</span><span data-lang="en">View the GitHub repository →</span></a>
       </div>
       -->
 
